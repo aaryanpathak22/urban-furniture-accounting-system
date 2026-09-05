@@ -1,0 +1,902 @@
+[
+  {
+    "customerId": "CUS001",
+    "name": "Royal Furniture Pvt Ltd",
+    "type": "Corporate",
+    "email": "contact@royalfurniture.com",
+    "phone": "9876543210",
+    "address": {
+      "street": "MG Road",
+      "city": "Pune",
+      "state": "Maharashtra",
+      "pincode": "411001"
+    },
+    "gstNumber": "27ABCDE1234F1Z5",
+    "creditLimit": 100000,
+    "paymentTerms": "30 Days",
+    "status": "Active",
+    "createdAt": "2026-09-06"
+  },
+  {
+    "customerId": "CUS002",
+    "name": "Modern Living Store",
+    "type": "Retail",
+    "email": "sales@modernliving.com",
+    "phone": "9876543211",
+    "address": {
+      "street": "FC Road",
+      "city": "Pune",
+      "state": "Maharashtra",
+      "pincode": "411004"
+    },
+    "gstNumber": "27FGHIJ5678K1Z2",
+    "creditLimit": 50000,
+    "paymentTerms": "15 Days",
+    "status": "Active",
+    "createdAt": "2026-09-06"
+  },
+  {
+    "customerId": "CUS003",
+    "name": "HomeCraft Interiors",
+    "type": "Corporate",
+    "email": "info@homecraft.com",
+    "phone": "9876543212",
+    "address": {
+      "street": "Baner Road",
+      "city": "Pune",
+      "state": "Maharashtra",
+      "pincode": "411045"
+    },
+    "gstNumber": "27KLMNO9876P1Z8",
+    "creditLimit": 75000,
+    "paymentTerms": "30 Days",
+    "status": "Active",
+    "createdAt": "2026-09-06"
+  },
+  {
+    "customerId": "CUS004",
+    "name": "Elegant Spaces",
+    "type": "Retail",
+    "email": "contact@elegantspaces.com",
+    "phone": "9876543213",
+    "address": {
+      "street": "Kothrud",
+      "city": "Pune",
+      "state": "Maharashtra",
+      "pincode": "411038"
+    },
+    "gstNumber": "27QRSTU4567V1Z9",
+    "creditLimit": 60000,
+    "paymentTerms": "15 Days",
+    "status": "Active",
+    "createdAt": "2026-09-06"
+  },
+  {
+    "customerId": "CUS005",
+    "name": "Urban Home Decor",
+    "type": "Corporate",
+    "email": "sales@urbanhome.com",
+    "phone": "9876543214",
+    "address": {
+      "street": "Viman Nagar",
+      "city": "Pune",
+      "state": "Maharashtra",
+      "pincode": "411014"
+    },
+    "gstNumber": "27WXYZA3456B1Z7",
+    "creditLimit": 90000,
+    "paymentTerms": "45 Days",
+    "status": "Active",
+    "createdAt": "2026-09-06"
+  },
+  {
+    "customerId": "CUS006",
+    "name": "Comfort Furniture House",
+    "type": "Retail",
+    "email": "support@comforthouse.com",
+    "phone": "9876543215",
+    "address": {
+      "street": "Aundh Road",
+      "city": "Pune",
+      "state": "Maharashtra",
+      "pincode": "411007"
+    },
+    "gstNumber": "27CDEFG7890H1Z4",
+    "creditLimit": 40000,
+    "paymentTerms": "15 Days",
+    "status": "Active",
+    "createdAt": "2026-09-06"
+  },
+  {
+    "customerId": "CUS007",
+    "name": "Wood Works India",
+    "type": "Corporate",
+    "email": "orders@woodworksindia.com",
+    "phone": "9876543216",
+    "address": {
+      "street": "Hadapsar Industrial Area",
+      "city": "Pune",
+      "state": "Maharashtra",
+      "pincode": "411028"
+    },
+    "gstNumber": "27HIJKL2345M1Z6",
+    "creditLimit": 120000,
+    "paymentTerms": "45 Days",
+    "status": "Active",
+    "createdAt": "2026-09-06"
+  },
+  {
+    "customerId": "CUS008",
+    "name": "Design Hub Interiors",
+    "type": "Corporate",
+    "email": "design@designhub.com",
+    "phone": "9876543217",
+    "address": {
+      "street": "Wakad",
+      "city": "Pune",
+      "state": "Maharashtra",
+      "pincode": "411057"
+    },
+    "gstNumber": "27MNOPQ6789R1Z3",
+    "creditLimit": 80000,
+    "paymentTerms": "30 Days",
+    "status": "Active",
+    "createdAt": "2026-09-06"
+  },
+  {
+    "customerId": "CUS009",
+    "name": "Luxury Living Concepts",
+    "type": "Retail",
+    "email": "luxury@livingconcepts.com",
+    "phone": "9876543218",
+    "address": {
+      "street": "Camp Area",
+      "city": "Pune",
+      "state": "Maharashtra",
+      "pincode": "411001"
+    },
+    "gstNumber": "27STUVW1234X1Z8",
+    "creditLimit": 65000,
+    "paymentTerms": "30 Days",
+    "status": "Active",
+    "createdAt": "2026-09-06"
+  },
+  {
+    "customerId": "CUS010",
+    "name": "Classic Furniture Mart",
+    "type": "Retail",
+    "email": "classic@furnituremart.com",
+    "phone": "9876543219",
+    "address": {
+      "street": "Shivaji Nagar",
+      "city": "Pune",
+      "state": "Maharashtra",
+      "pincode": "411005"
+    },
+    "gstNumber": "27YZAB5678C1Z1",
+    "creditLimit": 55000,
+    "paymentTerms": "15 Days",
+    "status": "Active",
+    "createdAt": "2026-09-06"
+  },
+{
+  "customerId": "CUS011",
+  "name": "Prime Workspace Solutions",
+  "type": "Corporate",
+  "email": "contact@primeworkspace.com",
+  "phone": "9876543220",
+  "address": {
+    "street": "Hinjewadi Phase 1",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411057"
+  },
+  "gstNumber": "27ABCDE5678F1Z5",
+  "creditLimit": 110000,
+  "paymentTerms": "45 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS012",
+  "name": "The Furniture Gallery",
+  "type": "Retail",
+  "email": "sales@furnituregallery.com",
+  "phone": "9876543221",
+  "address": {
+    "street": "Deccan Gymkhana",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411004"
+  },
+  "gstNumber": "27FGHIJ9012K1Z2",
+  "creditLimit": 70000,
+  "paymentTerms": "30 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS013",
+  "name": "Elite Interior Studio",
+  "type": "Corporate",
+  "email": "info@eliteinterior.com",
+  "phone": "9876543222",
+  "address": {
+    "street": "Balewadi",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411045"
+  },
+  "gstNumber": "27KLMNO3456P1Z8",
+  "creditLimit": 95000,
+  "paymentTerms": "30 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS014",
+  "name": "Home Style Furnishings",
+  "type": "Retail",
+  "email": "home@stylestore.com",
+  "phone": "9876543223",
+  "address": {
+    "street": "Kharadi",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411014"
+  },
+  "gstNumber": "27QRSTU7890V1Z9",
+  "creditLimit": 45000,
+  "paymentTerms": "15 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS015",
+  "name": "Oakwood Furniture Co",
+  "type": "Corporate",
+  "email": "orders@oakwood.com",
+  "phone": "9876543224",
+  "address": {
+    "street": "Pimpri Market",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411018"
+  },
+  "gstNumber": "27WXYZA8901B1Z7",
+  "creditLimit": 130000,
+  "paymentTerms": "45 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS016",
+  "name": "Nest Furniture House",
+  "type": "Retail",
+  "email": "contact@nestfurniture.com",
+  "phone": "9876543225",
+  "address": {
+    "street": "Magarpatta",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411028"
+  },
+  "gstNumber": "27CDEFG2345H1Z4",
+  "creditLimit": 60000,
+  "paymentTerms": "30 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS017",
+  "name": "Space Makers India",
+  "type": "Corporate",
+  "email": "sales@spacemakers.com",
+  "phone": "9876543226",
+  "address": {
+    "street": "Vishrantwadi",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411015"
+  },
+  "gstNumber": "27HIJKL6789M1Z6",
+  "creditLimit": 85000,
+  "paymentTerms": "30 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS018",
+  "name": "Royal Oak Interiors",
+  "type": "Corporate",
+  "email": "support@royaloakinteriors.com",
+  "phone": "9876543227",
+  "address": {
+    "street": "Akurdi",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411035"
+  },
+  "gstNumber": "27MNOPQ4567R1Z3",
+  "creditLimit": 100000,
+  "paymentTerms": "45 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS019",
+  "name": "Comfort Zone Furnitures",
+  "type": "Retail",
+  "email": "sales@comfortzone.com",
+  "phone": "9876543228",
+  "address": {
+    "street": "Warje",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411052"
+  },
+  "gstNumber": "27STUVW8901X1Z8",
+  "creditLimit": 50000,
+  "paymentTerms": "15 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS020",
+  "name": "Modern Home Concepts",
+  "type": "Corporate",
+  "email": "info@modernhomeconcepts.com",
+  "phone": "9876543229",
+  "address": {
+    "street": "Pashan",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411021"
+  },
+  "gstNumber": "27YZABC1234D1Z1",
+  "creditLimit": 120000,
+  "paymentTerms": "45 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS021",
+  "name": "Urban Living Spaces",
+  "type": "Retail",
+  "email": "contact@urbanlivingspaces.com",
+  "phone": "9876543230",
+  "address": {
+    "street": "Baner Road",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411045"
+  },
+  "gstNumber": "27ABCDE1111F1Z5",
+  "creditLimit": 65000,
+  "paymentTerms": "30 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS022",
+  "name": "Luxury Interiors Pvt Ltd",
+  "type": "Corporate",
+  "email": "info@luxuryinteriors.com",
+  "phone": "9876543231",
+  "address": {
+    "street": "Aundh",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411007"
+  },
+  "gstNumber": "27FGHIJ2222K1Z2",
+  "creditLimit": 150000,
+  "paymentTerms": "45 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS023",
+  "name": "Classic Wood Works",
+  "type": "Corporate",
+  "email": "sales@classicwoodworks.com",
+  "phone": "9876543232",
+  "address": {
+    "street": "Camp Area",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411001"
+  },
+  "gstNumber": "27KLMNO3333P1Z8",
+  "creditLimit": 90000,
+  "paymentTerms": "30 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS024",
+  "name": "Comfort Furniture Hub",
+  "type": "Retail",
+  "email": "support@comforthub.com",
+  "phone": "9876543233",
+  "address": {
+    "street": "Kothrud",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411038"
+  },
+  "gstNumber": "27QRSTU4444V1Z9",
+  "creditLimit": 55000,
+  "paymentTerms": "15 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS025",
+  "name": "Heritage Furniture House",
+  "type": "Corporate",
+  "email": "orders@heritagefurniture.com",
+  "phone": "9876543234",
+  "address": {
+    "street": "Shivajinagar",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411005"
+  },
+  "gstNumber": "27WXYZA5555B1Z7",
+  "creditLimit": 125000,
+  "paymentTerms": "45 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS026",
+  "name": "Design Studio India",
+  "type": "Corporate",
+  "email": "hello@designstudioindia.com",
+  "phone": "9876543235",
+  "address": {
+    "street": "Viman Nagar",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411014"
+  },
+  "gstNumber": "27CDEFG6666H1Z4",
+  "creditLimit": 80000,
+  "paymentTerms": "30 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS027",
+  "name": "Metro Furniture Mart",
+  "type": "Retail",
+  "email": "sales@metrofurniture.com",
+  "phone": "9876543236",
+  "address": {
+    "street": "Hadapsar",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411028"
+  },
+  "gstNumber": "27HIJKL7777M1Z6",
+  "creditLimit": 60000,
+  "paymentTerms": "15 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS028",
+  "name": "Elegant Home Decor",
+  "type": "Retail",
+  "email": "contact@eleganthome.com",
+  "phone": "9876543237",
+  "address": {
+    "street": "Wakad",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411057"
+  },
+  "gstNumber": "27MNOPQ8888R1Z3",
+  "creditLimit": 75000,
+  "paymentTerms": "30 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS029",
+  "name": "Future Furniture Solutions",
+  "type": "Corporate",
+  "email": "info@futurefurniture.com",
+  "phone": "9876543238",
+  "address": {
+    "street": "Pimple Saudagar",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411027"
+  },
+  "gstNumber": "27STUVW9999X1Z8",
+  "creditLimit": 140000,
+  "paymentTerms": "45 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS030",
+  "name": "Premium Space Interiors",
+  "type": "Corporate",
+  "email": "contact@premiumspace.com",
+  "phone": "9876543239",
+  "address": {
+    "street": "Kalyani Nagar",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411006"
+  },
+  "gstNumber": "27YZABC0000D1Z1",
+  "creditLimit": 175000,
+  "paymentTerms": "60 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS031",
+  "name": "Woodcraft Innovations",
+  "type": "Corporate",
+  "email": "contact@woodcraftinnovations.com",
+  "phone": "9876543240",
+  "address": {
+    "street": "Bavdhan",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411021"
+  },
+  "gstNumber": "27ABCDF1111E1Z5",
+  "creditLimit": 95000,
+  "paymentTerms": "30 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS032",
+  "name": "The Modern Furniture Co",
+  "type": "Retail",
+  "email": "sales@modernfurnitureco.com",
+  "phone": "9876543241",
+  "address": {
+    "street": "Pune Station Road",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411001"
+  },
+  "gstNumber": "27GHIJK2222L1Z2",
+  "creditLimit": 65000,
+  "paymentTerms": "15 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS033",
+  "name": "Interior Concepts Pvt Ltd",
+  "type": "Corporate",
+  "email": "info@interiorconcepts.com",
+  "phone": "9876543242",
+  "address": {
+    "street": "Bhosari MIDC",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411026"
+  },
+  "gstNumber": "27MNOPQ3333R1Z3",
+  "creditLimit": 160000,
+  "paymentTerms": "60 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS034",
+  "name": "Home Comfort Solutions",
+  "type": "Retail",
+  "email": "support@homecomfort.com",
+  "phone": "9876543243",
+  "address": {
+    "street": "Kondhwa",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411048"
+  },
+  "gstNumber": "27STUVW4444X1Z8",
+  "creditLimit": 55000,
+  "paymentTerms": "30 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS035",
+  "name": "Signature Furniture Studio",
+  "type": "Corporate",
+  "email": "hello@signaturefurniture.com",
+  "phone": "9876543244",
+  "address": {
+    "street": "Model Colony",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411016"
+  },
+  "gstNumber": "27YZABC5555D1Z1",
+  "creditLimit": 125000,
+  "paymentTerms": "45 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS036",
+  "name": "Elegant Living Furniture",
+  "type": "Retail",
+  "email": "contact@elegantliving.com",
+  "phone": "9876543245",
+  "address": {
+    "street": "Sinhagad Road",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411051"
+  },
+  "gstNumber": "27CDEFG6666H1Z4",
+  "creditLimit": 70000,
+  "paymentTerms": "30 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS037",
+  "name": "Classic Interiors India",
+  "type": "Corporate",
+  "email": "sales@classicinteriors.com",
+  "phone": "9876543246",
+  "address": {
+    "street": "Camp",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411001"
+  },
+  "gstNumber": "27HIJKL7777M1Z6",
+  "creditLimit": 115000,
+  "paymentTerms": "45 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS038",
+  "name": "Royal Space Decor",
+  "type": "Retail",
+  "email": "info@royalspacedecor.com",
+  "phone": "9876543247",
+  "address": {
+    "street": "Pimple Nilakh",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411027"
+  },
+  "gstNumber": "27QRSTU8888V1Z9",
+  "creditLimit": 60000,
+  "paymentTerms": "15 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS039",
+  "name": "Future Living Designs",
+  "type": "Corporate",
+  "email": "contact@futurelivingdesigns.com",
+  "phone": "9876543248",
+  "address": {
+    "street": "Wadgaon Sheri",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411014"
+  },
+  "gstNumber": "27WXYZA9999B1Z7",
+  "creditLimit": 135000,
+  "paymentTerms": "60 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS040",
+  "name": "Urban Decor Solutions",
+  "type": "Corporate",
+  "email": "sales@urbandecor.com",
+  "phone": "9876543249",
+  "address": {
+    "street": "Aundh Road",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411003"
+  },
+  "gstNumber": "27KLMNO0000P1Z8",
+  "creditLimit": 180000,
+  "paymentTerms": "60 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS041",
+  "name": "Apex Furniture Solutions",
+  "type": "Corporate",
+  "email": "contact@apexfurniture.com",
+  "phone": "9876543250",
+  "address": {
+    "street": "Yerwada",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411006"
+  },
+  "gstNumber": "27ABCDE1010F1Z5",
+  "creditLimit": 150000,
+  "paymentTerms": "45 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS042",
+  "name": "Greenwood Interiors",
+  "type": "Corporate",
+  "email": "sales@greenwoodinteriors.com",
+  "phone": "9876543251",
+  "address": {
+    "street": "Pune Nagar Road",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411014"
+  },
+  "gstNumber": "27FGHIJ2020K1Z2",
+  "creditLimit": 95000,
+  "paymentTerms": "30 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS043",
+  "name": "BuildRight Furnishings",
+  "type": "Corporate",
+  "email": "info@buildright.com",
+  "phone": "9876543252",
+  "address": {
+    "street": "Wakad Main Road",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411057"
+  },
+  "gstNumber": "27KLMNO3030P1Z8",
+  "creditLimit": 125000,
+  "paymentTerms": "45 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS044",
+  "name": "SpaceCraft Studio",
+  "type": "Retail",
+  "email": "hello@spacecraftstudio.com",
+  "phone": "9876543253",
+  "address": {
+    "street": "Karve Nagar",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411052"
+  },
+  "gstNumber": "27QRSTU4040V1Z9",
+  "creditLimit": 60000,
+  "paymentTerms": "15 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS045",
+  "name": "Vision Furniture World",
+  "type": "Retail",
+  "email": "sales@visionfurniture.com",
+  "phone": "9876543254",
+  "address": {
+    "street": "Dehu Road",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "412101"
+  },
+  "gstNumber": "27WXYZA5050B1Z7",
+  "creditLimit": 70000,
+  "paymentTerms": "30 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS046",
+  "name": "Infinite Living Spaces",
+  "type": "Corporate",
+  "email": "contact@infiniteliving.com",
+  "phone": "9876543255",
+  "address": {
+    "street": "Kalyani Nagar",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411006"
+  },
+  "gstNumber": "27CDEFG6060H1Z4",
+  "creditLimit": 175000,
+  "paymentTerms": "60 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS047",
+  "name": "Elite Woodcraft",
+  "type": "Corporate",
+  "email": "orders@elitewoodcraft.com",
+  "phone": "9876543256",
+  "address": {
+    "street": "Bhosari",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411039"
+  },
+  "gstNumber": "27HIJKL7070M1Z6",
+  "creditLimit": 110000,
+  "paymentTerms": "45 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS048",
+  "name": "Comfort Space Interiors",
+  "type": "Retail",
+  "email": "support@comfortspace.com",
+  "phone": "9876543257",
+  "address": {
+    "street": "Pimpri",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411018"
+  },
+  "gstNumber": "27MNOPQ8080R1Z3",
+  "creditLimit": 55000,
+  "paymentTerms": "15 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS049",
+  "name": "Premium Home Furnishers",
+  "type": "Corporate",
+  "email": "info@premiumhome.com",
+  "phone": "9876543258",
+  "address": {
+    "street": "Pashan",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411021"
+  },
+  "gstNumber": "27STUVW9090X1Z8",
+  "creditLimit": 140000,
+  "paymentTerms": "60 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+},
+{
+  "customerId": "CUS050",
+  "name": "FutureNest Furniture",
+  "type": "Corporate",
+  "email": "contact@futurenest.com",
+  "phone": "9876543259",
+  "address": {
+    "street": "Hinjewadi",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411057"
+  },
+  "gstNumber": "27YZABC0101D1Z1",
+  "creditLimit": 200000,
+  "paymentTerms": "60 Days",
+  "status": "Active",
+  "createdAt": "2026-09-06"
+}
+]

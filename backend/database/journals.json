@@ -1,0 +1,1302 @@
+[
+  {
+    "journalId": "JRN001",
+    "journalNumber": "JE-2026-001",
+    "transactionType": "Sales Invoice",
+    "referenceId": "INV001",
+    "referenceNumber": "INV-2026-001",
+    "transactionDate": "2026-09-01",
+    "entries": [
+      {
+        "accountName": "Accounts Receivable",
+        "accountType": "Asset",
+        "debit": 153400,
+        "credit": 0
+      },
+      {
+        "accountName": "Sales Revenue",
+        "accountType": "Revenue",
+        "debit": 0,
+        "credit": 153400
+      }
+    ],
+    "totalDebit": 153400,
+    "totalCredit": 153400,
+    "status": "Posted",
+    "createdAt": "2026-09-06"
+  },
+  {
+    "journalId": "JRN002",
+    "journalNumber": "JE-2026-002",
+    "transactionType": "Payment Received",
+    "referenceId": "PAY001",
+    "referenceNumber": "PAY-2026-001",
+    "transactionDate": "2026-09-02",
+    "entries": [
+      {
+        "accountName": "Bank",
+        "accountType": "Asset",
+        "debit": 100000,
+        "credit": 0
+      },
+      {
+        "accountName": "Accounts Receivable",
+        "accountType": "Asset",
+        "debit": 0,
+        "credit": 100000
+      }
+    ],
+    "totalDebit": 100000,
+    "totalCredit": 100000,
+    "status": "Posted",
+    "createdAt": "2026-09-06"
+  },
+  {
+    "journalId": "JRN003",
+    "journalNumber": "JE-2026-003",
+    "transactionType": "Purchase",
+    "referenceId": "BILL001",
+    "referenceNumber": "VB-2026-001",
+    "transactionDate": "2026-09-03",
+    "entries": [
+      {
+        "accountName": "Inventory",
+        "accountType": "Asset",
+        "debit": 130000,
+        "credit": 0
+      },
+      {
+        "accountName": "Accounts Payable",
+        "accountType": "Liability",
+        "debit": 0,
+        "credit": 130000
+      }
+    ],
+    "totalDebit": 130000,
+    "totalCredit": 130000,
+    "status": "Posted",
+    "createdAt": "2026-09-06"
+  },
+  {
+    "journalId": "JRN004",
+    "journalNumber": "JE-2026-004",
+    "transactionType": "Vendor Payment",
+    "referenceId": "PAYV001",
+    "referenceNumber": "VP-2026-001",
+    "transactionDate": "2026-09-04",
+    "entries": [
+      {
+        "accountName": "Accounts Payable",
+        "accountType": "Liability",
+        "debit": 100000,
+        "credit": 0
+      },
+      {
+        "accountName": "Bank",
+        "accountType": "Asset",
+        "debit": 0,
+        "credit": 100000
+      }
+    ],
+    "totalDebit": 100000,
+    "totalCredit": 100000,
+    "status": "Posted",
+    "createdAt": "2026-09-06"
+  },
+  {
+    "journalId": "JRN005",
+    "journalNumber": "JE-2026-005",
+    "transactionType": "Sales Invoice",
+    "referenceId": "INV002",
+    "referenceNumber": "INV-2026-002",
+    "transactionDate": "2026-09-05",
+    "entries": [
+      {
+        "accountName": "Accounts Receivable",
+        "accountType": "Asset",
+        "debit": 212400,
+        "credit": 0
+      },
+      {
+        "accountName": "Sales Revenue",
+        "accountType": "Revenue",
+        "debit": 0,
+        "credit": 212400
+      }
+    ],
+    "totalDebit": 212400,
+    "totalCredit": 212400,
+    "status": "Posted",
+    "createdAt": "2026-09-06"
+  },
+  {
+    "journalId": "JRN006",
+    "journalNumber": "JE-2026-006",
+    "transactionType": "Sales Invoice",
+    "referenceId": "INV003",
+    "referenceNumber": "INV-2026-003",
+    "transactionDate": "2026-09-06",
+    "entries": [
+      {
+        "accountName": "Accounts Receivable",
+        "accountType": "Asset",
+        "debit": 177000,
+        "credit": 0
+      },
+      {
+        "accountName": "Sales Revenue",
+        "accountType": "Revenue",
+        "debit": 0,
+        "credit": 177000
+      }
+    ],
+    "totalDebit": 177000,
+    "totalCredit": 177000,
+    "status": "Posted",
+    "createdAt": "2026-09-06"
+  },
+  {
+    "journalId": "JRN007",
+    "journalNumber": "JE-2026-007",
+    "transactionType": "Purchase",
+    "referenceId": "BILL002",
+    "referenceNumber": "VB-2026-002",
+    "transactionDate": "2026-09-07",
+    "entries": [
+      {
+        "accountName": "Inventory",
+        "accountType": "Asset",
+        "debit": 180000,
+        "credit": 0
+      },
+      {
+        "accountName": "Accounts Payable",
+        "accountType": "Liability",
+        "debit": 0,
+        "credit": 180000
+      }
+    ],
+    "totalDebit": 180000,
+    "totalCredit": 180000,
+    "status": "Posted",
+    "createdAt": "2026-09-06"
+  },
+  {
+    "journalId": "JRN008",
+    "journalNumber": "JE-2026-008",
+    "transactionType": "Expense",
+    "referenceId": "EXP001",
+    "referenceNumber": "EXP-2026-001",
+    "transactionDate": "2026-09-08",
+    "entries": [
+      {
+        "accountName": "Office Expense",
+        "accountType": "Expense",
+        "debit": 25000,
+        "credit": 0
+      },
+      {
+        "accountName": "Bank",
+        "accountType": "Asset",
+        "debit": 0,
+        "credit": 25000
+      }
+    ],
+    "totalDebit": 25000,
+    "totalCredit": 25000,
+    "status": "Posted",
+    "createdAt": "2026-09-06"
+  },
+  {
+    "journalId": "JRN009",
+    "journalNumber": "JE-2026-009",
+    "transactionType": "Sales Invoice",
+    "referenceId": "INV004",
+    "referenceNumber": "INV-2026-004",
+    "transactionDate": "2026-09-09",
+    "entries": [
+      {
+        "accountName": "Accounts Receivable",
+        "accountType": "Asset",
+        "debit": 330400,
+        "credit": 0
+      },
+      {
+        "accountName": "Sales Revenue",
+        "accountType": "Revenue",
+        "debit": 0,
+        "credit": 330400
+      }
+    ],
+    "totalDebit": 330400,
+    "totalCredit": 330400,
+    "status": "Posted",
+    "createdAt": "2026-09-06"
+  },
+  {
+    "journalId": "JRN010",
+    "journalNumber": "JE-2026-010",
+    "transactionType": "Adjustment",
+    "referenceId": "ADJ001",
+    "referenceNumber": "ADJ-2026-001",
+    "transactionDate": "2026-09-10",
+    "entries": [
+      {
+        "accountName": "Inventory Adjustment",
+        "accountType": "Expense",
+        "debit": 15000,
+        "credit": 0
+      },
+      {
+        "accountName": "Inventory",
+        "accountType": "Asset",
+        "debit": 0,
+        "credit": 15000
+      }
+    ],
+    "totalDebit": 15000,
+    "totalCredit": 15000,
+    "status": "Posted",
+    "createdAt": "2026-09-06"
+  },
+{
+  "journalId": "JRN011",
+  "journalNumber": "JE-2026-011",
+  "transactionType": "Sales Invoice",
+  "referenceId": "INV005",
+  "referenceNumber": "INV-2026-005",
+  "transactionDate": "2026-09-11",
+  "entries": [
+    {
+      "accountName": "Accounts Receivable",
+      "accountType": "Asset",
+      "debit": 519200,
+      "credit": 0
+    },
+    {
+      "accountName": "Sales Revenue",
+      "accountType": "Revenue",
+      "debit": 0,
+      "credit": 519200
+    }
+  ],
+  "totalDebit": 519200,
+  "totalCredit": 519200,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN012",
+  "journalNumber": "JE-2026-012",
+  "transactionType": "Payment Received",
+  "referenceId": "PAY002",
+  "referenceNumber": "PAY-2026-002",
+  "transactionDate": "2026-09-12",
+  "entries": [
+    {
+      "accountName": "Bank",
+      "accountType": "Asset",
+      "debit": 120000,
+      "credit": 0
+    },
+    {
+      "accountName": "Accounts Receivable",
+      "accountType": "Asset",
+      "debit": 0,
+      "credit": 120000
+    }
+  ],
+  "totalDebit": 120000,
+  "totalCredit": 120000,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN013",
+  "journalNumber": "JE-2026-013",
+  "transactionType": "Purchase",
+  "referenceId": "BILL003",
+  "referenceNumber": "VB-2026-003",
+  "transactionDate": "2026-09-13",
+  "entries": [
+    {
+      "accountName": "Inventory",
+      "accountType": "Asset",
+      "debit": 150000,
+      "credit": 0
+    },
+    {
+      "accountName": "Accounts Payable",
+      "accountType": "Liability",
+      "debit": 0,
+      "credit": 150000
+    }
+  ],
+  "totalDebit": 150000,
+  "totalCredit": 150000,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN014",
+  "journalNumber": "JE-2026-014",
+  "transactionType": "Vendor Payment",
+  "referenceId": "VP002",
+  "referenceNumber": "VP-2026-002",
+  "transactionDate": "2026-09-14",
+  "entries": [
+    {
+      "accountName": "Accounts Payable",
+      "accountType": "Liability",
+      "debit": 150000,
+      "credit": 0
+    },
+    {
+      "accountName": "Bank",
+      "accountType": "Asset",
+      "debit": 0,
+      "credit": 150000
+    }
+  ],
+  "totalDebit": 150000,
+  "totalCredit": 150000,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN015",
+  "journalNumber": "JE-2026-015",
+  "transactionType": "Sales Invoice",
+  "referenceId": "INV006",
+  "referenceNumber": "INV-2026-006",
+  "transactionDate": "2026-09-15",
+  "entries": [
+    {
+      "accountName": "Accounts Receivable",
+      "accountType": "Asset",
+      "debit": 132750,
+      "credit": 0
+    },
+    {
+      "accountName": "Sales Revenue",
+      "accountType": "Revenue",
+      "debit": 0,
+      "credit": 132750
+    }
+  ],
+  "totalDebit": 132750,
+  "totalCredit": 132750,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN016",
+  "journalNumber": "JE-2026-016",
+  "transactionType": "Purchase",
+  "referenceId": "BILL004",
+  "referenceNumber": "VB-2026-004",
+  "transactionDate": "2026-09-16",
+  "entries": [
+    {
+      "accountName": "Inventory",
+      "accountType": "Asset",
+      "debit": 280000,
+      "credit": 0
+    },
+    {
+      "accountName": "Accounts Payable",
+      "accountType": "Liability",
+      "debit": 0,
+      "credit": 280000
+    }
+  ],
+  "totalDebit": 280000,
+  "totalCredit": 280000,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN017",
+  "journalNumber": "JE-2026-017",
+  "transactionType": "Sales Invoice",
+  "referenceId": "INV007",
+  "referenceNumber": "INV-2026-007",
+  "transactionDate": "2026-09-17",
+  "entries": [
+    {
+      "accountName": "Accounts Receivable",
+      "accountType": "Asset",
+      "debit": 354000,
+      "credit": 0
+    },
+    {
+      "accountName": "Sales Revenue",
+      "accountType": "Revenue",
+      "debit": 0,
+      "credit": 354000
+    }
+  ],
+  "totalDebit": 354000,
+  "totalCredit": 354000,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN018",
+  "journalNumber": "JE-2026-018",
+  "transactionType": "Expense",
+  "referenceId": "EXP002",
+  "referenceNumber": "EXP-2026-002",
+  "transactionDate": "2026-09-18",
+  "entries": [
+    {
+      "accountName": "Marketing Expense",
+      "accountType": "Expense",
+      "debit": 40000,
+      "credit": 0
+    },
+    {
+      "accountName": "Bank",
+      "accountType": "Asset",
+      "debit": 0,
+      "credit": 40000
+    }
+  ],
+  "totalDebit": 40000,
+  "totalCredit": 40000,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN019",
+  "journalNumber": "JE-2026-019",
+  "transactionType": "Sales Invoice",
+  "referenceId": "INV008",
+  "referenceNumber": "INV-2026-008",
+  "transactionDate": "2026-09-19",
+  "entries": [
+    {
+      "accountName": "Accounts Receivable",
+      "accountType": "Asset",
+      "debit": 212400,
+      "credit": 0
+    },
+    {
+      "accountName": "Sales Revenue",
+      "accountType": "Revenue",
+      "debit": 0,
+      "credit": 212400
+    }
+  ],
+  "totalDebit": 212400,
+  "totalCredit": 212400,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN020",
+  "journalNumber": "JE-2026-020",
+  "transactionType": "Purchase",
+  "referenceId": "BILL005",
+  "referenceNumber": "VB-2026-005",
+  "transactionDate": "2026-09-20",
+  "entries": [
+    {
+      "accountName": "Inventory",
+      "accountType": "Asset",
+      "debit": 440000,
+      "credit": 0
+    },
+    {
+      "accountName": "Accounts Payable",
+      "accountType": "Liability",
+      "debit": 0,
+      "credit": 440000
+    }
+  ],
+  "totalDebit": 440000,
+  "totalCredit": 440000,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN021",
+  "journalNumber": "JE-2026-021",
+  "transactionType": "Sales Invoice",
+  "referenceId": "INV009",
+  "referenceNumber": "INV-2026-009",
+  "transactionDate": "2026-09-21",
+  "entries": [
+    {
+      "accountName": "Accounts Receivable",
+      "accountType": "Asset",
+      "debit": 472000,
+      "credit": 0
+    },
+    {
+      "accountName": "Sales Revenue",
+      "accountType": "Revenue",
+      "debit": 0,
+      "credit": 472000
+    }
+  ],
+  "totalDebit": 472000,
+  "totalCredit": 472000,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN022",
+  "journalNumber": "JE-2026-022",
+  "transactionType": "Payment Received",
+  "referenceId": "PAY003",
+  "referenceNumber": "PAY-2026-003",
+  "transactionDate": "2026-09-22",
+  "entries": [
+    {
+      "accountName": "Bank",
+      "accountType": "Asset",
+      "debit": 200000,
+      "credit": 0
+    },
+    {
+      "accountName": "Accounts Receivable",
+      "accountType": "Asset",
+      "debit": 0,
+      "credit": 200000
+    }
+  ],
+  "totalDebit": 200000,
+  "totalCredit": 200000,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN023",
+  "journalNumber": "JE-2026-023",
+  "transactionType": "Purchase",
+  "referenceId": "BILL006",
+  "referenceNumber": "VB-2026-006",
+  "transactionDate": "2026-09-23",
+  "entries": [
+    {
+      "accountName": "Inventory",
+      "accountType": "Asset",
+      "debit": 112500,
+      "credit": 0
+    },
+    {
+      "accountName": "Accounts Payable",
+      "accountType": "Liability",
+      "debit": 0,
+      "credit": 112500
+    }
+  ],
+  "totalDebit": 112500,
+  "totalCredit": 112500,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN024",
+  "journalNumber": "JE-2026-024",
+  "transactionType": "Vendor Payment",
+  "referenceId": "VP003",
+  "referenceNumber": "VP-2026-003",
+  "transactionDate": "2026-09-24",
+  "entries": [
+    {
+      "accountName": "Accounts Payable",
+      "accountType": "Liability",
+      "debit": 112500,
+      "credit": 0
+    },
+    {
+      "accountName": "Bank",
+      "accountType": "Asset",
+      "debit": 0,
+      "credit": 112500
+    }
+  ],
+  "totalDebit": 112500,
+  "totalCredit": 112500,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN025",
+  "journalNumber": "JE-2026-025",
+  "transactionType": "Sales Invoice",
+  "referenceId": "INV010",
+  "referenceNumber": "INV-2026-010",
+  "transactionDate": "2026-09-25",
+  "entries": [
+    {
+      "accountName": "Accounts Receivable",
+      "accountType": "Asset",
+      "debit": 318600,
+      "credit": 0
+    },
+    {
+      "accountName": "Sales Revenue",
+      "accountType": "Revenue",
+      "debit": 0,
+      "credit": 318600
+    }
+  ],
+  "totalDebit": 318600,
+  "totalCredit": 318600,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN026",
+  "journalNumber": "JE-2026-026",
+  "transactionType": "Purchase",
+  "referenceId": "BILL007",
+  "referenceNumber": "VB-2026-007",
+  "transactionDate": "2026-09-26",
+  "entries": [
+    {
+      "accountName": "Inventory",
+      "accountType": "Asset",
+      "debit": 300000,
+      "credit": 0
+    },
+    {
+      "accountName": "Accounts Payable",
+      "accountType": "Liability",
+      "debit": 0,
+      "credit": 300000
+    }
+  ],
+  "totalDebit": 300000,
+  "totalCredit": 300000,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN027",
+  "journalNumber": "JE-2026-027",
+  "transactionType": "Sales Invoice",
+  "referenceId": "INV011",
+  "referenceNumber": "INV-2026-011",
+  "transactionDate": "2026-09-27",
+  "entries": [
+    {
+      "accountName": "Accounts Receivable",
+      "accountType": "Asset",
+      "debit": 212400,
+      "credit": 0
+    },
+    {
+      "accountName": "Sales Revenue",
+      "accountType": "Revenue",
+      "debit": 0,
+      "credit": 212400
+    }
+  ],
+  "totalDebit": 212400,
+  "totalCredit": 212400,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN028",
+  "journalNumber": "JE-2026-028",
+  "transactionType": "Payment Received",
+  "referenceId": "PAY004",
+  "referenceNumber": "PAY-2026-004",
+  "transactionDate": "2026-09-28",
+  "entries": [
+    {
+      "accountName": "Bank",
+      "accountType": "Asset",
+      "debit": 150000,
+      "credit": 0
+    },
+    {
+      "accountName": "Accounts Receivable",
+      "accountType": "Asset",
+      "debit": 0,
+      "credit": 150000
+    }
+  ],
+  "totalDebit": 150000,
+  "totalCredit": 150000,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN029",
+  "journalNumber": "JE-2026-029",
+  "transactionType": "Purchase",
+  "referenceId": "BILL008",
+  "referenceNumber": "VB-2026-008",
+  "transactionDate": "2026-09-29",
+  "entries": [
+    {
+      "accountName": "Inventory",
+      "accountType": "Asset",
+      "debit": 180000,
+      "credit": 0
+    },
+    {
+      "accountName": "Accounts Payable",
+      "accountType": "Liability",
+      "debit": 0,
+      "credit": 180000
+    }
+  ],
+  "totalDebit": 180000,
+  "totalCredit": 180000,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN030",
+  "journalNumber": "JE-2026-030",
+  "transactionType": "Expense",
+  "referenceId": "EXP003",
+  "referenceNumber": "EXP-2026-003",
+  "transactionDate": "2026-09-30",
+  "entries": [
+    {
+      "accountName": "Maintenance Expense",
+      "accountType": "Expense",
+      "debit": 30000,
+      "credit": 0
+    },
+    {
+      "accountName": "Bank",
+      "accountType": "Asset",
+      "debit": 0,
+      "credit": 30000
+    }
+  ],
+  "totalDebit": 30000,
+  "totalCredit": 30000,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN031",
+  "journalNumber": "JE-2026-031",
+  "transactionType": "Sales Invoice",
+  "referenceId": "INV012",
+  "referenceNumber": "INV-2026-012",
+  "transactionDate": "2026-10-01",
+  "entries": [
+    {
+      "accountName": "Accounts Receivable",
+      "accountType": "Asset",
+      "debit": 495600,
+      "credit": 0
+    },
+    {
+      "accountName": "Sales Revenue",
+      "accountType": "Revenue",
+      "debit": 0,
+      "credit": 495600
+    }
+  ],
+  "totalDebit": 495600,
+  "totalCredit": 495600,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN032",
+  "journalNumber": "JE-2026-032",
+  "transactionType": "Vendor Payment",
+  "referenceId": "VP004",
+  "referenceNumber": "VP-2026-004",
+  "transactionDate": "2026-10-02",
+  "entries": [
+    {
+      "accountName": "Accounts Payable",
+      "accountType": "Liability",
+      "debit": 180000,
+      "credit": 0
+    },
+    {
+      "accountName": "Bank",
+      "accountType": "Asset",
+      "debit": 0,
+      "credit": 180000
+    }
+  ],
+  "totalDebit": 180000,
+  "totalCredit": 180000,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN033",
+  "journalNumber": "JE-2026-033",
+  "transactionType": "Purchase",
+  "referenceId": "BILL009",
+  "referenceNumber": "VB-2026-009",
+  "transactionDate": "2026-10-03",
+  "entries": [
+    {
+      "accountName": "Inventory",
+      "accountType": "Asset",
+      "debit": 400000,
+      "credit": 0
+    },
+    {
+      "accountName": "Accounts Payable",
+      "accountType": "Liability",
+      "debit": 0,
+      "credit": 400000
+    }
+  ],
+  "totalDebit": 400000,
+  "totalCredit": 400000,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN034",
+  "journalNumber": "JE-2026-034",
+  "transactionType": "Sales Invoice",
+  "referenceId": "INV013",
+  "referenceNumber": "INV-2026-013",
+  "transactionDate": "2026-10-04",
+  "entries": [
+    {
+      "accountName": "Accounts Receivable",
+      "accountType": "Asset",
+      "debit": 354000,
+      "credit": 0
+    },
+    {
+      "accountName": "Sales Revenue",
+      "accountType": "Revenue",
+      "debit": 0,
+      "credit": 354000
+    }
+  ],
+  "totalDebit": 354000,
+  "totalCredit": 354000,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN035",
+  "journalNumber": "JE-2026-035",
+  "transactionType": "Adjustment",
+  "referenceId": "ADJ002",
+  "referenceNumber": "ADJ-2026-002",
+  "transactionDate": "2026-10-05",
+  "entries": [
+    {
+      "accountName": "Inventory Adjustment",
+      "accountType": "Expense",
+      "debit": 20000,
+      "credit": 0
+    },
+    {
+      "accountName": "Inventory",
+      "accountType": "Asset",
+      "debit": 0,
+      "credit": 20000
+    }
+  ],
+  "totalDebit": 20000,
+  "totalCredit": 20000,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN036",
+  "journalNumber": "JE-2026-036",
+  "transactionType": "Sales Invoice",
+  "referenceId": "INV014",
+  "referenceNumber": "INV-2026-014",
+  "transactionDate": "2026-10-06",
+  "entries": [
+    {
+      "accountName": "Accounts Receivable",
+      "accountType": "Asset",
+      "debit": 424800,
+      "credit": 0
+    },
+    {
+      "accountName": "Sales Revenue",
+      "accountType": "Revenue",
+      "debit": 0,
+      "credit": 424800
+    }
+  ],
+  "totalDebit": 424800,
+  "totalCredit": 424800,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN037",
+  "journalNumber": "JE-2026-037",
+  "transactionType": "Purchase",
+  "referenceId": "BILL010",
+  "referenceNumber": "VB-2026-010",
+  "transactionDate": "2026-10-07",
+  "entries": [
+    {
+      "accountName": "Inventory",
+      "accountType": "Asset",
+      "debit": 270000,
+      "credit": 0
+    },
+    {
+      "accountName": "Accounts Payable",
+      "accountType": "Liability",
+      "debit": 0,
+      "credit": 270000
+    }
+  ],
+  "totalDebit": 270000,
+  "totalCredit": 270000,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN038",
+  "journalNumber": "JE-2026-038",
+  "transactionType": "Payment Received",
+  "referenceId": "PAY005",
+  "referenceNumber": "PAY-2026-005",
+  "transactionDate": "2026-10-08",
+  "entries": [
+    {
+      "accountName": "Bank",
+      "accountType": "Asset",
+      "debit": 250000,
+      "credit": 0
+    },
+    {
+      "accountName": "Accounts Receivable",
+      "accountType": "Asset",
+      "debit": 0,
+      "credit": 250000
+    }
+  ],
+  "totalDebit": 250000,
+  "totalCredit": 250000,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN039",
+  "journalNumber": "JE-2026-039",
+  "transactionType": "Sales Invoice",
+  "referenceId": "INV015",
+  "referenceNumber": "INV-2026-015",
+  "transactionDate": "2026-10-09",
+  "entries": [
+    {
+      "accountName": "Accounts Receivable",
+      "accountType": "Asset",
+      "debit": 159300,
+      "credit": 0
+    },
+    {
+      "accountName": "Sales Revenue",
+      "accountType": "Revenue",
+      "debit": 0,
+      "credit": 159300
+    }
+  ],
+  "totalDebit": 159300,
+  "totalCredit": 159300,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN040",
+  "journalNumber": "JE-2026-040",
+  "transactionType": "Vendor Payment",
+  "referenceId": "VP005",
+  "referenceNumber": "VP-2026-005",
+  "transactionDate": "2026-10-10",
+  "entries": [
+    {
+      "accountName": "Accounts Payable",
+      "accountType": "Liability",
+      "debit": 270000,
+      "credit": 0
+    },
+    {
+      "accountName": "Bank",
+      "accountType": "Asset",
+      "debit": 0,
+      "credit": 270000
+    }
+  ],
+  "totalDebit": 270000,
+  "totalCredit": 270000,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN041",
+  "journalNumber": "JE-2026-041",
+  "transactionType": "Sales Invoice",
+  "referenceId": "INV016",
+  "referenceNumber": "INV-2026-016",
+  "transactionDate": "2026-10-11",
+  "entries": [
+    {
+      "accountName": "Accounts Receivable",
+      "accountType": "Asset",
+      "debit": 531000,
+      "credit": 0
+    },
+    {
+      "accountName": "Sales Revenue",
+      "accountType": "Revenue",
+      "debit": 0,
+      "credit": 531000
+    }
+  ],
+  "totalDebit": 531000,
+  "totalCredit": 531000,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN042",
+  "journalNumber": "JE-2026-042",
+  "transactionType": "Purchase",
+  "referenceId": "BILL011",
+  "referenceNumber": "VB-2026-011",
+  "transactionDate": "2026-10-12",
+  "entries": [
+    {
+      "accountName": "Inventory",
+      "accountType": "Asset",
+      "debit": 180000,
+      "credit": 0
+    },
+    {
+      "accountName": "Accounts Payable",
+      "accountType": "Liability",
+      "debit": 0,
+      "credit": 180000
+    }
+  ],
+  "totalDebit": 180000,
+  "totalCredit": 180000,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN043",
+  "journalNumber": "JE-2026-043",
+  "transactionType": "Expense",
+  "referenceId": "EXP004",
+  "referenceNumber": "EXP-2026-004",
+  "transactionDate": "2026-10-13",
+  "entries": [
+    {
+      "accountName": "Utility Expense",
+      "accountType": "Expense",
+      "debit": 18000,
+      "credit": 0
+    },
+    {
+      "accountName": "Bank",
+      "accountType": "Asset",
+      "debit": 0,
+      "credit": 18000
+    }
+  ],
+  "totalDebit": 18000,
+  "totalCredit": 18000,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN044",
+  "journalNumber": "JE-2026-044",
+  "transactionType": "Sales Invoice",
+  "referenceId": "INV017",
+  "referenceNumber": "INV-2026-017",
+  "transactionDate": "2026-10-14",
+  "entries": [
+    {
+      "accountName": "Accounts Receivable",
+      "accountType": "Asset",
+      "debit": 377600,
+      "credit": 0
+    },
+    {
+      "accountName": "Sales Revenue",
+      "accountType": "Revenue",
+      "debit": 0,
+      "credit": 377600
+    }
+  ],
+  "totalDebit": 377600,
+  "totalCredit": 377600,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN045",
+  "journalNumber": "JE-2026-045",
+  "transactionType": "Purchase",
+  "referenceId": "BILL012",
+  "referenceNumber": "VB-2026-012",
+  "transactionDate": "2026-10-15",
+  "entries": [
+    {
+      "accountName": "Inventory",
+      "accountType": "Asset",
+      "debit": 420000,
+      "credit": 0
+    },
+    {
+      "accountName": "Accounts Payable",
+      "accountType": "Liability",
+      "debit": 0,
+      "credit": 420000
+    }
+  ],
+  "totalDebit": 420000,
+  "totalCredit": 420000,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN046",
+  "journalNumber": "JE-2026-046",
+  "transactionType": "Sales Invoice",
+  "referenceId": "INV018",
+  "referenceNumber": "INV-2026-018",
+  "transactionDate": "2026-10-16",
+  "entries": [
+    {
+      "accountName": "Accounts Receivable",
+      "accountType": "Asset",
+      "debit": 424800,
+      "credit": 0
+    },
+    {
+      "accountName": "Sales Revenue",
+      "accountType": "Revenue",
+      "debit": 0,
+      "credit": 424800
+    }
+  ],
+  "totalDebit": 424800,
+  "totalCredit": 424800,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN047",
+  "journalNumber": "JE-2026-047",
+  "transactionType": "Purchase",
+  "referenceId": "BILL013",
+  "referenceNumber": "VB-2026-013",
+  "transactionDate": "2026-10-17",
+  "entries": [
+    {
+      "accountName": "Inventory",
+      "accountType": "Asset",
+      "debit": 450000,
+      "credit": 0
+    },
+    {
+      "accountName": "Accounts Payable",
+      "accountType": "Liability",
+      "debit": 0,
+      "credit": 450000
+    }
+  ],
+  "totalDebit": 450000,
+  "totalCredit": 450000,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN048",
+  "journalNumber": "JE-2026-048",
+  "transactionType": "Payment Received",
+  "referenceId": "PAY006",
+  "referenceNumber": "PAY-2026-006",
+  "transactionDate": "2026-10-18",
+  "entries": [
+    {
+      "accountName": "Bank",
+      "accountType": "Asset",
+      "debit": 300000,
+      "credit": 0
+    },
+    {
+      "accountName": "Accounts Receivable",
+      "accountType": "Asset",
+      "debit": 0,
+      "credit": 300000
+    }
+  ],
+  "totalDebit": 300000,
+  "totalCredit": 300000,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN049",
+  "journalNumber": "JE-2026-049",
+  "transactionType": "Vendor Payment",
+  "referenceId": "VP006",
+  "referenceNumber": "VP-2026-006",
+  "transactionDate": "2026-10-19",
+  "entries": [
+    {
+      "accountName": "Accounts Payable",
+      "accountType": "Liability",
+      "debit": 450000,
+      "credit": 0
+    },
+    {
+      "accountName": "Bank",
+      "accountType": "Asset",
+      "debit": 0,
+      "credit": 450000
+    }
+  ],
+  "totalDebit": 450000,
+  "totalCredit": 450000,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+},
+{
+  "journalId": "JRN050",
+  "journalNumber": "JE-2026-050",
+  "transactionType": "Adjustment",
+  "referenceId": "ADJ003",
+  "referenceNumber": "ADJ-2026-003",
+  "transactionDate": "2026-10-20",
+  "entries": [
+    {
+      "accountName": "Depreciation Expense",
+      "accountType": "Expense",
+      "debit": 25000,
+      "credit": 0
+    },
+    {
+      "accountName": "Accumulated Depreciation",
+      "accountType": "Liability",
+      "debit": 0,
+      "credit": 25000
+    }
+  ],
+  "totalDebit": 25000,
+  "totalCredit": 25000,
+  "status": "Posted",
+  "createdAt": "2026-09-06"
+}
+]

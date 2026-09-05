@@ -1,0 +1,149 @@
+[
+  {
+    "reportId": "RPT001",
+    "reportType": "Sales Summary",
+    "reportName": "Monthly Sales Summary",
+    "period": "September 2026",
+    "data": {
+      "totalOrders": 75,
+      "totalSales": 18500000,
+      "completedOrders": 68,
+      "pendingOrders": 7
+    },
+    "generatedBy": "Admin",
+    "status": "Generated",
+    "createdAt": "2026-09-06"
+  },
+  {
+    "reportId": "RPT002",
+    "reportType": "Purchase Summary",
+    "reportName": "Monthly Purchase Report",
+    "period": "September 2026",
+    "data": {
+      "totalPurchaseOrders": 50,
+      "totalPurchaseAmount": 9200000,
+      "completedPurchases": 45,
+      "pendingPurchases": 5
+    },
+    "generatedBy": "Admin",
+    "status": "Generated",
+    "createdAt": "2026-09-06"
+  },
+  {
+    "reportId": "RPT003",
+    "reportType": "Revenue Report",
+    "reportName": "Revenue Analysis",
+    "period": "September 2026",
+    "data": {
+      "grossRevenue": 18500000,
+      "taxCollected": 3330000,
+      "netRevenue": 15170000
+    },
+    "generatedBy": "Admin",
+    "status": "Generated",
+    "createdAt": "2026-09-06"
+  },
+  {
+    "reportId": "RPT004",
+    "reportType": "Expense Report",
+    "reportName": "Business Expense Analysis",
+    "period": "September 2026",
+    "data": {
+      "totalExpenses": 2400000,
+      "operationalExpenses": 1800000,
+      "otherExpenses": 600000
+    },
+    "generatedBy": "Admin",
+    "status": "Generated",
+    "createdAt": "2026-09-06"
+  },
+  {
+    "reportId": "RPT005",
+    "reportType": "Profit Loss Report",
+    "reportName": "Profit and Loss Statement",
+    "period": "September 2026",
+    "data": {
+      "revenue": 18500000,
+      "expenses": 2400000,
+      "profit": 16100000,
+      "profitMargin": "87%"
+    },
+    "generatedBy": "Admin",
+    "status": "Generated",
+    "createdAt": "2026-09-06"
+  },
+  {
+    "reportId": "RPT006",
+    "reportType": "Customer Outstanding",
+    "reportName": "Customer Receivables Report",
+    "period": "September 2026",
+    "data": {
+      "totalCustomers": 50,
+      "outstandingAmount": 4500000,
+      "overdueCustomers": 12
+    },
+    "generatedBy": "Admin",
+    "status": "Generated",
+    "createdAt": "2026-09-06"
+  },
+  {
+    "reportId": "RPT007",
+    "reportType": "Vendor Payables",
+    "reportName": "Vendor Outstanding Report",
+    "period": "September 2026",
+    "data": {
+      "totalVendors": 25,
+      "payableAmount": 3200000,
+      "pendingBills": 15
+    },
+    "generatedBy": "Admin",
+    "status": "Generated",
+    "createdAt": "2026-09-06"
+  },
+  {
+    "reportId": "RPT008",
+    "reportType": "Tax Report",
+    "reportName": "GST Tax Report",
+    "period": "September 2026",
+    "data": {
+      "cgst": 1665000,
+      "sgst": 1665000,
+      "igst": 0,
+      "totalTax": 3330000
+    },
+    "generatedBy": "Admin",
+    "status": "Generated",
+    "createdAt": "2026-09-06"
+  },
+  {
+    "reportId": "RPT009",
+    "reportType": "Payment Summary",
+    "reportName": "Payment Collection Report",
+    "period": "September 2026",
+    "data": {
+      "totalPayments": 50,
+      "receivedAmount": 7500000,
+      "pendingAmount": 4500000
+    },
+    "generatedBy": "Admin",
+    "status": "Generated",
+    "createdAt": "2026-09-06"
+  },
+  {
+    "reportId": "RPT010",
+    "reportType": "Dashboard Summary",
+    "reportName": "Executive Dashboard",
+    "period": "September 2026",
+    "data": {
+      "customers": 50,
+      "products": 100,
+      "orders": 75,
+      "invoices": 75,
+      "payments": 50,
+      "revenue": 18500000
+    },
+    "generatedBy": "Admin",
+    "status": "Generated",
+    "createdAt": "2026-09-06"
+  }
+]

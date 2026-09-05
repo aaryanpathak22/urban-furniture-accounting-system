@@ -1,0 +1,1776 @@
+[
+  {
+    "invoiceId": "INV001",
+    "invoiceNumber": "INV-2026-001",
+    "salesOrderId": "SO001",
+    "customerId": "CUS001",
+    "customerName": "Royal Furniture Pvt Ltd",
+    "invoiceDate": "2026-09-01",
+    "items": [
+      {
+        "productId": "PRD001",
+        "productName": "Executive High Back Chair",
+        "quantity": 5,
+        "unitPrice": 7500,
+        "total": 37500
+      },
+      {
+        "productId": "PRD006",
+        "productName": "Wooden Office Desk",
+        "quantity": 2,
+        "unitPrice": 15000,
+        "total": 30000
+      }
+    ],
+    "subtotal": 67500,
+    "tax": 12150,
+    "totalAmount": 79650,
+    "paymentStatus": "Paid",
+    "invoiceStatus": "Generated",
+    "createdAt": "2026-09-06"
+  },
+  {
+    "invoiceId": "INV002",
+    "invoiceNumber": "INV-2026-002",
+    "salesOrderId": "SO002",
+    "customerId": "CUS002",
+    "customerName": "Modern Living Store",
+    "invoiceDate": "2026-09-02",
+    "items": [
+      {
+        "productId": "PRD016",
+        "productName": "Modern Sofa Set",
+        "quantity": 3,
+        "unitPrice": 45000,
+        "total": 135000
+      }
+    ],
+    "subtotal": 135000,
+    "tax": 24300,
+    "totalAmount": 159300,
+    "paymentStatus": "Pending",
+    "invoiceStatus": "Generated",
+    "createdAt": "2026-09-06"
+  },
+  {
+    "invoiceId": "INV003",
+    "invoiceNumber": "INV-2026-003",
+    "salesOrderId": "SO003",
+    "customerId": "CUS003",
+    "customerName": "HomeCraft Interiors",
+    "invoiceDate": "2026-09-03",
+    "items": [
+      {
+        "productId": "PRD026",
+        "productName": "Manager Office Desk",
+        "quantity": 4,
+        "unitPrice": 20000,
+        "total": 80000
+      },
+      {
+        "productId": "PRD002",
+        "productName": "Premium Office Chair",
+        "quantity": 8,
+        "unitPrice": 6000,
+        "total": 48000
+      }
+    ],
+    "subtotal": 128000,
+    "tax": 23040,
+    "totalAmount": 151040,
+    "paymentStatus": "Paid",
+    "invoiceStatus": "Generated",
+    "createdAt": "2026-09-06"
+  },
+  {
+    "invoiceId": "INV004",
+    "invoiceNumber": "INV-2026-004",
+    "salesOrderId": "SO004",
+    "customerId": "CUS004",
+    "customerName": "Elegant Spaces",
+    "invoiceDate": "2026-09-04",
+    "items": [
+      {
+        "productId": "PRD017",
+        "productName": "Luxury Dining Table",
+        "quantity": 2,
+        "unitPrice": 32000,
+        "total": 64000
+      }
+    ],
+    "subtotal": 64000,
+    "tax": 11520,
+    "totalAmount": 75520,
+    "paymentStatus": "Pending",
+    "invoiceStatus": "Generated",
+    "createdAt": "2026-09-06"
+  },
+  {
+    "invoiceId": "INV005",
+    "invoiceNumber": "INV-2026-005",
+    "salesOrderId": "SO005",
+    "customerId": "CUS005",
+    "customerName": "Urban Home Decor",
+    "invoiceDate": "2026-09-05",
+    "items": [
+      {
+        "productId": "PRD032",
+        "productName": "Sliding Door Wardrobe",
+        "quantity": 2,
+        "unitPrice": 60000,
+        "total": 120000
+      }
+    ],
+    "subtotal": 120000,
+    "tax": 21600,
+    "totalAmount": 141600,
+    "paymentStatus": "Paid",
+    "invoiceStatus": "Generated",
+    "createdAt": "2026-09-06"
+  },
+{
+  "invoiceId": "INV006",
+  "invoiceNumber": "INV-2026-006",
+  "salesOrderId": "SO006",
+  "customerId": "CUS006",
+  "customerName": "Comfort Furniture House",
+  "invoiceDate": "2026-09-06",
+  "items": [
+    {
+      "productId": "PRD021",
+      "productName": "Ergonomic Mesh Chair",
+      "quantity": 10,
+      "unitPrice": 5500,
+      "total": 55000
+    },
+    {
+      "productId": "PRD013",
+      "productName": "Three Drawer Unit",
+      "quantity": 5,
+      "unitPrice": 6000,
+      "total": 30000
+    }
+  ],
+  "subtotal": 85000,
+  "tax": 15300,
+  "totalAmount": 100300,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV007",
+  "invoiceNumber": "INV-2026-007",
+  "salesOrderId": "SO007",
+  "customerId": "CUS007",
+  "customerName": "Wood Works India",
+  "invoiceDate": "2026-09-07",
+  "items": [
+    {
+      "productId": "PRD049",
+      "productName": "Conference Room Setup",
+      "quantity": 1,
+      "unitPrice": 100000,
+      "total": 100000
+    }
+  ],
+  "subtotal": 100000,
+  "tax": 18000,
+  "totalAmount": 118000,
+  "paymentStatus": "Pending",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV008",
+  "invoiceNumber": "INV-2026-008",
+  "salesOrderId": "SO008",
+  "customerId": "CUS008",
+  "customerName": "Design Hub Interiors",
+  "invoiceDate": "2026-09-08",
+  "items": [
+    {
+      "productId": "PRD046",
+      "productName": "Executive Workstation",
+      "quantity": 3,
+      "unitPrice": 35000,
+      "total": 105000
+    }
+  ],
+  "subtotal": 105000,
+  "tax": 18900,
+  "totalAmount": 123900,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV009",
+  "invoiceNumber": "INV-2026-009",
+  "salesOrderId": "SO009",
+  "customerId": "CUS009",
+  "customerName": "Luxury Living Concepts",
+  "invoiceDate": "2026-09-09",
+  "items": [
+    {
+      "productId": "PRD043",
+      "productName": "Corner Sofa Set",
+      "quantity": 2,
+      "unitPrice": 65000,
+      "total": 130000
+    }
+  ],
+  "subtotal": 130000,
+  "tax": 23400,
+  "totalAmount": 153400,
+  "paymentStatus": "Pending",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV010",
+  "invoiceNumber": "INV-2026-010",
+  "salesOrderId": "SO010",
+  "customerId": "CUS010",
+  "customerName": "Classic Furniture Mart",
+  "invoiceDate": "2026-09-10",
+  "items": [
+    {
+      "productId": "PRD006",
+      "productName": "Wooden Office Desk",
+      "quantity": 6,
+      "unitPrice": 15000,
+      "total": 90000
+    }
+  ],
+  "subtotal": 90000,
+  "tax": 16200,
+  "totalAmount": 106200,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV011",
+  "invoiceNumber": "INV-2026-011",
+  "salesOrderId": "SO011",
+  "customerId": "CUS011",
+  "customerName": "Prime Workspace Solutions",
+  "invoiceDate": "2026-09-11",
+  "items": [
+    {
+      "productId": "PRD027",
+      "productName": "Computer Workstation",
+      "quantity": 5,
+      "unitPrice": 14000,
+      "total": 70000
+    }
+  ],
+  "subtotal": 70000,
+  "tax": 12600,
+  "totalAmount": 82600,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV012",
+  "invoiceNumber": "INV-2026-012",
+  "salesOrderId": "SO012",
+  "customerId": "CUS012",
+  "customerName": "The Furniture Gallery",
+  "invoiceDate": "2026-09-12",
+  "items": [
+    {
+      "productId": "PRD019",
+      "productName": "Wooden Wardrobe",
+      "quantity": 3,
+      "unitPrice": 38000,
+      "total": 114000
+    }
+  ],
+  "subtotal": 114000,
+  "tax": 20520,
+  "totalAmount": 134520,
+  "paymentStatus": "Pending",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV013",
+  "invoiceNumber": "INV-2026-013",
+  "salesOrderId": "SO013",
+  "customerId": "CUS013",
+  "customerName": "Elite Interior Studio",
+  "invoiceDate": "2026-09-13",
+  "items": [
+    {
+      "productId": "PRD062",
+      "productName": "Office Reception Desk",
+      "quantity": 2,
+      "unitPrice": 48000,
+      "total": 96000
+    }
+  ],
+  "subtotal": 96000,
+  "tax": 17280,
+  "totalAmount": 113280,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV014",
+  "invoiceNumber": "INV-2026-014",
+  "salesOrderId": "SO014",
+  "customerId": "CUS014",
+  "customerName": "Home Style Furnishings",
+  "invoiceDate": "2026-09-14",
+  "items": [
+    {
+      "productId": "PRD053",
+      "productName": "Premium Wooden Dining Chair",
+      "quantity": 12,
+      "unitPrice": 5500,
+      "total": 66000
+    }
+  ],
+  "subtotal": 66000,
+  "tax": 11880,
+  "totalAmount": 77880,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV015",
+  "invoiceNumber": "INV-2026-015",
+  "salesOrderId": "SO015",
+  "customerId": "CUS015",
+  "customerName": "Oakwood Furniture Co",
+  "invoiceDate": "2026-09-15",
+  "items": [
+    {
+      "productId": "PRD078",
+      "productName": "Height Adjustable Desk",
+      "quantity": 4,
+      "unitPrice": 45000,
+      "total": 180000
+    }
+  ],
+  "subtotal": 180000,
+  "tax": 32400,
+  "totalAmount": 212400,
+  "paymentStatus": "Pending",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV016",
+  "invoiceNumber": "INV-2026-016",
+  "salesOrderId": "SO016",
+  "customerId": "CUS016",
+  "customerName": "Nest Furniture House",
+  "invoiceDate": "2026-09-16",
+  "items": [
+    {
+      "productId": "PRD055",
+      "productName": "Designer TV Unit",
+      "quantity": 3,
+      "unitPrice": 22000,
+      "total": 66000
+    }
+  ],
+  "subtotal": 66000,
+  "tax": 11880,
+  "totalAmount": 77880,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV017",
+  "invoiceNumber": "INV-2026-017",
+  "salesOrderId": "SO017",
+  "customerId": "CUS017",
+  "customerName": "Space Makers India",
+  "invoiceDate": "2026-09-17",
+  "items": [
+    {
+      "productId": "PRD047",
+      "productName": "Four Seater Workstation",
+      "quantity": 2,
+      "unitPrice": 52000,
+      "total": 104000
+    }
+  ],
+  "subtotal": 104000,
+  "tax": 18720,
+  "totalAmount": 122720,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV018",
+  "invoiceNumber": "INV-2026-018",
+  "salesOrderId": "SO018",
+  "customerId": "CUS018",
+  "customerName": "Royal Oak Interiors",
+  "invoiceDate": "2026-09-18",
+  "items": [
+    {
+      "productId": "PRD083",
+      "productName": "Modern Wardrobe",
+      "quantity": 2,
+      "unitPrice": 50000,
+      "total": 100000
+    }
+  ],
+  "subtotal": 100000,
+  "tax": 18000,
+  "totalAmount": 118000,
+  "paymentStatus": "Pending",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV019",
+  "invoiceNumber": "INV-2026-019",
+  "salesOrderId": "SO019",
+  "customerId": "CUS019",
+  "customerName": "Comfort Zone Furnitures",
+  "invoiceDate": "2026-09-19",
+  "items": [
+    {
+      "productId": "PRD071",
+      "productName": "Premium Wooden Stool",
+      "quantity": 20,
+      "unitPrice": 2500,
+      "total": 50000
+    }
+  ],
+  "subtotal": 50000,
+  "tax": 9000,
+  "totalAmount": 59000,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV020",
+  "invoiceNumber": "INV-2026-020",
+  "salesOrderId": "SO020",
+  "customerId": "CUS020",
+  "customerName": "Modern Home Concepts",
+  "invoiceDate": "2026-09-20",
+  "items": [
+    {
+      "productId": "PRD100",
+      "productName": "Premium Executive Furniture Package",
+      "quantity": 1,
+      "unitPrice": 175000,
+      "total": 175000
+    }
+  ],
+  "subtotal": 175000,
+  "tax": 31500,
+  "totalAmount": 206500,
+  "paymentStatus": "Pending",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV021",
+  "invoiceNumber": "INV-2026-021",
+  "salesOrderId": "SO021",
+  "customerId": "CUS021",
+  "customerName": "Urban Living Spaces",
+  "invoiceDate": "2026-09-21",
+  "items": [
+    {
+      "productId": "PRD032",
+      "productName": "Sliding Door Wardrobe",
+      "quantity": 2,
+      "unitPrice": 60000,
+      "total": 120000
+    },
+    {
+      "productId": "PRD045",
+      "productName": "Bedside Table",
+      "quantity": 4,
+      "unitPrice": 4500,
+      "total": 18000
+    }
+  ],
+  "subtotal": 138000,
+  "tax": 24840,
+  "totalAmount": 162840,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV022",
+  "invoiceNumber": "INV-2026-022",
+  "salesOrderId": "SO022",
+  "customerId": "CUS022",
+  "customerName": "Luxury Interiors Pvt Ltd",
+  "invoiceDate": "2026-09-22",
+  "items": [
+    {
+      "productId": "PRD087",
+      "productName": "Luxury King Bed",
+      "quantity": 2,
+      "unitPrice": 90000,
+      "total": 180000
+    }
+  ],
+  "subtotal": 180000,
+  "tax": 32400,
+  "totalAmount": 212400,
+  "paymentStatus": "Pending",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV023",
+  "invoiceNumber": "INV-2026-023",
+  "salesOrderId": "SO023",
+  "customerId": "CUS023",
+  "customerName": "Classic Wood Works",
+  "invoiceDate": "2026-09-23",
+  "items": [
+    {
+      "productId": "PRD081",
+      "productName": "Premium Office Partition",
+      "quantity": 6,
+      "unitPrice": 18000,
+      "total": 108000
+    }
+  ],
+  "subtotal": 108000,
+  "tax": 19440,
+  "totalAmount": 127440,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV024",
+  "invoiceNumber": "INV-2026-024",
+  "salesOrderId": "SO024",
+  "customerId": "CUS024",
+  "customerName": "Comfort Furniture Hub",
+  "invoiceDate": "2026-09-24",
+  "items": [
+    {
+      "productId": "PRD053",
+      "productName": "Premium Wooden Dining Chair",
+      "quantity": 8,
+      "unitPrice": 5500,
+      "total": 44000
+    },
+    {
+      "productId": "PRD017",
+      "productName": "Luxury Dining Table",
+      "quantity": 1,
+      "unitPrice": 32000,
+      "total": 32000
+    }
+  ],
+  "subtotal": 76000,
+  "tax": 13680,
+  "totalAmount": 89680,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV025",
+  "invoiceNumber": "INV-2026-025",
+  "salesOrderId": "SO025",
+  "customerId": "CUS025",
+  "customerName": "Heritage Furniture House",
+  "invoiceDate": "2026-09-25",
+  "items": [
+    {
+      "productId": "PRD049",
+      "productName": "Conference Room Setup",
+      "quantity": 2,
+      "unitPrice": 100000,
+      "total": 200000
+    }
+  ],
+  "subtotal": 200000,
+  "tax": 36000,
+  "totalAmount": 236000,
+  "paymentStatus": "Pending",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV026",
+  "invoiceNumber": "INV-2026-026",
+  "salesOrderId": "SO026",
+  "customerId": "CUS026",
+  "customerName": "Design Studio India",
+  "invoiceDate": "2026-09-26",
+  "items": [
+    {
+      "productId": "PRD046",
+      "productName": "Executive Workstation",
+      "quantity": 4,
+      "unitPrice": 35000,
+      "total": 140000
+    }
+  ],
+  "subtotal": 140000,
+  "tax": 25200,
+  "totalAmount": 165200,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV027",
+  "invoiceNumber": "INV-2026-027",
+  "salesOrderId": "SO027",
+  "customerId": "CUS027",
+  "customerName": "Metro Furniture Mart",
+  "invoiceDate": "2026-09-27",
+  "items": [
+    {
+      "productId": "PRD003",
+      "productName": "Visitor Chair",
+      "quantity": 25,
+      "unitPrice": 3200,
+      "total": 80000
+    }
+  ],
+  "subtotal": 80000,
+  "tax": 14400,
+  "totalAmount": 94400,
+  "paymentStatus": "Pending",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV028",
+  "invoiceNumber": "INV-2026-028",
+  "salesOrderId": "SO028",
+  "customerId": "CUS028",
+  "customerName": "Elegant Home Decor",
+  "invoiceDate": "2026-09-28",
+  "items": [
+    {
+      "productId": "PRD043",
+      "productName": "Corner Sofa Set",
+      "quantity": 1,
+      "unitPrice": 65000,
+      "total": 65000
+    },
+    {
+      "productId": "PRD010",
+      "productName": "Side Table",
+      "quantity": 2,
+      "unitPrice": 3500,
+      "total": 7000
+    }
+  ],
+  "subtotal": 72000,
+  "tax": 12960,
+  "totalAmount": 84960,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV029",
+  "invoiceNumber": "INV-2026-029",
+  "salesOrderId": "SO029",
+  "customerId": "CUS029",
+  "customerName": "Future Furniture Solutions",
+  "invoiceDate": "2026-09-29",
+  "items": [
+    {
+      "productId": "PRD078",
+      "productName": "Height Adjustable Desk",
+      "quantity": 3,
+      "unitPrice": 45000,
+      "total": 135000
+    }
+  ],
+  "subtotal": 135000,
+  "tax": 24300,
+  "totalAmount": 159300,
+  "paymentStatus": "Pending",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV030",
+  "invoiceNumber": "INV-2026-030",
+  "salesOrderId": "SO030",
+  "customerId": "CUS030",
+  "customerName": "Premium Space Interiors",
+  "invoiceDate": "2026-09-30",
+  "items": [
+    {
+      "productId": "PRD087",
+      "productName": "Luxury King Bed",
+      "quantity": 2,
+      "unitPrice": 90000,
+      "total": 180000
+    }
+  ],
+  "subtotal": 180000,
+  "tax": 32400,
+  "totalAmount": 212400,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV031",
+  "invoiceNumber": "INV-2026-031",
+  "salesOrderId": "SO031",
+  "customerId": "CUS031",
+  "customerName": "Woodcraft Innovations",
+  "invoiceDate": "2026-10-01",
+  "items": [
+    {
+      "productId": "PRD061",
+      "productName": "Premium Wooden Console Table",
+      "quantity": 5,
+      "unitPrice": 14000,
+      "total": 70000
+    }
+  ],
+  "subtotal": 70000,
+  "tax": 12600,
+  "totalAmount": 82600,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV032",
+  "invoiceNumber": "INV-2026-032",
+  "salesOrderId": "SO032",
+  "customerId": "CUS032",
+  "customerName": "The Modern Furniture Co",
+  "invoiceDate": "2026-10-02",
+  "items": [
+    {
+      "productId": "PRD082",
+      "productName": "Wooden Dining Chair Set",
+      "quantity": 4,
+      "unitPrice": 18000,
+      "total": 72000
+    }
+  ],
+  "subtotal": 72000,
+  "tax": 12960,
+  "totalAmount": 84960,
+  "paymentStatus": "Pending",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV033",
+  "invoiceNumber": "INV-2026-033",
+  "salesOrderId": "SO033",
+  "customerId": "CUS033",
+  "customerName": "Interior Concepts Pvt Ltd",
+  "invoiceDate": "2026-10-03",
+  "items": [
+    {
+      "productId": "PRD049",
+      "productName": "Conference Room Setup",
+      "quantity": 1,
+      "unitPrice": 100000,
+      "total": 100000
+    }
+  ],
+  "subtotal": 100000,
+  "tax": 18000,
+  "totalAmount": 118000,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV034",
+  "invoiceNumber": "INV-2026-034",
+  "salesOrderId": "SO034",
+  "customerId": "CUS034",
+  "customerName": "Home Comfort Solutions",
+  "invoiceDate": "2026-10-04",
+  "items": [
+    {
+      "productId": "PRD020",
+      "productName": "Designer Coffee Table",
+      "quantity": 3,
+      "unitPrice": 10000,
+      "total": 30000
+    }
+  ],
+  "subtotal": 30000,
+  "tax": 5400,
+  "totalAmount": 35400,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV035",
+  "invoiceNumber": "INV-2026-035",
+  "salesOrderId": "SO035",
+  "customerId": "CUS035",
+  "customerName": "Signature Furniture Studio",
+  "invoiceDate": "2026-10-05",
+  "items": [
+    {
+      "productId": "PRD083",
+      "productName": "Modern Wardrobe",
+      "quantity": 3,
+      "unitPrice": 50000,
+      "total": 150000
+    }
+  ],
+  "subtotal": 150000,
+  "tax": 27000,
+  "totalAmount": 177000,
+  "paymentStatus": "Pending",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV036",
+  "invoiceNumber": "INV-2026-036",
+  "salesOrderId": "SO036",
+  "customerId": "CUS036",
+  "customerName": "Elegant Living Furniture",
+  "invoiceDate": "2026-10-06",
+  "items": [
+    {
+      "productId": "PRD053",
+      "productName": "Premium Wooden Dining Chair",
+      "quantity": 15,
+      "unitPrice": 5500,
+      "total": 82500
+    }
+  ],
+  "subtotal": 82500,
+  "tax": 14850,
+  "totalAmount": 97350,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV037",
+  "invoiceNumber": "INV-2026-037",
+  "salesOrderId": "SO037",
+  "customerId": "CUS037",
+  "customerName": "Classic Interiors India",
+  "invoiceDate": "2026-10-07",
+  "items": [
+    {
+      "productId": "PRD062",
+      "productName": "Office Reception Desk",
+      "quantity": 2,
+      "unitPrice": 48000,
+      "total": 96000
+    }
+  ],
+  "subtotal": 96000,
+  "tax": 17280,
+  "totalAmount": 113280,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV038",
+  "invoiceNumber": "INV-2026-038",
+  "salesOrderId": "SO038",
+  "customerId": "CUS038",
+  "customerName": "Royal Space Decor",
+  "invoiceDate": "2026-10-08",
+  "items": [
+    {
+      "productId": "PRD043",
+      "productName": "Corner Sofa Set",
+      "quantity": 2,
+      "unitPrice": 65000,
+      "total": 130000
+    }
+  ],
+  "subtotal": 130000,
+  "tax": 23400,
+  "totalAmount": 153400,
+  "paymentStatus": "Pending",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV039",
+  "invoiceNumber": "INV-2026-039",
+  "salesOrderId": "SO039",
+  "customerId": "CUS039",
+  "customerName": "Future Living Designs",
+  "invoiceDate": "2026-10-09",
+  "items": [
+    {
+      "productId": "PRD078",
+      "productName": "Height Adjustable Desk",
+      "quantity": 3,
+      "unitPrice": 45000,
+      "total": 135000
+    }
+  ],
+  "subtotal": 135000,
+  "tax": 24300,
+  "totalAmount": 159300,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV040",
+  "invoiceNumber": "INV-2026-040",
+  "salesOrderId": "SO040",
+  "customerId": "CUS040",
+  "customerName": "Urban Decor Solutions",
+  "invoiceDate": "2026-10-10",
+  "items": [
+    {
+      "productId": "PRD049",
+      "productName": "Conference Room Setup",
+      "quantity": 1,
+      "unitPrice": 100000,
+      "total": 100000
+    }
+  ],
+  "subtotal": 100000,
+  "tax": 18000,
+  "totalAmount": 118000,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV041",
+  "invoiceNumber": "INV-2026-041",
+  "salesOrderId": "SO041",
+  "customerId": "CUS041",
+  "customerName": "Apex Furniture Solutions",
+  "invoiceDate": "2026-10-11",
+  "items": [
+    {
+      "productId": "PRD088",
+      "productName": "Compact Office Desk",
+      "quantity": 10,
+      "unitPrice": 12000,
+      "total": 120000
+    }
+  ],
+  "subtotal": 120000,
+  "tax": 21600,
+  "totalAmount": 141600,
+  "paymentStatus": "Pending",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV042",
+  "invoiceNumber": "INV-2026-042",
+  "salesOrderId": "SO042",
+  "customerId": "CUS042",
+  "customerName": "Greenwood Interiors",
+  "invoiceDate": "2026-10-12",
+  "items": [
+    {
+      "productId": "PRD032",
+      "productName": "Sliding Door Wardrobe",
+      "quantity": 3,
+      "unitPrice": 60000,
+      "total": 180000
+    }
+  ],
+  "subtotal": 180000,
+  "tax": 32400,
+  "totalAmount": 212400,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV043",
+  "invoiceNumber": "INV-2026-043",
+  "salesOrderId": "SO043",
+  "customerId": "CUS043",
+  "customerName": "BuildRight Furnishings",
+  "invoiceDate": "2026-10-13",
+  "items": [
+    {
+      "productId": "PRD047",
+      "productName": "Four Seater Workstation",
+      "quantity": 3,
+      "unitPrice": 52000,
+      "total": 156000
+    }
+  ],
+  "subtotal": 156000,
+  "tax": 28080,
+  "totalAmount": 184080,
+  "paymentStatus": "Pending",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV044",
+  "invoiceNumber": "INV-2026-044",
+  "salesOrderId": "SO044",
+  "customerId": "CUS044",
+  "customerName": "SpaceCraft Studio",
+  "invoiceDate": "2026-10-14",
+  "items": [
+    {
+      "productId": "PRD017",
+      "productName": "Luxury Dining Table",
+      "quantity": 2,
+      "unitPrice": 32000,
+      "total": 64000
+    }
+  ],
+  "subtotal": 64000,
+  "tax": 11520,
+  "totalAmount": 75520,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV045",
+  "invoiceNumber": "INV-2026-045",
+  "salesOrderId": "SO045",
+  "customerId": "CUS045",
+  "customerName": "Vision Furniture World",
+  "invoiceDate": "2026-10-15",
+  "items": [
+    {
+      "productId": "PRD083",
+      "productName": "Modern Wardrobe",
+      "quantity": 2,
+      "unitPrice": 50000,
+      "total": 100000
+    }
+  ],
+  "subtotal": 100000,
+  "tax": 18000,
+  "totalAmount": 118000,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV046",
+  "invoiceNumber": "INV-2026-046",
+  "salesOrderId": "SO046",
+  "customerId": "CUS046",
+  "customerName": "Infinite Living Spaces",
+  "invoiceDate": "2026-10-16",
+  "items": [
+    {
+      "productId": "PRD087",
+      "productName": "Luxury King Bed",
+      "quantity": 1,
+      "unitPrice": 90000,
+      "total": 90000
+    }
+  ],
+  "subtotal": 90000,
+  "tax": 16200,
+  "totalAmount": 106200,
+  "paymentStatus": "Pending",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV047",
+  "invoiceNumber": "INV-2026-047",
+  "salesOrderId": "SO047",
+  "customerId": "CUS047",
+  "customerName": "Elite Woodcraft",
+  "invoiceDate": "2026-10-17",
+  "items": [
+    {
+      "productId": "PRD061",
+      "productName": "Premium Wooden Console Table",
+      "quantity": 4,
+      "unitPrice": 14000,
+      "total": 56000
+    }
+  ],
+  "subtotal": 56000,
+  "tax": 10080,
+  "totalAmount": 66080,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV048",
+  "invoiceNumber": "INV-2026-048",
+  "salesOrderId": "SO048",
+  "customerId": "CUS048",
+  "customerName": "Comfort Space Interiors",
+  "invoiceDate": "2026-10-18",
+  "items": [
+    {
+      "productId": "PRD076",
+      "productName": "Premium Recliner Chair",
+      "quantity": 3,
+      "unitPrice": 22000,
+      "total": 66000
+    }
+  ],
+  "subtotal": 66000,
+  "tax": 11880,
+  "totalAmount": 77880,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV049",
+  "invoiceNumber": "INV-2026-049",
+  "salesOrderId": "SO049",
+  "customerId": "CUS049",
+  "customerName": "Premium Home Furnishers",
+  "invoiceDate": "2026-10-19",
+  "items": [
+    {
+      "productId": "PRD100",
+      "productName": "Premium Executive Furniture Package",
+      "quantity": 2,
+      "unitPrice": 175000,
+      "total": 350000
+    }
+  ],
+  "subtotal": 350000,
+  "tax": 63000,
+  "totalAmount": 413000,
+  "paymentStatus": "Pending",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV050",
+  "invoiceNumber": "INV-2026-050",
+  "salesOrderId": "SO050",
+  "customerId": "CUS050",
+  "customerName": "FutureNest Furniture",
+  "invoiceDate": "2026-10-20",
+  "items": [
+    {
+      "productId": "PRD062",
+      "productName": "Office Reception Desk",
+      "quantity": 3,
+      "unitPrice": 48000,
+      "total": 144000
+    }
+  ],
+  "subtotal": 144000,
+  "tax": 25920,
+  "totalAmount": 169920,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV051",
+  "invoiceNumber": "INV-2026-051",
+  "salesOrderId": "SO051",
+  "customerId": "CUS001",
+  "customerName": "Royal Furniture Pvt Ltd",
+  "invoiceDate": "2026-10-21",
+  "items": [
+    {
+      "productId": "PRD006",
+      "productName": "Wooden Office Desk",
+      "quantity": 5,
+      "unitPrice": 15000,
+      "total": 75000
+    },
+    {
+      "productId": "PRD002",
+      "productName": "Premium Office Chair",
+      "quantity": 10,
+      "unitPrice": 6000,
+      "total": 60000
+    }
+  ],
+  "subtotal": 135000,
+  "tax": 24300,
+  "totalAmount": 159300,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV052",
+  "invoiceNumber": "INV-2026-052",
+  "salesOrderId": "SO052",
+  "customerId": "CUS005",
+  "customerName": "Urban Home Decor",
+  "invoiceDate": "2026-10-22",
+  "items": [
+    {
+      "productId": "PRD016",
+      "productName": "Modern Sofa Set",
+      "quantity": 2,
+      "unitPrice": 45000,
+      "total": 90000
+    }
+  ],
+  "subtotal": 90000,
+  "tax": 16200,
+  "totalAmount": 106200,
+  "paymentStatus": "Pending",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV053",
+  "invoiceNumber": "INV-2026-053",
+  "salesOrderId": "SO053",
+  "customerId": "CUS010",
+  "customerName": "Classic Furniture Mart",
+  "invoiceDate": "2026-10-23",
+  "items": [
+    {
+      "productId": "PRD027",
+      "productName": "Computer Workstation",
+      "quantity": 8,
+      "unitPrice": 14000,
+      "total": 112000
+    }
+  ],
+  "subtotal": 112000,
+  "tax": 20160,
+  "totalAmount": 132160,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV054",
+  "invoiceNumber": "INV-2026-054",
+  "salesOrderId": "SO054",
+  "customerId": "CUS015",
+  "customerName": "Oakwood Furniture Co",
+  "invoiceDate": "2026-10-24",
+  "items": [
+    {
+      "productId": "PRD087",
+      "productName": "Luxury King Bed",
+      "quantity": 3,
+      "unitPrice": 90000,
+      "total": 270000
+    }
+  ],
+  "subtotal": 270000,
+  "tax": 48600,
+  "totalAmount": 318600,
+  "paymentStatus": "Pending",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV055",
+  "invoiceNumber": "INV-2026-055",
+  "salesOrderId": "SO055",
+  "customerId": "CUS020",
+  "customerName": "Modern Home Concepts",
+  "invoiceDate": "2026-10-25",
+  "items": [
+    {
+      "productId": "PRD100",
+      "productName": "Premium Executive Furniture Package",
+      "quantity": 1,
+      "unitPrice": 175000,
+      "total": 175000
+    }
+  ],
+  "subtotal": 175000,
+  "tax": 31500,
+  "totalAmount": 206500,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV056",
+  "invoiceNumber": "INV-2026-056",
+  "salesOrderId": "SO056",
+  "customerId": "CUS025",
+  "customerName": "Heritage Furniture House",
+  "invoiceDate": "2026-10-26",
+  "items": [
+    {
+      "productId": "PRD062",
+      "productName": "Office Reception Desk",
+      "quantity": 2,
+      "unitPrice": 48000,
+      "total": 96000
+    }
+  ],
+  "subtotal": 96000,
+  "tax": 17280,
+  "totalAmount": 113280,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV057",
+  "invoiceNumber": "INV-2026-057",
+  "salesOrderId": "SO057",
+  "customerId": "CUS030",
+  "customerName": "Premium Space Interiors",
+  "invoiceDate": "2026-10-27",
+  "items": [
+    {
+      "productId": "PRD032",
+      "productName": "Sliding Door Wardrobe",
+      "quantity": 4,
+      "unitPrice": 60000,
+      "total": 240000
+    }
+  ],
+  "subtotal": 240000,
+  "tax": 43200,
+  "totalAmount": 283200,
+  "paymentStatus": "Pending",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV058",
+  "invoiceNumber": "INV-2026-058",
+  "salesOrderId": "SO058",
+  "customerId": "CUS035",
+  "customerName": "Signature Furniture Studio",
+  "invoiceDate": "2026-10-28",
+  "items": [
+    {
+      "productId": "PRD047",
+      "productName": "Four Seater Workstation",
+      "quantity": 4,
+      "unitPrice": 52000,
+      "total": 208000
+    }
+  ],
+  "subtotal": 208000,
+  "tax": 37440,
+  "totalAmount": 245440,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV059",
+  "invoiceNumber": "INV-2026-059",
+  "salesOrderId": "SO059",
+  "customerId": "CUS040",
+  "customerName": "Urban Decor Solutions",
+  "invoiceDate": "2026-10-29",
+  "items": [
+    {
+      "productId": "PRD049",
+      "productName": "Conference Room Setup",
+      "quantity": 2,
+      "unitPrice": 100000,
+      "total": 200000
+    }
+  ],
+  "subtotal": 200000,
+  "tax": 36000,
+  "totalAmount": 236000,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV060",
+  "invoiceNumber": "INV-2026-060",
+  "salesOrderId": "SO060",
+  "customerId": "CUS045",
+  "customerName": "Vision Furniture World",
+  "invoiceDate": "2026-10-30",
+  "items": [
+    {
+      "productId": "PRD083",
+      "productName": "Modern Wardrobe",
+      "quantity": 2,
+      "unitPrice": 50000,
+      "total": 100000
+    }
+  ],
+  "subtotal": 100000,
+  "tax": 18000,
+  "totalAmount": 118000,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV061",
+  "invoiceNumber": "INV-2026-061",
+  "salesOrderId": "SO061",
+  "customerId": "CUS002",
+  "customerName": "Modern Living Store",
+  "invoiceDate": "2026-10-31",
+  "items": [
+    {
+      "productId": "PRD016",
+      "productName": "Modern Sofa Set",
+      "quantity": 3,
+      "unitPrice": 45000,
+      "total": 135000
+    }
+  ],
+  "subtotal": 135000,
+  "tax": 24300,
+  "totalAmount": 159300,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV062",
+  "invoiceNumber": "INV-2026-062",
+  "salesOrderId": "SO062",
+  "customerId": "CUS008",
+  "customerName": "Design Hub Interiors",
+  "invoiceDate": "2026-11-01",
+  "items": [
+    {
+      "productId": "PRD046",
+      "productName": "Executive Workstation",
+      "quantity": 5,
+      "unitPrice": 35000,
+      "total": 175000
+    }
+  ],
+  "subtotal": 175000,
+  "tax": 31500,
+  "totalAmount": 206500,
+  "paymentStatus": "Pending",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV063",
+  "invoiceNumber": "INV-2026-063",
+  "salesOrderId": "SO063",
+  "customerId": "CUS012",
+  "customerName": "The Furniture Gallery",
+  "invoiceDate": "2026-11-02",
+  "items": [
+    {
+      "productId": "PRD019",
+      "productName": "Wooden Wardrobe",
+      "quantity": 4,
+      "unitPrice": 38000,
+      "total": 152000
+    }
+  ],
+  "subtotal": 152000,
+  "tax": 27360,
+  "totalAmount": 179360,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV064",
+  "invoiceNumber": "INV-2026-064",
+  "salesOrderId": "SO064",
+  "customerId": "CUS018",
+  "customerName": "Royal Oak Interiors",
+  "invoiceDate": "2026-11-03",
+  "items": [
+    {
+      "productId": "PRD087",
+      "productName": "Luxury King Bed",
+      "quantity": 2,
+      "unitPrice": 90000,
+      "total": 180000
+    }
+  ],
+  "subtotal": 180000,
+  "tax": 32400,
+  "totalAmount": 212400,
+  "paymentStatus": "Pending",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV065",
+  "invoiceNumber": "INV-2026-065",
+  "salesOrderId": "SO065",
+  "customerId": "CUS022",
+  "customerName": "Luxury Interiors Pvt Ltd",
+  "invoiceDate": "2026-11-04",
+  "items": [
+    {
+      "productId": "PRD049",
+      "productName": "Conference Room Setup",
+      "quantity": 1,
+      "unitPrice": 100000,
+      "total": 100000
+    }
+  ],
+  "subtotal": 100000,
+  "tax": 18000,
+  "totalAmount": 118000,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV066",
+  "invoiceNumber": "INV-2026-066",
+  "salesOrderId": "SO066",
+  "customerId": "CUS027",
+  "customerName": "Metro Furniture Mart",
+  "invoiceDate": "2026-11-05",
+  "items": [
+    {
+      "productId": "PRD003",
+      "productName": "Visitor Chair",
+      "quantity": 30,
+      "unitPrice": 3200,
+      "total": 96000
+    }
+  ],
+  "subtotal": 96000,
+  "tax": 17280,
+  "totalAmount": 113280,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV067",
+  "invoiceNumber": "INV-2026-067",
+  "salesOrderId": "SO067",
+  "customerId": "CUS031",
+  "customerName": "Woodcraft Innovations",
+  "invoiceDate": "2026-11-06",
+  "items": [
+    {
+      "productId": "PRD078",
+      "productName": "Height Adjustable Desk",
+      "quantity": 3,
+      "unitPrice": 45000,
+      "total": 135000
+    }
+  ],
+  "subtotal": 135000,
+  "tax": 24300,
+  "totalAmount": 159300,
+  "paymentStatus": "Pending",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV068",
+  "invoiceNumber": "INV-2026-068",
+  "salesOrderId": "SO068",
+  "customerId": "CUS036",
+  "customerName": "Elegant Living Furniture",
+  "invoiceDate": "2026-11-07",
+  "items": [
+    {
+      "productId": "PRD017",
+      "productName": "Luxury Dining Table",
+      "quantity": 3,
+      "unitPrice": 32000,
+      "total": 96000
+    }
+  ],
+  "subtotal": 96000,
+  "tax": 17280,
+  "totalAmount": 113280,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV069",
+  "invoiceNumber": "INV-2026-069",
+  "salesOrderId": "SO069",
+  "customerId": "CUS041",
+  "customerName": "Apex Furniture Solutions",
+  "invoiceDate": "2026-11-08",
+  "items": [
+    {
+      "productId": "PRD088",
+      "productName": "Compact Office Desk",
+      "quantity": 12,
+      "unitPrice": 12000,
+      "total": 144000
+    }
+  ],
+  "subtotal": 144000,
+  "tax": 25920,
+  "totalAmount": 169920,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV070",
+  "invoiceNumber": "INV-2026-070",
+  "salesOrderId": "SO070",
+  "customerId": "CUS046",
+  "customerName": "Infinite Living Spaces",
+  "invoiceDate": "2026-11-09",
+  "items": [
+    {
+      "productId": "PRD100",
+      "productName": "Premium Executive Furniture Package",
+      "quantity": 1,
+      "unitPrice": 175000,
+      "total": 175000
+    }
+  ],
+  "subtotal": 175000,
+  "tax": 31500,
+  "totalAmount": 206500,
+  "paymentStatus": "Pending",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV071",
+  "invoiceNumber": "INV-2026-071",
+  "salesOrderId": "SO071",
+  "customerId": "CUS048",
+  "customerName": "Comfort Space Interiors",
+  "invoiceDate": "2026-11-10",
+  "items": [
+    {
+      "productId": "PRD076",
+      "productName": "Premium Recliner Chair",
+      "quantity": 5,
+      "unitPrice": 22000,
+      "total": 110000
+    }
+  ],
+  "subtotal": 110000,
+  "tax": 19800,
+  "totalAmount": 129800,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV072",
+  "invoiceNumber": "INV-2026-072",
+  "salesOrderId": "SO072",
+  "customerId": "CUS049",
+  "customerName": "Premium Home Furnishers",
+  "invoiceDate": "2026-11-11",
+  "items": [
+    {
+      "productId": "PRD032",
+      "productName": "Sliding Door Wardrobe",
+      "quantity": 2,
+      "unitPrice": 60000,
+      "total": 120000
+    }
+  ],
+  "subtotal": 120000,
+  "tax": 21600,
+  "totalAmount": 141600,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV073",
+  "invoiceNumber": "INV-2026-073",
+  "salesOrderId": "SO073",
+  "customerId": "CUS050",
+  "customerName": "FutureNest Furniture",
+  "invoiceDate": "2026-11-12",
+  "items": [
+    {
+      "productId": "PRD062",
+      "productName": "Office Reception Desk",
+      "quantity": 4,
+      "unitPrice": 48000,
+      "total": 192000
+    }
+  ],
+  "subtotal": 192000,
+  "tax": 34560,
+  "totalAmount": 226560,
+  "paymentStatus": "Pending",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV074",
+  "invoiceNumber": "INV-2026-074",
+  "salesOrderId": "SO074",
+  "customerId": "CUS013",
+  "customerName": "Elite Interior Studio",
+  "invoiceDate": "2026-11-13",
+  "items": [
+    {
+      "productId": "PRD047",
+      "productName": "Four Seater Workstation",
+      "quantity": 2,
+      "unitPrice": 52000,
+      "total": 104000
+    }
+  ],
+  "subtotal": 104000,
+  "tax": 18720,
+  "totalAmount": 122720,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+},
+{
+  "invoiceId": "INV075",
+  "invoiceNumber": "INV-2026-075",
+  "salesOrderId": "SO075",
+  "customerId": "CUS025",
+  "customerName": "Heritage Furniture House",
+  "invoiceDate": "2026-11-14",
+  "items": [
+    {
+      "productId": "PRD100",
+      "productName": "Premium Executive Furniture Package",
+      "quantity": 2,
+      "unitPrice": 175000,
+      "total": 350000
+    }
+  ],
+  "subtotal": 350000,
+  "tax": 63000,
+  "totalAmount": 413000,
+  "paymentStatus": "Paid",
+  "invoiceStatus": "Generated",
+  "createdAt": "2026-09-06"
+}
+]

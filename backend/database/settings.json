@@ -1,0 +1,131 @@
+[
+  {
+    "settingId": "SET001",
+    "settingType": "Company Profile",
+    "key": "companyDetails",
+    "value": {
+      "companyName": "Urban Furniture Pvt Ltd",
+      "address": "MG Road, Pune, Maharashtra",
+      "gstNumber": "27ABCDE1234F1Z5",
+      "phone": "9876543210",
+      "email": "contact@urbanfurniture.com"
+    },
+    "status": "Active",
+    "updatedAt": "2026-09-06"
+  },
+  {
+    "settingId": "SET002",
+    "settingType": "Tax Configuration",
+    "key": "taxSettings",
+    "value": {
+      "gstEnabled": true,
+      "cgstRate": 9,
+      "sgstRate": 9,
+      "igstRate": 18
+    },
+    "status": "Active",
+    "updatedAt": "2026-09-06"
+  },
+  {
+    "settingId": "SET003",
+    "settingType": "Invoice Settings",
+    "key": "invoiceConfiguration",
+    "value": {
+      "invoicePrefix": "INV",
+      "startingNumber": 1001,
+      "paymentTerms": "30 Days",
+      "autoGenerateInvoice": true
+    },
+    "status": "Active",
+    "updatedAt": "2026-09-06"
+  },
+  {
+    "settingId": "SET004",
+    "settingType": "Payment Settings",
+    "key": "paymentConfiguration",
+    "value": {
+      "acceptedModes": [
+        "Cash",
+        "UPI",
+        "Bank Transfer",
+        "Credit Card"
+      ],
+      "defaultPaymentTerm": "30 Days",
+      "currency": "INR"
+    },
+    "status": "Active",
+    "updatedAt": "2026-09-06"
+  },
+  {
+    "settingId": "SET005",
+    "settingType": "Currency Settings",
+    "key": "currencyConfiguration",
+    "value": {
+      "baseCurrency": "INR",
+      "currencySymbol": "₹",
+      "decimalPlaces": 2
+    },
+    "status": "Active",
+    "updatedAt": "2026-09-06"
+  },
+  {
+    "settingId": "SET006",
+    "settingType": "Notification Settings",
+    "key": "notificationPreferences",
+    "value": {
+      "emailNotifications": true,
+      "paymentReminder": true,
+      "lowStockAlert": true
+    },
+    "status": "Active",
+    "updatedAt": "2026-09-06"
+  },
+  {
+    "settingId": "SET007",
+    "settingType": "User Preferences",
+    "key": "userPreferences",
+    "value": {
+      "defaultDashboard": "Accounting Dashboard",
+      "theme": "Light",
+      "language": "English"
+    },
+    "status": "Active",
+    "updatedAt": "2026-09-06"
+  },
+  {
+    "settingId": "SET008",
+    "settingType": "Accounting Settings",
+    "key": "accountingConfiguration",
+    "value": {
+      "financialYear": "2026-2027",
+      "ledgerEnabled": true,
+      "journalApprovalRequired": false
+    },
+    "status": "Active",
+    "updatedAt": "2026-09-06"
+  },
+  {
+    "settingId": "SET009",
+    "settingType": "Purchase Settings",
+    "key": "purchaseConfiguration",
+    "value": {
+      "purchaseOrderPrefix": "PO",
+      "approvalRequired": true,
+      "defaultVendorPaymentTerms": "30 Days"
+    },
+    "status": "Active",
+    "updatedAt": "2026-09-06"
+  },
+  {
+    "settingId": "SET010",
+    "settingType": "System Settings",
+    "key": "systemConfiguration",
+    "value": {
+      "backupEnabled": true,
+      "auditLogsEnabled": true,
+      "dateFormat": "YYYY-MM-DD"
+    },
+    "status": "Active",
+    "updatedAt": "2026-09-06"
+  }
+]
