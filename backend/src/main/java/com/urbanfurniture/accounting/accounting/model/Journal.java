@@ -1,5 +1,7 @@
 package com.urbanfurniture.accounting.accounting.model;
 
+import java.time.LocalDateTime;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -18,21 +20,9 @@ public class Journal {
     @Id
     private String id;
 
-    private String name;
-
-    private String code;
-
-    private JournalType type;
+    private String reference;
 
     private String description;
 
-    private boolean active;
-
-    public enum JournalType {
-        SALES,
-        PURCHASE,
-        CASH,
-        BANK,
-        GENERAL
-    }
+    private LocalDateTime createdAt;
 }

@@ -12,15 +12,16 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         http
-                .csrf(csrf -> csrf.disable())
-                .authorizeHttpRequests(auth -> auth
-        .requestMatchers(
-        "/api/contacts/**",
-        "/api/products/**",
-        "/api/accounts/**"
-        ).permitAll()
-        .anyRequest().authenticated()
-);
+            .csrf(csrf -> csrf.disable())
+            .authorizeHttpRequests(auth -> auth
+                    .requestMatchers(
+                            "/api/contacts/**",
+                            "/api/products/**",
+                            "/api/accounts/**",
+                            "/api/journals/**"
+                    ).permitAll()
+                    .anyRequest().authenticated()
+            );
 
         return http.build();
     }
