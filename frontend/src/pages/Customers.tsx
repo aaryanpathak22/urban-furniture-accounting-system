@@ -2,27 +2,31 @@ import { useEffect, useState } from "react";
 import { getCustomers } from "../api/services/customerService";
 
 
-export default function Customers(){
+interface Customer {
+    id: string;
+    name: string;
+    type: string;
+    email: string;
+    phone: string;
+}
 
 
-    const [customers,setCustomers] = useState<any[]>([]);
+export default function Customers() {
 
-
-    useEffect(()=>{
-
-        loadCustomers();
-
-    },[]);
+    const [customers, setCustomers] = useState<Customer[]>([]);
 
 
 
-    const loadCustomers = async()=>{
+    useEffect(() => {
 
+    const fetchCustomers = async () => {
         const data = await getCustomers();
-
         setCustomers(data);
-
     };
+
+    fetchCustomers();
+
+}, []);
 
 
 
@@ -37,12 +41,14 @@ export default function Customers(){
 
 
 
-            <div className="
-                bg-white
-                rounded-xl
-                border
-                overflow-hidden
-            ">
+            <div
+                className="
+                    bg-white
+                    rounded-xl
+                    border
+                    overflow-hidden
+                "
+            >
 
 
                 <table className="w-full">
@@ -51,6 +57,7 @@ export default function Customers(){
                     <thead>
 
                         <tr className="border-b">
+
 
                             <th className="p-4 text-left">
                                 Name
@@ -71,6 +78,7 @@ export default function Customers(){
                                 Phone
                             </th>
 
+
                         </tr>
 
                     </thead>
@@ -80,39 +88,38 @@ export default function Customers(){
                     <tbody>
 
 
-                    {
-                        customers.map(customer=>(
+                        {
+                            customers.map((customer) => (
 
-                            <tr
-                                key={customer.id}
-                                className="border-b"
-                            >
+                                <tr
+                                    key={customer.id}
+                                    className="border-b"
+                                >
 
-                                <td className="p-4">
-                                    {customer.name}
-                                </td>
-
-
-                                <td className="p-4">
-                                    {customer.type}
-                                </td>
+                                    <td className="p-4">
+                                        {customer.name}
+                                    </td>
 
 
-                                <td className="p-4">
-                                    {customer.email}
-                                </td>
+                                    <td className="p-4">
+                                        {customer.type}
+                                    </td>
 
 
-                                <td className="p-4">
-                                    {customer.phone}
-                                </td>
+                                    <td className="p-4">
+                                        {customer.email}
+                                    </td>
 
 
-                            </tr>
+                                    <td className="p-4">
+                                        {customer.phone}
+                                    </td>
 
 
-                        ))
-                    }
+                                </tr>
+
+                            ))
+                        }
 
 
                     </tbody>
@@ -126,6 +133,6 @@ export default function Customers(){
 
         </div>
 
-    )
+    );
 
 }
