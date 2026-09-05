@@ -18,7 +18,9 @@ public class SecurityConfig {
                             "/api/contacts/**",
                             "/api/products/**",
                             "/api/accounts/**",
-                            "/api/journals/**"
+                            "/api/journals/**",
+                            "/api/sales-orders/**",
+                            "/api/invoices/**"
                     ).permitAll()
                     .anyRequest().authenticated()
             );
