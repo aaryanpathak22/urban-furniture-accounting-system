@@ -24,8 +24,13 @@ public class SecurityConfig {
                             "/api/purchase-orders/**",
                             "/api/vendor-bills/**",
                             "/api/auth/**",
-                            "/api/payments/**"
+                            "/api/auth/**",
+                            "/api/payments/**",
+                            "/swagger-ui/**",
+                            "/swagger-ui.html",
+                            "/v3/api-docs/**"
                     ).permitAll()
+                    .requestMatchers("/api/**").permitAll()
                     .anyRequest().authenticated()
             );
 
