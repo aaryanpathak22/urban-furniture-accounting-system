@@ -63,18 +63,28 @@ public class ContactService {
     }
 
     public List<ContactResponse> getCustomers() {
-        return contactRepository.findByType(Contact.ContactType.CUSTOMER)
-                .stream()
-                .map(this::toResponse)
-                .toList();
-    }
+    return contactRepository.findByTypeIn(
+                    List.of(
+                            Contact.ContactType.CUSTOMER,
+                            Contact.ContactType.BOTH
+                    )
+            )
+            .stream()
+            .map(this::toResponse)
+            .toList();
+}
 
     public List<ContactResponse> getVendors() {
-        return contactRepository.findByType(Contact.ContactType.VENDOR)
-                .stream()
-                .map(this::toResponse)
-                .toList();
-    }
+    return contactRepository.findByTypeIn(
+                    List.of(
+                            Contact.ContactType.VENDOR,
+                            Contact.ContactType.BOTH
+                    )
+            )
+            .stream()
+            .map(this::toResponse)
+            .toList();
+}
 
     public ContactResponse updateContact(String id, ContactRequest request) {
 

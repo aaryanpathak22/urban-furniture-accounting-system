@@ -10,5 +10,7 @@ public interface ContactRepository extends MongoRepository<Contact, String> {
 
     List<Contact> findByType(Contact.ContactType type);
 
+    List<Contact> findByTypeIn(List<Contact.ContactType> types);
+
     boolean existsByEmail(String email);
 }
