@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import { getPayments } from "../api/services/paymentService";
+import SearchBar from "../components/Common/SearchBar";
+import ActionButton from "../components/Common/ActionButton";
+import StatusBadge from "../components/Common/StatusBadge";
 
 
 interface Payment {
@@ -9,6 +12,7 @@ interface Payment {
     customerName: string;
     date: string;
     amount: number;
+    method: string;
     status: string;
 
 }
@@ -19,6 +23,7 @@ export default function Payments() {
 
 
     const [payments, setPayments] = useState<Payment[]>([]);
+    const [search, setSearch] = useState("");
 
 
 
@@ -42,25 +47,92 @@ export default function Payments() {
 
 
 
+    const filteredPayments = payments.filter((payment) =>
+
+        payment.paymentNumber
+            .toLowerCase()
+            .includes(search.toLowerCase())
+
+        ||
+
+        payment.customerName
+            .toLowerCase()
+            .includes(search.toLowerCase())
+
+    );
+
+
+
+
     return (
 
         <div>
 
 
-            <h1 className="text-3xl font-bold mb-6">
-                Payments
-            </h1>
+            <div className="
+                flex
+                justify-between
+                items-center
+                mb-6
+            ">
+
+
+                <h1 className="
+                    text-3xl
+                    font-bold
+                ">
+                    Payments
+                </h1>
 
 
 
-            <div
-                className="
+                <button
+                    className="
+                    bg-[#714B67]
+                    text-white
+                    px-5
+                    py-2
+                    rounded-lg
+                    "
+                >
+
+                    + Record Payment
+
+                </button>
+
+
+            </div>
+
+
+
+
+
+            <div className="mb-5">
+
+                <SearchBar
+
+                    placeholder="Search payments..."
+
+                    value={search}
+
+                    onChange={setSearch}
+
+                />
+
+            </div>
+
+
+
+
+
+
+
+            <div className="
                 bg-white
                 rounded-xl
                 border
                 overflow-hidden
-                "
-            >
+            ">
 
 
                 <table className="w-full">
@@ -92,7 +164,17 @@ export default function Payments() {
 
 
                             <th className="p-4 text-left">
+                                Method
+                            </th>
+
+
+                            <th className="p-4 text-left">
                                 Status
+                            </th>
+
+
+                            <th className="p-4 text-left">
+                                Actions
                             </th>
 
 
@@ -103,16 +185,24 @@ export default function Payments() {
 
 
 
+
+
                     <tbody>
 
 
                         {
-                            payments.map((payment) => (
+                            filteredPayments.map((payment)=>(
 
 
                                 <tr
+
                                     key={payment.id}
-                                    className="border-b"
+
+                                    className="
+                                    border-b
+                                    hover:bg-gray-50
+                                    "
+
                                 >
 
 
@@ -137,8 +227,47 @@ export default function Payments() {
 
 
                                     <td className="p-4">
-                                        {payment.status}
+                                        {payment.method}
                                     </td>
+
+
+                                    <td className="p-4">
+
+                                        <StatusBadge
+                                            status={payment.status}
+                                        />
+
+                                    </td>
+
+
+
+                                    <td className="
+                                        p-4
+                                        flex
+                                        gap-3
+                                    ">
+
+
+                                        <ActionButton
+                                            label="View"
+                                            onClick={()=>{}}
+                                        />
+
+
+                                        <ActionButton
+                                            label="Edit"
+                                            onClick={()=>{}}
+                                        />
+
+
+                                        <ActionButton
+                                            label="Delete"
+                                            onClick={()=>{}}
+                                        />
+
+
+                                    </td>
+
 
 
                                 </tr>
@@ -146,6 +275,7 @@ export default function Payments() {
 
                             ))
                         }
+
 
 
                     </tbody>
@@ -157,7 +287,9 @@ export default function Payments() {
             </div>
 
 
+
         </div>
+
 
     );
 

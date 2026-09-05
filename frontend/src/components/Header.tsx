@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
 
-export default function Navbar(){
+const Header = () => {
 
 
 const navigate = useNavigate();
@@ -13,12 +13,12 @@ return (
 
 className="
 h-14
-bg-white
 border-b
 flex
 items-center
 justify-between
-px-6
+px-5
+bg-white
 "
 
 >
@@ -70,3 +70,6 @@ U
 )
 
 }
+
+
+export default Header;

@@ -1,29 +1,27 @@
 import { useEffect, useState } from "react";
-
-import { getSalesOrders } from "../api/services/salesOrderService";
-
-import StatusBadge from "../components/Common/StatusBadge";
+import { getPurchaseOrders } from "../api/services/purchaseOrdersService";
 import SearchBar from "../components/Common/SearchBar";
+import ActionButton from "../components/Common/ActionButton";
+import StatusBadge from "../components/Common/StatusBadge";
 
 
-interface SalesOrder {
+interface PurchaseOrder {
 
     id: string;
     orderNumber: string;
-    customerName: string;
-    orderDate: string;
-    totalAmount: number;
+    vendorName: string;
+    date: string;
+    amount: number;
     status: string;
 
 }
 
 
 
-export default function SalesOrders() {
+export default function PurchaseOrders() {
 
 
-    const [orders, setOrders] = useState<SalesOrder[]>([]);
-
+    const [orders, setOrders] = useState<PurchaseOrder[]>([]);
     const [search, setSearch] = useState("");
 
 
@@ -31,16 +29,16 @@ export default function SalesOrders() {
     useEffect(() => {
 
 
-        const fetchOrders = async () => {
+        const loadOrders = async () => {
 
-            const data = await getSalesOrders();
+            const data = await getPurchaseOrders();
 
             setOrders(data);
 
         };
 
 
-        fetchOrders();
+        loadOrders();
 
 
     }, []);
@@ -48,19 +46,21 @@ export default function SalesOrders() {
 
 
 
-    const filteredOrders = orders.filter((order) =>
+
+    const filteredOrders = orders.filter((order)=>
 
         order.orderNumber
-            .toLowerCase()
-            .includes(search.toLowerCase())
+        .toLowerCase()
+        .includes(search.toLowerCase())
 
         ||
 
-        order.customerName
-            .toLowerCase()
-            .includes(search.toLowerCase())
+        order.vendorName
+        .toLowerCase()
+        .includes(search.toLowerCase())
 
     );
+
 
 
 
@@ -70,23 +70,19 @@ export default function SalesOrders() {
         <div>
 
 
-            <div
-                className="
+            <div className="
                 flex
                 justify-between
                 items-center
                 mb-6
-                "
-            >
+            ">
 
 
-                <h1
-                    className="
+                <h1 className="
                     text-3xl
                     font-bold
-                    "
-                >
-                    Sales Orders
+                ">
+                    Purchase Orders
                 </h1>
 
 
@@ -100,7 +96,9 @@ export default function SalesOrders() {
                     rounded-lg
                     "
                 >
-                    + Create Order
+
+                    + Create Purchase Order
+
                 </button>
 
 
@@ -113,10 +111,14 @@ export default function SalesOrders() {
             <div className="mb-5">
 
                 <SearchBar
-    placeholder="Search sales orders..."
-    value={search}
-    onChange={setSearch}
-/>
+
+                    placeholder="Search purchase orders..."
+
+                    value={search}
+
+                    onChange={setSearch}
+
+                />
 
             </div>
 
@@ -125,20 +127,19 @@ export default function SalesOrders() {
 
 
 
-            <div
-                className="
+            <div className="
                 bg-white
                 rounded-xl
                 border
                 overflow-hidden
-                "
-            >
+            ">
 
 
                 <table className="w-full">
 
 
                     <thead>
+
 
                         <tr className="border-b">
 
@@ -149,7 +150,7 @@ export default function SalesOrders() {
 
 
                             <th className="p-4 text-left">
-                                Customer
+                                Vendor
                             </th>
 
 
@@ -174,6 +175,7 @@ export default function SalesOrders() {
 
 
                         </tr>
+
 
                     </thead>
 
@@ -206,17 +208,17 @@ export default function SalesOrders() {
 
 
                                     <td className="p-4">
-                                        {order.customerName}
+                                        {order.vendorName}
                                     </td>
 
 
                                     <td className="p-4">
-                                        {order.orderDate}
+                                        {order.date}
                                     </td>
 
 
                                     <td className="p-4">
-                                        ₹{order.totalAmount}
+                                        ₹{order.amount}
                                     </td>
 
 
@@ -230,56 +232,24 @@ export default function SalesOrders() {
 
 
 
-                                    <td className="p-4">
+                                    <td className="
+                                        p-4
+                                        flex
+                                        gap-3
+                                    ">
 
 
-                                        <div
-                                            className="
-                                            flex
-                                            gap-3
-                                            "
-                                        >
-
-                                            <button
-
-                                                className="
-                                                text-[#714B67]
-                                                hover:underline
-                                                "
-
-                                                onClick={() =>
-                                                    console.log(
-                                                        "View",
-                                                        order.id
-                                                    )
-                                                }
-
-                                            >
-                                                View
-                                            </button>
+                                        <ActionButton
+                                            label="View"
+                                            onClick={()=>{}}
+                                        />
 
 
+                                        <ActionButton
+                                            label="Edit"
+                                            onClick={()=>{}}
+                                        />
 
-                                            <button
-
-                                                className="
-                                                text-[#714B67]
-                                                hover:underline
-                                                "
-
-                                                onClick={() =>
-                                                    console.log(
-                                                        "Edit",
-                                                        order.id
-                                                    )
-                                                }
-
-                                            >
-                                                Edit
-                                            </button>
-
-
-                                        </div>
 
 
                                     </td>

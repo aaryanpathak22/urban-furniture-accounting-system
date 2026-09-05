@@ -6,59 +6,126 @@ import {
   FileText,
   CreditCard,
   BookOpen,
-  BarChart3
+  BarChart3,
+  WalletCards,
+  UserCircle,
+  Settings
 } from "lucide-react";
 
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 
-const menuItems = [
+const menu = [
+
   {
     name: "Dashboard",
-    path: "/dashboard",
+    path: "/",
     icon: LayoutDashboard
   },
+
   {
-    name: "Customers",
-    path: "/customers",
-    icon: Users
+    name: "Master Data",
+    children: [
+      {
+        name: "Contacts",
+        path: "/contacts",
+        icon: Users
+      },
+      {
+        name: "Products",
+        path: "/products",
+        icon: Package
+      },
+      {
+        name: "Accounts",
+        path: "/accounts",
+        icon: WalletCards
+      }
+    ]
   },
+
   {
-    name: "Products",
-    path: "/products",
-    icon: Package
+    name: "Sales",
+    children: [
+      {
+        name: "Sales Orders",
+        path: "/sales-orders",
+        icon: ShoppingCart
+      },
+      {
+        name: "Invoices",
+        path: "/invoices",
+        icon: FileText
+      },
+      {
+        name: "Payments",
+        path: "/payments",
+        icon: CreditCard
+      }
+    ]
   },
+
   {
-    name: "Sales Orders",
-    path: "/sales-orders",
-    icon: ShoppingCart
+    name: "Purchase",
+    children: [
+      {
+        name: "Purchase Orders",
+        path: "/purchase-orders",
+        icon: ShoppingCart
+      },
+      {
+        name: "Vendor Bills",
+        path: "/vendor-bills",
+        icon: FileText
+      }
+    ]
   },
+
   {
-    name: "Invoices",
-    path: "/invoices",
-    icon: FileText
+    name: "Accounting",
+    children: [
+      {
+        name: "Journals",
+        path: "/journals",
+        icon: BookOpen
+      },
+      {
+        name: "Ledger",
+        path: "/ledger",
+        icon: BookOpen
+      }
+    ]
   },
+
+
   {
-    name: "Payments",
-    path: "/payments",
-    icon: CreditCard
+    name: "Profile",
+    path: "/profile",
+    icon: UserCircle
   },
-  {
-    name: "Journals",
-    path: "/journals",
-    icon: BookOpen
-  },
+
+
   {
     name: "Reports",
     path: "/reports",
     icon: BarChart3
+  },
+
+
+  {
+    name: "Settings",
+    path: "/settings",
+    icon: Settings
   }
+
 ];
+
 
 
 export default function Sidebar() {
 
   const navigate = useNavigate();
+  const location = useLocation();
 
 
   return (
@@ -88,42 +155,158 @@ export default function Sidebar() {
       <nav className="space-y-2">
 
 
-        {
-          menuItems.map((item)=>{
+        {menu.map((item) => {
 
-            const Icon = item.icon;
+
+          if (item.children) {
 
 
             return (
 
-              <div
-                key={item.name}
-                onClick={() => navigate(item.path)}
-                className="
-                flex
-                items-center
-                gap-3
-                px-4
-                py-3
-                rounded-lg
-                hover:bg-[#F3EAF0]
-                cursor-pointer
-                "
-              >
+              <div key={item.name}>
 
-                <Icon size={20}/>
 
-                <span>
+                <div
+                  className="
+                  text-sm
+                  text-gray-500
+                  mt-5
+                  mb-2
+                  "
+                >
                   {item.name}
-                </span>
+                </div>
+
+
+                {
+                  item.children.map((child) => {
+
+
+                    const ChildIcon = child.icon;
+
+                    const active =
+                      location.pathname === child.path;
+
+
+
+                    return (
+
+                      <div
+
+                        key={child.path}
+
+                        onClick={() =>
+                          navigate(child.path)
+                        }
+
+
+                        className={`
+
+                        flex
+                        items-center
+                        gap-3
+                        px-4
+                        py-3
+                        rounded-lg
+                        cursor-pointer
+                        transition
+
+
+                        ${
+                          active
+                          ?
+                          "bg-[#F3EAF0] text-[#714B67] font-semibold"
+                          :
+                          "hover:bg-gray-100"
+                        }
+
+                        `}
+
+                      >
+
+                        <ChildIcon size={18}/>
+
+
+                        <span>
+                          {child.name}
+                        </span>
+
+
+                      </div>
+
+                    );
+
+                  })
+                }
 
 
               </div>
 
-            )
+            );
 
-          })
-        }
+          }
+
+
+
+          const ItemIcon = item.icon;
+
+
+          const active =
+            location.pathname === item.path;
+
+
+
+          return (
+
+            <div
+
+              key={item.path}
+
+              onClick={() =>
+                navigate(item.path!)
+              }
+
+
+              className={`
+
+              flex
+              items-center
+              gap-3
+              px-4
+              py-3
+              rounded-lg
+              cursor-pointer
+
+
+              ${
+                active
+                ?
+                "bg-[#F3EAF0] text-[#714B67] font-semibold"
+                :
+                "hover:bg-gray-100"
+              }
+
+              `}
+
+            >
+
+              {
+                ItemIcon &&
+                <ItemIcon size={18}/>
+              }
+
+
+              <span>
+                {item.name}
+              </span>
+
+
+            </div>
+
+          );
+
+
+        })}
 
 
       </nav>
@@ -131,5 +314,6 @@ export default function Sidebar() {
 
     </aside>
 
-  )
+  );
+
 }

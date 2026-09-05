@@ -1,40 +1,41 @@
 import { useEffect, useState } from "react";
-import { getReports } from "../api/services/reportService";
+import { getVendorBills } from "../api/services/vendorBillsService";
 
-
-interface Report {
+interface VendorBill {
 
     id: string;
-    name: string;
-    period: string;
+    billNumber: string;
+    vendorName: string;
+    date: string;
     amount: number;
+    status: string;
 
 }
 
 
 
-export default function Reports() {
+export default function VendorBills() {
 
 
-    const [reports, setReports] = useState<Report[]>([]);
+    const [bills, setBills] = useState<VendorBill[]>([]);
 
 
 
     useEffect(() => {
 
 
-        const loadReports = async () => {
+        const loadBills = async () => {
 
 
-            const data = await getReports();
+            const data = await getVendorBills();
 
-            setReports(data);
+            setBills(data);
 
 
         };
 
 
-        loadReports();
+        loadBills();
 
 
     }, []);
@@ -44,6 +45,7 @@ export default function Reports() {
 
     return (
 
+
         <div>
 
 
@@ -51,7 +53,7 @@ export default function Reports() {
 
 
                 <h1 className="text-3xl font-bold">
-                    Reports
+                    Vendor Bills
                 </h1>
 
 
@@ -65,7 +67,7 @@ export default function Reports() {
                     hover:opacity-90
                     "
                 >
-                    + Generate Report
+                    + Create Bill
                 </button>
 
 
@@ -94,17 +96,27 @@ export default function Reports() {
 
 
                             <th className="p-4 text-left">
-                                Report Name
+                                Bill Number
                             </th>
 
 
                             <th className="p-4 text-left">
-                                Period
+                                Vendor
+                            </th>
+
+
+                            <th className="p-4 text-left">
+                                Date
                             </th>
 
 
                             <th className="p-4 text-left">
                                 Amount
+                            </th>
+
+
+                            <th className="p-4 text-left">
+                                Status
                             </th>
 
 
@@ -120,44 +132,58 @@ export default function Reports() {
 
 
 
+
                     <tbody>
 
 
                         {
-                            reports.length > 0 ? (
+                            bills.length > 0 ? (
 
 
-                                reports.map((report) => (
+                                bills.map((bill) => (
 
 
                                     <tr
-                                        key={report.id}
+                                        key={bill.id}
                                         className="border-b"
                                     >
 
 
                                         <td className="p-4">
-                                            {report.name}
+                                            {bill.billNumber}
                                         </td>
 
 
                                         <td className="p-4">
-                                            {report.period}
+                                            {bill.vendorName}
                                         </td>
 
 
                                         <td className="p-4">
-                                            ₹{report.amount}
+                                            {bill.date}
+                                        </td>
+
+
+                                        <td className="p-4">
+                                            ₹{bill.amount}
+                                        </td>
+
+
+                                        <td className="p-4">
+                                            {bill.status}
                                         </td>
 
 
                                         <td className="p-4">
 
-
-                                            <span className="text-[#714B67] cursor-pointer">
+                                            <span className="text-[#714B67] cursor-pointer mr-3">
                                                 View
                                             </span>
 
+
+                                            <span className="text-[#714B67] cursor-pointer">
+                                                Edit
+                                            </span>
 
                                         </td>
 
@@ -174,11 +200,12 @@ export default function Reports() {
                                 <tr>
 
                                     <td
-                                        colSpan={4}
+                                        colSpan={6}
                                         className="p-6 text-center text-gray-500"
                                     >
-                                        No reports available
+                                        No vendor bills found
                                     </td>
+
 
                                 </tr>
 
@@ -197,6 +224,7 @@ export default function Reports() {
 
 
         </div>
+
 
     );
 
