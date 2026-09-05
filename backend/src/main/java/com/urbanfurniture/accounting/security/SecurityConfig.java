@@ -22,7 +22,8 @@ public class SecurityConfig {
                             "/api/sales-orders/**",
                             "/api/invoices/**",
                             "/api/purchase-orders/**",
-                            "/api/vendor-bills/**"
+                            "/api/vendor-bills/**",
+                            "/api/auth/**"
                     ).permitAll()
                     .anyRequest().authenticated()
             );
