@@ -29,13 +29,14 @@ public class SalesOrder {
 
     private List<SalesOrderItem> items;
 
-    private double subtotal;
+    private Double subtotal;
 
-    private double taxAmount;
+    private Double taxAmount;
 
-    private double totalAmount;
+    private Double totalAmount;
 
     private OrderStatus status;
+
 
     @Data
     @Builder
@@ -45,14 +46,15 @@ public class SalesOrder {
 
         private String productId;
 
-        private int quantity;
+        private Integer quantity;
 
-        private double unitPrice;
+        private Double unitPrice;
 
-        private double taxRate;
+        private Double taxRate;
 
-        private double lineTotal;
+        private Double lineTotal;
     }
+
 
     public enum OrderStatus {
         DRAFT,

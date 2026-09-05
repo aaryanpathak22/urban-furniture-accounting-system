@@ -19,10 +19,17 @@ public class SalesOrderService {
 
     public SalesOrder createSalesOrder(SalesOrder salesOrder) {
 
+        System.out.println("SALES ORDER RECEIVED: " + salesOrder);
+
         salesOrder.setOrderDate(LocalDate.now());
-        salesOrder.setStatus(SalesOrder.OrderStatus.DRAFT);
+
+        if (salesOrder.getStatus() == null) {
+            salesOrder.setStatus(SalesOrder.OrderStatus.DRAFT);
+        }
 
         calculateTotals(salesOrder);
+
+        System.out.println("SALES ORDER BEFORE SAVE: " + salesOrder);
 
         return salesOrderRepository.save(salesOrder);
     }

@@ -33,15 +33,16 @@ public class Invoice {
 
     private List<InvoiceItem> items;
 
-    private double subtotal;
+    private Double subtotal;
 
-    private double taxAmount;
+    private Double taxAmount;
 
-    private double totalAmount;
+    private Double totalAmount;
 
-    private double paidAmount;
+    private Double paidAmount;
 
     private InvoiceStatus status;
+
 
     @Data
     @Builder
@@ -51,14 +52,15 @@ public class Invoice {
 
         private String productId;
 
-        private int quantity;
+        private Integer quantity;
 
-        private double unitPrice;
+        private Double unitPrice;
 
-        private double taxRate;
+        private Double taxRate;
 
-        private double lineTotal;
+        private Double lineTotal;
     }
+
 
     public enum InvoiceStatus {
         DRAFT,

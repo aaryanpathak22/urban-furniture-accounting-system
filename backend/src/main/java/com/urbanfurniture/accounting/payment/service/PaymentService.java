@@ -41,7 +41,9 @@ public class PaymentService {
 
         return paymentRepository.findById(id)
                 .orElseThrow(
-                        () -> new RuntimeException("Payment not found")
+                        () -> new RuntimeException(
+                                "Payment not found with id: " + id
+                        )
                 );
     }
 
@@ -52,14 +54,46 @@ public class PaymentService {
 
         Payment existing = getPaymentById(id);
 
-        existing.setPaymentNumber(updatedPayment.getPaymentNumber());
-        existing.setType(updatedPayment.getType());
-        existing.setReferenceId(updatedPayment.getReferenceId());
-        existing.setPaymentDate(updatedPayment.getPaymentDate());
-        existing.setAmount(updatedPayment.getAmount());
-        existing.setMethod(updatedPayment.getMethod());
-        existing.setJournalId(updatedPayment.getJournalId());
-        existing.setStatus(updatedPayment.getStatus());
+
+        if (updatedPayment.getPaymentNumber() != null) {
+            existing.setPaymentNumber(updatedPayment.getPaymentNumber());
+        }
+
+
+        if (updatedPayment.getType() != null) {
+            existing.setType(updatedPayment.getType());
+        }
+
+
+        if (updatedPayment.getReferenceId() != null) {
+            existing.setReferenceId(updatedPayment.getReferenceId());
+        }
+
+
+        if (updatedPayment.getPaymentDate() != null) {
+            existing.setPaymentDate(updatedPayment.getPaymentDate());
+        }
+
+
+        if (updatedPayment.getAmount() != 0) {
+            existing.setAmount(updatedPayment.getAmount());
+        }
+
+
+        if (updatedPayment.getMethod() != null) {
+            existing.setMethod(updatedPayment.getMethod());
+        }
+
+
+        if (updatedPayment.getJournalId() != null) {
+            existing.setJournalId(updatedPayment.getJournalId());
+        }
+
+
+        if (updatedPayment.getStatus() != null) {
+            existing.setStatus(updatedPayment.getStatus());
+        }
+
 
         return paymentRepository.save(existing);
     }

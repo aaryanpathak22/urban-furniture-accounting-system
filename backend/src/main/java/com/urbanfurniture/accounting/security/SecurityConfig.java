@@ -23,7 +23,8 @@ public class SecurityConfig {
                             "/api/invoices/**",
                             "/api/purchase-orders/**",
                             "/api/vendor-bills/**",
-                            "/api/auth/**"
+                            "/api/auth/**",
+                            "/api/payments/**"
                     ).permitAll()
                     .anyRequest().authenticated()
             );

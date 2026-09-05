@@ -24,19 +24,27 @@ public class SalesOrderController {
 
     private final SalesOrderService salesOrderService;
 
+
     @PostMapping
-    public ResponseEntity<SalesOrder> create(@RequestBody SalesOrder salesOrder) {
+    public ResponseEntity<SalesOrder> create(
+            @RequestBody SalesOrder salesOrder) {
+
+        System.out.println("CONTROLLER RECEIVED: " + salesOrder);
+
         return ResponseEntity.ok(
                 salesOrderService.createSalesOrder(salesOrder)
         );
     }
 
+
     @GetMapping
     public ResponseEntity<List<SalesOrder>> getAll() {
+
         return ResponseEntity.ok(
                 salesOrderService.getAllSalesOrders()
         );
     }
+
 
     @GetMapping("/{id}")
     public ResponseEntity<SalesOrder> getById(
@@ -47,6 +55,7 @@ public class SalesOrderController {
         );
     }
 
+
     @GetMapping("/customer/{customerId}")
     public ResponseEntity<List<SalesOrder>> getByCustomer(
             @PathVariable String customerId) {
@@ -55,6 +64,7 @@ public class SalesOrderController {
                 salesOrderService.getByCustomer(customerId)
         );
     }
+
 
     @PutMapping("/{id}")
     public ResponseEntity<SalesOrder> update(
@@ -66,11 +76,13 @@ public class SalesOrderController {
         );
     }
 
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(
             @PathVariable String id) {
 
         salesOrderService.deleteSalesOrder(id);
+
         return ResponseEntity.noContent().build();
     }
 }
