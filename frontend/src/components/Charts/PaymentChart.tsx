@@ -1,125 +1,95 @@
 import {
-    PieChart,
-    Pie,
-    Cell,
-    Tooltip,
-    ResponsiveContainer,
-    Legend
+  PieChart,
+  Pie,
+  Tooltip,
+  ResponsiveContainer,
+  Cell
 } from "recharts";
 
 
-interface Props {
-    completed:number;
-    pending:number;
-    cancelled:number;
+interface PaymentChartProps {
+  completed?: number;
+  pending?: number;
+  cancelled?: number;
 }
 
 
-const COLORS=[
-    "#714B67",
-    "#F0AD4E",
-    "#D9534F"
-];
-
-
 export default function PaymentChart({
-    completed,
-    pending,
-    cancelled
-}:Props){
+  completed = 0,
+  pending = 0,
+  cancelled = 0
+}: PaymentChartProps) {
 
 
-    const data=[
-        {
-            name:"Completed",
-            value:completed
-        },
-        {
-            name:"Pending",
-            value:pending
-        },
-        {
-            name:"Cancelled",
-            value:cancelled
-        }
-    ];
+  const data = [
+    {
+      name: "Completed",
+      value: completed
+    },
+    {
+      name: "Pending",
+      value: pending
+    },
+    {
+      name: "Cancelled",
+      value: cancelled
+    }
+  ];
 
 
-
-    // Prevent empty chart
-    const chartData =
-        data.every(item=>item.value===0)
-        ?
-        [
-            {
-                name:"No Data",
-                value:1
-            }
-        ]
-        :
-        data;
+  const hasData = data.some(
+    item => item.value > 0
+  );
 
 
-
-    return(
-
-        <ResponsiveContainer width="100%" height="100%">
-
-
-            <PieChart>
-
-
-                <Pie
-
-                    data={chartData}
-
-                    dataKey="value"
-
-                    cx="50%"
-
-                    cy="50%"
-
-                    outerRadius={90}
-
-                    label
-
-
-                >
-
-                    {
-                        chartData.map((item,index)=>(
-
-                            <Cell
-
-                                key={item.name}
-
-                                fill={
-                                    item.name==="No Data"
-                                    ?
-                                    "#cccccc"
-                                    :
-                                    COLORS[index]
-                                }
-
-                            />
-
-                        ))
-                    }
-
-
-                </Pie>
-
-
-                <Tooltip/>
-
-                <Legend/>
-
-
-            </PieChart>
-
-
-        </ResponsiveContainer>
-
+  if(!hasData){
+    return (
+      <div
+        style={{
+          height:"250px",
+          display:"flex",
+          justifyContent:"center",
+          alignItems:"center"
+        }}
+      >
+        No Payment Data
+      </div>
     );
+  }
+
+
+  return (
+
+    <ResponsiveContainer width="100%" height={250}>
+
+      <PieChart>
+
+        <Pie
+          data={data}
+          dataKey="value"
+          nameKey="name"
+          cx="50%"
+          cy="50%"
+          outerRadius={90}
+          label
+        >
+
+        {
+          data.map((entry,index)=>(
+            <Cell key={index}/>
+          ))
+        }
+
+        </Pie>
+
+
+        <Tooltip/>
+
+
+      </PieChart>
+
+    </ResponsiveContainer>
+
+  );
 
 }
