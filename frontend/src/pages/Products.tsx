@@ -1,567 +1,379 @@
-import {
-    useEffect,
-    useState
-} from "react";
-
-
-import ActionButton from "../components/Common/ActionButton";
-import SearchBar from "../components/Common/SearchBar";
-import StatusBadge from "../components/Common/StatusBadge";
-
+import { useEffect, useState } from "react";
 
 import {
-    getProducts,
-    type Product
+    getProducts
+} from "../api/services/productService";
+
+import type {
+    Product
 } from "../api/services/productService";
 
 
 
+export default function Products() {
 
 
-export default function Products(){
+    const [products, setProducts] = useState<Product[]>([]);
 
-
-
-const [
-    products,
-    setProducts
-] = useState<Product[]>([]);
+    const [search, setSearch] = useState("");
 
 
 
 
-const [
-    search,
-    setSearch
-] = useState("");
+    const loadProducts = async () => {
 
+        try {
 
+            const data = await getProducts();
 
+            setProducts(data);
 
-const [
-    category,
-    setCategory
-] = useState("All Categories");
+        } catch (error) {
 
+            console.error(
+                "Failed to load products",
+                error
+            );
 
-
-
-
-
-useEffect(()=>{
-
-
-    const loadProducts = async()=>{
-
-
-        const data = await getProducts();
-
-
-        setProducts(data);
-
+        }
 
     };
 
 
-    loadProducts();
 
 
 
-},[]);
+    useEffect(() => {
 
+        const fetchProducts = async () => {
 
+            await loadProducts();
 
+        };
 
 
+        fetchProducts();
 
 
-const categories = [
+    }, []);
 
-    "All Categories",
 
-    ...Array.from(
 
-        new Set(
 
-            products.map(
 
-                product=>product.category
 
-            )
+    const filteredProducts =
+        products.filter((product) => {
 
-        )
 
-    )
+            const productName =
+                product.name?.toLowerCase() || "";
 
-];
 
+            return productName.includes(
+                search.toLowerCase()
+            );
 
 
+        });
 
 
 
 
-const filteredProducts = products.filter((product)=>{
 
 
+    return (
 
-    const matchesSearch =
 
-        product.name
+        <div
+            style={{
+                padding: "30px",
+                width: "100%"
+            }}
+        >
 
-        .toLowerCase()
 
-        .includes(
 
-            search.toLowerCase()
+            <div
+                style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    marginBottom: "25px"
+                }}
+            >
 
-        );
 
+                <h1
+                    style={{
+                        fontSize: "28px",
+                        fontWeight: "700"
+                    }}
+                >
+                    Products
+                </h1>
 
 
 
-    const matchesCategory =
+                <button
 
-        category === "All Categories"
+                    style={{
+                        background: "#76506f",
+                        color: "white",
+                        border: "none",
+                        padding: "12px 20px",
+                        borderRadius: "8px",
+                        cursor: "pointer",
+                        fontWeight: "600"
+                    }}
 
-        ||
+                    onClick={() =>
+                        alert(
+                            "Add Product feature coming soon"
+                        )
+                    }
 
-        product.category === category;
+                >
 
+                    + Add Product
 
+                </button>
 
-    return matchesSearch && matchesCategory;
 
+            </div>
 
 
-});
 
 
 
 
+            <div
 
+                style={{
+                    display: "flex",
+                    gap: "15px",
+                    marginBottom: "25px"
+                }}
 
+            >
 
 
 
-return (
+                <input
 
+                    style={{
+                        width: "300px",
+                        padding: "12px",
+                        border: "1px solid #ccc",
+                        borderRadius: "8px"
+                    }}
 
-<div className="p-6">
+                    placeholder="Search products..."
 
+                    value={search}
 
+                    onChange={(e) =>
+                        setSearch(e.target.value)
+                    }
 
+                />
 
 
-<div
 
-className="
-flex
-justify-between
-items-center
-mb-6
-"
 
->
+                <select
 
+                    style={{
+                        padding: "12px",
+                        border: "1px solid #ccc",
+                        borderRadius: "8px"
+                    }}
 
-<h1
+                >
 
-className="
-text-3xl
-font-bold
-"
+                    <option>
+                        All Categories
+                    </option>
 
->
 
-Products
+                </select>
 
-</h1>
 
 
+            </div>
 
 
 
-<button
 
-className="
-bg-[#714B67]
-text-white
-px-5
-py-2
-rounded-lg
-"
 
->
 
-+ Add Product
 
-</button>
+            <div
 
+                style={{
+                    background: "white",
+                    border: "1px solid #ddd",
+                    borderRadius: "12px",
+                    overflow: "hidden"
+                }}
 
+            >
 
-</div>
 
 
+                <table
 
+                    style={{
+                        width: "100%",
+                        borderCollapse: "collapse"
+                    }}
 
+                >
 
 
 
+                    <thead>
 
-<div
 
-className="
-flex
-gap-4
-mb-6
-"
+                        <tr
 
->
+                            style={{
+                                background: "#faf7fa"
+                            }}
 
+                        >
 
 
-<SearchBar
+                            <th style={head}>
+                                Name
+                            </th>
 
-value={search}
 
-onChange={setSearch}
+                            <th style={head}>
+                                Type
+                            </th>
 
-placeholder="Search products..."
 
-/>
+                            <th style={head}>
+                                Category
+                            </th>
 
 
+                            <th style={head}>
+                                Sales Price
+                            </th>
 
 
+                            <th style={head}>
+                                Purchase Price
+                            </th>
 
 
-<select
+                            <th style={head}>
+                                Status
+                            </th>
 
-value={category}
 
-onChange={(e)=>
-setCategory(e.target.value)
-}
 
-className="
-border
-rounded-lg
-px-4
-py-2
-"
+                        </tr>
 
->
 
+                    </thead>
 
-{
 
-categories.map((cat)=>(
 
 
-<option
 
-key={cat}
 
-value={cat}
 
->
+                    <tbody>
 
-{cat}
 
-</option>
+                        {
+                            filteredProducts.map(
+                                (product) => (
 
 
-))
+                                    <tr
+                                        key={product.id}
+                                    >
 
 
-}
+                                        <td style={cell}>
+                                            {product.name}
+                                        </td>
 
 
-</select>
+                                        <td style={cell}>
+                                            {product.type || "-"}
+                                        </td>
 
 
+                                        <td style={cell}>
+                                            {product.category || "-"}
+                                        </td>
 
 
-</div>
+                                        <td style={cell}>
+                                            ₹ {product.salesPrice ?? 0}
+                                        </td>
 
 
+                                        <td style={cell}>
+                                            ₹ {product.purchasePrice ?? 0}
+                                        </td>
 
 
+                                        <td style={cell}>
 
+                                            <span
 
+                                                style={{
+                                                    background: "#eee",
+                                                    padding: "5px 12px",
+                                                    borderRadius: "20px",
+                                                    fontSize: "13px"
+                                                }}
 
+                                            >
 
+                                                Active
 
-<div
+                                            </span>
 
-className="
-bg-white
-border
-rounded-xl
-overflow-hidden
-"
 
->
+                                        </td>
 
 
 
+                                    </tr>
 
-<table
 
-className="
-w-full
-"
+                                )
 
->
+                            )
+                        }
 
 
 
-<thead>
 
+                    </tbody>
 
-<tr className="border-b">
 
 
-<th className="p-4 text-left">
-Name
-</th>
+                </table>
 
 
 
-<th className="p-4 text-left">
-Type
-</th>
+            </div>
 
 
 
-<th className="p-4 text-left">
-Category
-</th>
 
+        </div>
 
 
-<th className="p-4 text-left">
-Sales Price
-</th>
-
-
-
-<th className="p-4 text-left">
-Purchase Price
-</th>
-
-
-
-<th className="p-4 text-left">
-Status
-</th>
-
-
-
-<th className="p-4 text-left">
-Actions
-</th>
-
-
-</tr>
-
-
-</thead>
-
-
-
-
-
-
-
-
-<tbody>
-
-
-
-{
-
-filteredProducts.map((product)=>(
-
-
-
-<tr
-
-key={product.id}
-
-className="
-border-b
-"
-
->
-
-
-
-<td className="p-4">
-
-{product.name}
-
-</td>
-
-
-
-
-
-<td className="p-4">
-
-{product.type}
-
-</td>
-
-
-
-
-
-<td className="p-4">
-
-{product.category}
-
-</td>
-
-
-
-
-
-
-<td className="p-4">
-
-₹{product.sellingPrice}
-
-</td>
-
-
-
-
-
-
-<td className="p-4">
-
-₹{product.purchasePrice}
-
-</td>
-
-
-
-
-
-
-
-<td className="p-4">
-
-
-<StatusBadge
-
-
-status={
-
-product.status === "Active"
-
-?
-
-"Active"
-
-:
-
-"Inactive"
-
-}
-
-
-/>
-
-
-</td>
-
-
-
-
-
-
-
-
-<td
-
-className="
-p-4
-flex
-gap-3
-"
-
->
-
-
-
-<ActionButton
-
-label="View"
-
-onClick={()=>
-console.log(
-"view",
-product.id
-)
-}
-
-/>
-
-
-
-
-
-<ActionButton
-
-label="Edit"
-
-onClick={()=>
-console.log(
-"edit",
-product.id
-)
-}
-
-/>
-
-
-
-
-
-
-<ActionButton
-
-label="Delete"
-
-onClick={()=>
-console.log(
-"delete",
-product.id
-)
-}
-
-/>
-
-
-
-
-
-
-</td>
-
-
-
-
-
-</tr>
-
-
-
-))
-
+    );
 
 }
 
@@ -569,26 +381,27 @@ product.id
 
 
 
-</tbody>
+const head = {
+
+    textAlign: "left" as const,
+
+    padding: "16px",
+
+    borderBottom: "1px solid #ddd",
+
+    fontWeight: "700"
+
+};
 
 
 
 
-</table>
+const cell = {
 
+    padding: "15px",
 
+    borderBottom: "1px solid #eee",
 
+    fontSize: "14px"
 
-</div>
-
-
-
-
-</div>
-
-
-
-)
-
-
-}
+};

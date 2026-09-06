@@ -3,117 +3,48 @@ import axios from "../axios";
 
 export interface Product {
 
-    id: string;
+    id:number;
 
-    name: string;
+    name:string;
 
-    category: string;
+    type:string;
 
-    type: string;
+    category:string;
 
-    sellingPrice: number;
+    salesPrice:number;
 
-    purchasePrice: number;
+    purchasePrice:number;
 
-    status: string;
+    active:boolean;
 
 }
 
 
 
 
-export const getProducts = async (): Promise<Product[]> => {
+export const getProducts = async():Promise<Product[]> => {
 
 
-    try {
+    const response = await axios.get("/products");
 
 
-        const response = await axios.get("/products");
+    return response.data;
 
-
-
-        if (!Array.isArray(response.data)) {
-
-            return [];
-
-        }
+};
 
 
 
-        return response.data.map(
-
-            (product: Record<string, unknown>): Product => ({
 
 
-                id:
-                    String(
-                        product.id ?? ""
-                    ),
+export const createProduct = async(product:Product)=>{
 
 
-
-                name:
-                    String(
-                        product.name ?? "Unknown"
-                    ),
-
+    const response = await axios.post(
+        "/products",
+        product
+    );
 
 
-                category:
-                    String(
-                        product.category ?? "-"
-                    ),
-
-
-
-                type:
-                    String(
-                        product.unit ?? "Goods"
-                    ),
-
-
-
-                sellingPrice:
-                    Number(
-                        product.sellingPrice ?? 0
-                    ),
-
-
-
-                purchasePrice:
-                    Number(
-                        product.purchasePrice ?? 0
-                    ),
-
-
-
-                status:
-                    String(
-                        product.status ?? "Active"
-                    )
-
-
-
-            })
-
-        );
-
-
-
-    }
-    catch(error){
-
-
-        console.error(
-            "Failed to fetch products",
-            error
-        );
-
-
-        return [];
-
-
-    }
-
+    return response.data;
 
 };
