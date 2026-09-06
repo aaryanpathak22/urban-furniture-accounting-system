@@ -1,10 +1,15 @@
-import api from "../axios";
+import axios from "axios";
 
 
-export const getPayments = async () => {
+export const getPayments = async()=>{
 
-    const response = await api.get("/payments");
+
+    const response = await axios.get(
+        "http://localhost:8080/api/payments"
+    );
+
 
     return response.data;
+
 
 };

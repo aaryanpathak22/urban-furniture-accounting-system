@@ -1,14 +1,138 @@
+import {
+    useEffect,
+    useState
+} from "react";
+
+
+import {
+    getSettings
+} from "../api/services/settingsService";
+
+
+import type {
+    Setting
+} from "../api/services/settingsService";
+
+
+
 export default function Settings() {
+
+
+    const [, setSettings] =
+        useState<Setting[]>([]);
+
+
+
+    const [companyName, setCompanyName] =
+        useState("");
+
+
+
+    const [currency, setCurrency] =
+        useState("");
+
+
+
+    const [emailNotification, setEmailNotification] =
+        useState(true);
+
+
+
+
+
+    useEffect(() => {
+
+
+        const loadSettings = async () => {
+
+
+            const data =
+                await getSettings();
+
+
+
+            setSettings(data);
+
+
+
+            const companyDetails =
+                data.find(
+                    setting =>
+                        setting.key === "companyDetails"
+                );
+
+
+
+            if (companyDetails) {
+
+
+                setCompanyName(
+                    String(
+                        companyDetails.value.companyName ?? ""
+                    )
+                );
+
+
+            }
+
+
+
+
+
+            const paymentConfiguration =
+                data.find(
+                    setting =>
+                        setting.key === "paymentConfiguration"
+                );
+
+
+
+            if (paymentConfiguration) {
+
+
+                setCurrency(
+                    String(
+                        paymentConfiguration.value.currency ?? "INR ₹"
+                    )
+                );
+
+
+            }
+
+
+
+        };
+
+
+
+        loadSettings();
+
+
+
+    }, []);
+
+
+
 
 
     return (
 
+
         <div>
 
 
-            <h1 className="text-3xl font-bold mb-6">
+            <h1
+                className="
+                text-3xl
+                font-bold
+                mb-6
+                "
+            >
+
                 Settings
+
             </h1>
+
 
 
 
@@ -19,76 +143,118 @@ export default function Settings() {
                 border
                 rounded-xl
                 p-6
-                space-y-6
                 "
             >
 
 
 
-                <div>
+                <h2
+                    className="
+                    text-xl
+                    font-semibold
+                    mb-6
+                    "
+                >
 
-                    <h2 className="text-xl font-semibold mb-2">
-                        Company Settings
-                    </h2>
+                    Company Settings
 
-
-                    <p className="text-gray-500">
-                        Manage your company information and preferences.
-                    </p>
-
-
-                </div>
+                </h2>
 
 
 
 
 
-                <div className="grid grid-cols-2 gap-6">
+                <div
+                    className="
+                    grid
+                    grid-cols-2
+                    gap-5
+                    "
+                >
+
 
 
 
                     <div>
 
-                        <label className="block mb-2 text-sm">
+
+                        <label
+                            className="
+                            block
+                            mb-2
+                            "
+                        >
+
                             Company Name
+
                         </label>
 
 
+
                         <input
-                            value="Urban Furniture"
-                            readOnly
+
+                            value={companyName}
+
+                            onChange={
+                                e =>
+                                    setCompanyName(
+                                        e.target.value
+                                    )
+                            }
+
+
                             className="
+                            w-full
                             border
                             rounded-lg
-                            px-4
-                            py-2
-                            w-full
+                            p-3
                             "
+
                         />
 
 
                     </div>
+
+
 
 
 
 
                     <div>
 
-                        <label className="block mb-2 text-sm">
+
+                        <label
+                            className="
+                            block
+                            mb-2
+                            "
+                        >
+
                             Currency
+
                         </label>
 
 
+
                         <input
-                            value="INR ₹"
-                            readOnly
+
+                            value={currency}
+
+                            onChange={
+                                e =>
+                                    setCurrency(
+                                        e.target.value
+                                    )
+                            }
+
+
                             className="
+                            w-full
                             border
                             rounded-lg
-                            px-4
-                            py-2
-                            w-full
+                            p-3
                             "
+
                         />
 
 
@@ -102,58 +268,100 @@ export default function Settings() {
 
 
 
-                <div>
 
 
-                    <h2 className="text-xl font-semibold mb-2">
+                <div
+                    className="
+                    mt-6
+                    "
+                >
+
+
+                    <h3
+                        className="
+                        font-semibold
+                        mb-3
+                        "
+                    >
+
                         Account Preferences
-                    </h2>
+
+                    </h3>
 
 
 
-                    <div className="flex items-center gap-3">
+
+                    <label>
 
 
                         <input
+
                             type="checkbox"
-                            checked
-                            readOnly
+
+                            checked={emailNotification}
+
+
+                            onChange={
+                                e =>
+                                    setEmailNotification(
+                                        e.target.checked
+                                    )
+                            }
+
+
+                            className="
+                            mr-2
+                            "
+
                         />
 
 
-                        <span>
-                            Enable email notifications
-                        </span>
+                        Enable email notifications
 
 
-                    </div>
+                    </label>
 
 
                 </div>
+
+
 
 
 
 
 
                 <button
+
                     className="
+                    mt-6
                     bg-[#714B67]
                     text-white
-                    px-6
+                    px-5
                     py-2
                     rounded-lg
                     "
+
                 >
+
                     Save Settings
+
+
                 </button>
+
+
 
 
 
             </div>
 
 
+
+
         </div>
 
+
     );
+
+
 
 }

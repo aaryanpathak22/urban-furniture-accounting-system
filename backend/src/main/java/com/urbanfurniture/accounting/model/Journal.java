@@ -1,5 +1,4 @@
-package com.urbanfurniture.accounting.accounting.model;
-
+package com.urbanfurniture.accounting.model;
 import java.time.LocalDateTime;
 
 import org.springframework.data.annotation.Id;

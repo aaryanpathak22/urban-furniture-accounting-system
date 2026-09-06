@@ -1,109 +1,77 @@
 package com.urbanfurniture.accounting.product.service;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.urbanfurniture.accounting.product.dto.ProductRequest;
-import com.urbanfurniture.accounting.product.dto.ProductResponse;
 import com.urbanfurniture.accounting.product.model.Product;
 import com.urbanfurniture.accounting.product.repository.ProductRepository;
+
 
 @Service
 public class ProductService {
 
     private final ProductRepository productRepository;
 
+
     public ProductService(ProductRepository productRepository) {
+
         this.productRepository = productRepository;
+
     }
 
-    public ProductResponse createProduct(ProductRequest request) {
 
-        if (productRepository.existsBySku(request.sku())) {
-            throw new RuntimeException("Product with this SKU already exists");
-        }
+    // GET ALL PRODUCTS
+    public List<Product> getAllProducts() {
 
-        LocalDateTime now = LocalDateTime.now();
+        return productRepository.findAll();
 
-        Product product = Product.builder()
-                .name(request.name())
-                .sku(request.sku())
-                .description(request.description())
-                .category(request.category())
-                .unitPrice(request.unitPrice())
-                .costPrice(request.costPrice())
-                .taxRate(request.taxRate())
-                .stockQuantity(request.stockQuantity())
-                .active(true)
-                .createdAt(now)
-                .updatedAt(now)
-                .build();
-
-        return toResponse(productRepository.save(product));
     }
 
-    public List<ProductResponse> getAllProducts() {
-        return productRepository.findAll()
-                .stream()
-                .map(this::toResponse)
-                .toList();
+
+    // CREATE PRODUCT
+    public Product saveProduct(Product product) {
+
+        return productRepository.save(product);
+
     }
 
-    public ProductResponse getProductById(String id) {
-        Product product = productRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Product not found"));
 
-        return toResponse(product);
+    // GET PRODUCT BY ID
+    public Product getProductById(String id) {
+
+        return productRepository.findById(id)
+                .orElse(null);
+
     }
 
-    public ProductResponse updateProduct(String id, ProductRequest request) {
 
-        Product existingProduct = productRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Product not found"));
+    // UPDATE PRODUCT
+    public Product updateProduct(String id, Product updatedProduct) {
 
-        if (!existingProduct.getSku().equals(request.sku())
-                && productRepository.existsBySku(request.sku())) {
-            throw new RuntimeException("Product with this SKU already exists");
-        }
+        return productRepository.findById(id)
+                .map(product -> {
 
-        existingProduct.setName(request.name());
-        existingProduct.setSku(request.sku());
-        existingProduct.setDescription(request.description());
-        existingProduct.setCategory(request.category());
-        existingProduct.setUnitPrice(request.unitPrice());
-        existingProduct.setCostPrice(request.costPrice());
-        existingProduct.setTaxRate(request.taxRate());
-        existingProduct.setStockQuantity(request.stockQuantity());
-        existingProduct.setUpdatedAt(LocalDateTime.now());
+                    product.setProductId(updatedProduct.getProductId());
+                    product.setName(updatedProduct.getName());
+                    product.setCategory(updatedProduct.getCategory());
+                    product.setDescription(updatedProduct.getDescription());
+                    product.setPrice(updatedProduct.getPrice());
+                    product.setQuantity(updatedProduct.getQuantity());
 
-        return toResponse(productRepository.save(existingProduct));
+                    return productRepository.save(product);
+
+                })
+                .orElse(null);
+
     }
 
+
+    // DELETE PRODUCT
     public void deleteProduct(String id) {
 
-        Product product = productRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Product not found"));
+        productRepository.deleteById(id);
 
-        productRepository.delete(product);
     }
 
-    private ProductResponse toResponse(Product product) {
-
-        return new ProductResponse(
-                product.getId(),
-                product.getName(),
-                product.getSku(),
-                product.getDescription(),
-                product.getCategory(),
-                product.getUnitPrice(),
-                product.getCostPrice(),
-                product.getTaxRate(),
-                product.getStockQuantity(),
-                product.isActive(),
-                product.getCreatedAt(),
-                product.getUpdatedAt()
-        );
-    }
 }

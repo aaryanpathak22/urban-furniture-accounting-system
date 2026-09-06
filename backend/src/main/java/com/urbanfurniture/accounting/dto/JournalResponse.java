@@ -1,4 +1,4 @@
-package com.urbanfurniture.accounting.accounting.dto;
+package com.urbanfurniture.accounting.dto;
 
 import java.time.LocalDateTime;
 import java.util.List;

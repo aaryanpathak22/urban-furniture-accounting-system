@@ -1,10 +1,89 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
+
 import StatCard from "../components/Cards/StatCard";
 
 import RevenueChart from "../components/Charts/RevenueChart";
 import PaymentChart from "../components/Charts/PaymentChart";
 
 
-export default function Dashboard(){
+interface DashboardData {
+
+    totalProducts:number;
+    totalPayments:number;
+    pendingPayments:number;
+    completedPayments:number;
+    cancelledPayments:number;
+
+    totalSalesOrders:number;
+    totalInvoices:number;
+
+    totalRevenue:number;
+    totalInventoryItems:number;
+
+}
+
+
+
+export default function Dashboard() {
+
+
+    const [dashboard, setDashboard] =
+        useState<DashboardData | null>(null);
+
+
+
+    useEffect(() => {
+
+
+        axios
+            .get<DashboardData>(
+                "http://localhost:8080/api/dashboard"
+            )
+            .then((response) => {
+
+
+                console.log(
+                    "BACKEND DATA:",
+                    response.data
+                );
+
+
+                setDashboard(response.data);
+
+
+            })
+            .catch((error) => {
+
+
+                console.error(
+                    "Dashboard API Error:",
+                    error
+                );
+
+
+            });
+
+
+    }, []);
+
+
+
+
+    if (!dashboard) {
+
+        return (
+
+            <div className="text-xl font-semibold">
+
+                Loading Dashboard...
+
+            </div>
+
+        );
+
+    }
+
 
 
     return (
@@ -12,54 +91,71 @@ export default function Dashboard(){
         <div>
 
 
-            <h1
-                className="
+            <h1 className="
                 text-3xl
                 font-bold
                 mb-6
-                "
-            >
+            ">
+
                 Dashboard
+
             </h1>
 
 
 
-            {/* Summary Cards */}
 
-            <div
-                className="
+
+            <div className="
                 grid
                 grid-cols-4
                 gap-6
-                "
-            >
+            ">
 
 
                 <StatCard
-                    title="Total Customers"
-                    value="248"
-                    description="Active customers"
-                />
 
-
-                <StatCard
                     title="Products"
-                    value="126"
+
+                    value={String(dashboard.totalProducts)}
+
                     description="Furniture items"
+
                 />
 
 
+
                 <StatCard
-                    title="Revenue"
-                    value="₹12.5L"
-                    description="This month"
+
+                    title="Sales Orders"
+
+                    value={String(dashboard.totalSalesOrders)}
+
+                    description="Total orders"
+
                 />
 
 
+
                 <StatCard
-                    title="Pending Payments"
-                    value="₹3.2L"
-                    description="Outstanding"
+
+                    title="Invoices"
+
+                    value={String(dashboard.totalInvoices)}
+
+                    description="Generated invoices"
+
+                />
+
+
+
+                <StatCard
+
+                    title="Payments"
+
+                    value={String(dashboard.totalPayments)}
+
+                    description="Total payments"
+
                 />
 
 
@@ -69,42 +165,39 @@ export default function Dashboard(){
 
 
 
-            {/* Charts Section */}
 
-            <div
-                className="
+            <div className="
                 mt-8
                 grid
                 grid-cols-2
                 gap-6
-                "
-            >
+            ">
 
 
 
-                {/* Revenue Chart */}
-
-                <div
-                    className="
+                <div className="
                     bg-white
                     rounded-xl
                     border
                     p-6
                     h-80
-                    "
-                >
+                ">
 
-                    <h3
-                        className="
+
+                    <h3 className="
                         font-semibold
                         mb-4
-                        "
-                    >
+                    ">
+
                         Revenue Trend
+
                     </h3>
 
 
-                    <RevenueChart />
+
+                    <RevenueChart
+    revenue={dashboard.totalRevenue}
+/>
 
 
                 </div>
@@ -113,29 +206,37 @@ export default function Dashboard(){
 
 
 
-                {/* Payment Chart */}
 
-                <div
-                    className="
+
+                <div className="
                     bg-white
                     rounded-xl
                     border
                     p-6
                     h-80
-                    "
-                >
+                ">
 
-                    <h3
-                        className="
+
+                    <h3 className="
                         font-semibold
                         mb-4
-                        "
-                    >
+                    ">
+
                         Payment Overview
+
                     </h3>
 
 
-                    <PaymentChart />
+
+                    <PaymentChart
+
+completed={dashboard.completedPayments}
+
+pending={dashboard.pendingPayments}
+
+cancelled={dashboard.cancelledPayments}
+
+/>
 
 
                 </div>
@@ -149,6 +250,6 @@ export default function Dashboard(){
 
         </div>
 
-    )
+    );
 
 }

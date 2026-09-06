@@ -1,19 +1,22 @@
 import { useEffect, useState } from "react";
-
-import { getSalesOrders } from "../api/services/salesOrderService";
-
-import StatusBadge from "../components/Common/StatusBadge";
-import SearchBar from "../components/Common/SearchBar";
+import axios from "axios";
 
 
 interface SalesOrder {
 
     id: string;
-    orderNumber: string;
-    customerName: string;
+
+    customerId: string;
+
     orderDate: string;
-    totalAmount: number;
-    status: string;
+
+    subtotal: number;
+
+    taxAmount: number | null;
+
+    totalAmount: number | null;
+
+    status: string | null;
 
 }
 
@@ -24,43 +27,42 @@ export default function SalesOrders() {
 
     const [orders, setOrders] = useState<SalesOrder[]>([]);
 
-    const [search, setSearch] = useState("");
-
 
 
     useEffect(() => {
 
 
-        const fetchOrders = async () => {
-
-            const data = await getSalesOrders();
-
-            setOrders(data);
-
-        };
+        axios
+            .get<SalesOrder[]>(
+                "http://localhost:8080/api/sales-orders"
+            )
+            .then((response) => {
 
 
-        fetchOrders();
+                console.log(
+                    "SALES ORDERS DATA:",
+                    response.data
+                );
+
+
+                setOrders(response.data);
+
+
+            })
+            .catch((error) => {
+
+
+                console.error(
+                    "Sales Orders API Error:",
+                    error
+                );
+
+
+            });
 
 
     }, []);
 
-
-
-
-    const filteredOrders = orders.filter((order) =>
-
-        order.orderNumber
-            .toLowerCase()
-            .includes(search.toLowerCase())
-
-        ||
-
-        order.customerName
-            .toLowerCase()
-            .includes(search.toLowerCase())
-
-    );
 
 
 
@@ -70,56 +72,15 @@ export default function SalesOrders() {
         <div>
 
 
-            <div
+            <h1
                 className="
-                flex
-                justify-between
-                items-center
+                text-3xl
+                font-bold
                 mb-6
                 "
             >
-
-
-                <h1
-                    className="
-                    text-3xl
-                    font-bold
-                    "
-                >
-                    Sales Orders
-                </h1>
-
-
-
-                <button
-                    className="
-                    bg-[#714B67]
-                    text-white
-                    px-5
-                    py-2
-                    rounded-lg
-                    "
-                >
-                    + Create Order
-                </button>
-
-
-            </div>
-
-
-
-
-
-            <div className="mb-5">
-
-                <SearchBar
-    placeholder="Search sales orders..."
-    value={search}
-    onChange={setSearch}
-/>
-
-            </div>
-
+                Sales Orders
+            </h1>
 
 
 
@@ -135,26 +96,32 @@ export default function SalesOrders() {
             >
 
 
-                <table className="w-full">
+
+                <table
+                    className="
+                    w-full
+                    "
+                >
+
 
 
                     <thead>
 
-                        <tr className="border-b">
+
+                        <tr
+                            className="
+                            border-b
+                            "
+                        >
 
 
                             <th className="p-4 text-left">
-                                Order Number
+                                Customer ID
                             </th>
 
 
                             <th className="p-4 text-left">
-                                Customer
-                            </th>
-
-
-                            <th className="p-4 text-left">
-                                Date
+                                Order Date
                             </th>
 
 
@@ -168,12 +135,8 @@ export default function SalesOrders() {
                             </th>
 
 
-                            <th className="p-4 text-left">
-                                Actions
-                            </th>
-
-
                         </tr>
+
 
                     </thead>
 
@@ -184,105 +147,60 @@ export default function SalesOrders() {
                     <tbody>
 
 
+
                         {
-                            filteredOrders.map((order)=>(
+                            orders.map((order) => (
 
 
                                 <tr
-
                                     key={order.id}
-
                                     className="
                                     border-b
-                                    hover:bg-gray-50
                                     "
-
                                 >
 
 
+
                                     <td className="p-4">
-                                        {order.orderNumber}
+
+                                        {order.customerId}
+
                                     </td>
 
 
-                                    <td className="p-4">
-                                        {order.customerName}
-                                    </td>
-
 
                                     <td className="p-4">
+
                                         {order.orderDate}
-                                    </td>
-
-
-                                    <td className="p-4">
-                                        ₹{order.totalAmount}
-                                    </td>
-
-
-                                    <td className="p-4">
-
-                                        <StatusBadge
-                                            status={order.status}
-                                        />
 
                                     </td>
+
 
 
 
                                     <td className="p-4">
 
+                                        ₹ {
+                                            order.totalAmount ??
+                                            order.subtotal
+                                        }
 
-                                        <div
-                                            className="
-                                            flex
-                                            gap-3
-                                            "
-                                        >
-
-                                            <button
-
-                                                className="
-                                                text-[#714B67]
-                                                hover:underline
-                                                "
-
-                                                onClick={() =>
-                                                    console.log(
-                                                        "View",
-                                                        order.id
-                                                    )
-                                                }
-
-                                            >
-                                                View
-                                            </button>
+                                    </td>
 
 
 
-                                            <button
 
-                                                className="
-                                                text-[#714B67]
-                                                hover:underline
-                                                "
-
-                                                onClick={() =>
-                                                    console.log(
-                                                        "Edit",
-                                                        order.id
-                                                    )
-                                                }
-
-                                            >
-                                                Edit
-                                            </button>
+                                    <td className="p-4">
 
 
-                                        </div>
+                                        {
+                                            order.status ??
+                                            "Pending"
+                                        }
 
 
                                     </td>
+
 
 
 
@@ -293,17 +211,25 @@ export default function SalesOrders() {
                         }
 
 
+
+
                     </tbody>
+
 
 
                 </table>
 
 
+
+
             </div>
+
+
 
 
         </div>
 
     );
+
 
 }

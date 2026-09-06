@@ -1,23 +1,18 @@
 import { useEffect, useState } from "react";
+
 import { getVendorBills } from "../api/services/vendorBillsService";
 
-interface VendorBill {
+import type { VendorBill } from "../api/services/vendorBillsService";
 
-    id: string;
-    billNumber: string;
-    vendorName: string;
-    date: string;
-    amount: number;
-    status: string;
+import ActionButton from "../components/Common/ActionButton";
 
-}
 
 
 
 export default function VendorBills() {
 
 
-    const [bills, setBills] = useState<VendorBill[]>([]);
+    const [vendorBills, setVendorBills] = useState<VendorBill[]>([]);
 
 
 
@@ -29,7 +24,8 @@ export default function VendorBills() {
 
             const data = await getVendorBills();
 
-            setBills(data);
+
+            setVendorBills(data);
 
 
         };
@@ -45,16 +41,24 @@ export default function VendorBills() {
 
     return (
 
-
         <div>
 
 
-            <div className="flex justify-between items-center mb-6">
+            <div className="
+                flex
+                justify-between
+                items-center
+                mb-6
+            ">
 
 
-                <h1 className="text-3xl font-bold">
+                <h1 className="
+                    text-3xl
+                    font-bold
+                ">
                     Vendor Bills
                 </h1>
+
 
 
                 <button
@@ -64,7 +68,6 @@ export default function VendorBills() {
                     px-5
                     py-2
                     rounded-lg
-                    hover:opacity-90
                     "
                 >
                     + Create Bill
@@ -76,21 +79,19 @@ export default function VendorBills() {
 
 
 
-            <div
-                className="
+
+            <div className="
                 bg-white
-                border
                 rounded-xl
+                border
                 overflow-hidden
-                "
-            >
+            ">
 
 
                 <table className="w-full">
 
 
                     <thead>
-
 
                         <tr className="border-b">
 
@@ -133,84 +134,92 @@ export default function VendorBills() {
 
 
 
+
                     <tbody>
 
 
                         {
-                            bills.length > 0 ? (
+                            vendorBills.map((bill) => (
 
 
-                                bills.map((bill) => (
+                                <tr
+                                    key={bill.id}
+                                    className="
+                                    border-b
+                                    hover:bg-gray-50
+                                    "
+                                >
 
 
-                                    <tr
-                                        key={bill.id}
-                                        className="border-b"
-                                    >
-
-
-                                        <td className="p-4">
-                                            {bill.billNumber}
-                                        </td>
-
-
-                                        <td className="p-4">
-                                            {bill.vendorName}
-                                        </td>
-
-
-                                        <td className="p-4">
-                                            {bill.date}
-                                        </td>
-
-
-                                        <td className="p-4">
-                                            ₹{bill.amount}
-                                        </td>
-
-
-                                        <td className="p-4">
-                                            {bill.status}
-                                        </td>
-
-
-                                        <td className="p-4">
-
-                                            <span className="text-[#714B67] cursor-pointer mr-3">
-                                                View
-                                            </span>
-
-
-                                            <span className="text-[#714B67] cursor-pointer">
-                                                Edit
-                                            </span>
-
-                                        </td>
-
-
-                                    </tr>
-
-
-                                ))
-
-
-                            ) : (
-
-
-                                <tr>
-
-                                    <td
-                                        colSpan={6}
-                                        className="p-6 text-center text-gray-500"
-                                    >
-                                        No vendor bills found
+                                    <td className="p-4">
+                                        {bill.billNumber}
                                     </td>
+
+
+
+                                    <td className="p-4">
+                                        {bill.vendorName}
+                                    </td>
+
+
+
+                                    <td className="p-4">
+                                        {bill.date}
+                                    </td>
+
+
+
+                                    <td className="p-4">
+                                        ₹{bill.amount}
+                                    </td>
+
+
+
+                                    <td className="p-4">
+
+                                        <span className="
+                                            bg-green-100
+                                            text-green-700
+                                            px-3
+                                            py-1
+                                            rounded-full
+                                            text-sm
+                                        ">
+                                            {bill.status || "Pending"}
+                                        </span>
+
+                                    </td>
+
+
+
+
+                                    <td className="
+                                        p-4
+                                        flex
+                                        gap-3
+                                    ">
+
+
+                                        <ActionButton
+                                            label="View"
+                                            onClick={() => {}}
+                                        />
+
+
+                                        <ActionButton
+                                            label="Edit"
+                                            onClick={() => {}}
+                                        />
+
+
+                                    </td>
+
 
 
                                 </tr>
 
 
-                            )
+                            ))
                         }
 
 
@@ -225,7 +234,7 @@ export default function VendorBills() {
 
         </div>
 
-
     );
+
 
 }

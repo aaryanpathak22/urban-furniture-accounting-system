@@ -1,223 +1,177 @@
 import { useEffect, useState } from "react";
-import { getLedger } from "../api/services/reportService";
+
+import {
+    getLedger,
+} from "../api/services/ledgerService";
+
+import type {
+    LedgerEntry,
+} from "../api/services/ledgerService";
+
 import SearchBar from "../components/Common/SearchBar";
-
-
-interface LedgerEntry {
-
-    id: string;
-    accountName: string;
-    date: string;
-    description: string;
-    debit: number;
-    credit: number;
-    balance: number;
-
-}
-
 
 
 export default function Ledger() {
 
-
-    const [ledger, setLedger] = useState<LedgerEntry[]>([]);
+    const [ledgerEntries, setLedgerEntries] = useState<LedgerEntry[]>([]);
     const [search, setSearch] = useState("");
 
 
-
     useEffect(() => {
-
 
         const loadLedger = async () => {
 
             const data = await getLedger();
 
-            setLedger(data);
+            setLedgerEntries(data);
 
         };
 
-
         loadLedger();
-
 
     }, []);
 
 
 
-
-    const filteredLedger = ledger.filter((entry) =>
-
-
-        entry.accountName
+    const filteredEntries = ledgerEntries.filter((entry) =>
+        JSON.stringify(entry)
             .toLowerCase()
             .includes(search.toLowerCase())
-
-
-        ||
-
-        entry.description
-            .toLowerCase()
-            .includes(search.toLowerCase())
-
-
     );
-
-
-
 
 
     return (
 
-        <div>
+        <div className="p-6">
 
+            <div className="flex justify-between items-center mb-6">
 
-            <h1 className="
-                text-3xl
-                font-bold
-                mb-6
-            ">
-                Ledger
-            </h1>
-
-
-
-
-            <div className="mb-5">
-
-
-                <SearchBar
-
-                    placeholder="Search ledger..."
-
-                    value={search}
-
-                    onChange={setSearch}
-
-                />
-
+                <h1 className="text-3xl font-bold">
+                    Ledger
+                </h1>
 
             </div>
 
 
-
+            <SearchBar
+                value={search}
+                onChange={setSearch}
+            />
 
 
             <div className="
                 bg-white
-                rounded-xl
                 border
+                rounded-xl
+                mt-6
                 overflow-hidden
             ">
 
-
                 <table className="w-full">
-
 
                     <thead>
 
-
                         <tr className="border-b">
-
 
                             <th className="p-4 text-left">
                                 Account
                             </th>
 
-
                             <th className="p-4 text-left">
                                 Date
                             </th>
-
 
                             <th className="p-4 text-left">
                                 Description
                             </th>
 
-
-                            <th className="p-4 text-left">
+                            <th className="p-4 text-right">
                                 Debit
                             </th>
 
-
-                            <th className="p-4 text-left">
+                            <th className="p-4 text-right">
                                 Credit
                             </th>
 
-
-                            <th className="p-4 text-left">
+                            <th className="p-4 text-right">
                                 Balance
                             </th>
 
-
                         </tr>
-
 
                     </thead>
 
 
-
-
-
                     <tbody>
 
-
                         {
-                            filteredLedger.map((entry)=>(
-
+                            filteredEntries.map((entry, index) => (
 
                                 <tr
-
-                                    key={entry.id}
-
-                                    className="
-                                    border-b
-                                    hover:bg-gray-50
-                                    "
-
+                                    key={entry.id ?? index}
+                                    className="border-b"
                                 >
 
-
                                     <td className="p-4">
-                                        {entry.accountName}
+                                        {entry.accountName ?? "-"}
                                     </td>
 
 
                                     <td className="p-4">
-                                        {entry.date}
+                                        {
+                                            entry.transactionDate
+                                            ??
+                                            "-"
+                                        }
                                     </td>
 
 
                                     <td className="p-4">
-                                        {entry.description}
+                                        {
+                                            entry.description
+                                            ??
+                                            "-"
+                                        }
                                     </td>
 
 
-                                    <td className="p-4">
-                                        ₹{entry.debit}
+                                    <td className="p-4 text-right">
+                                        ₹
+                                        {
+                                            entry.debit
+                                            ??
+                                            0
+                                        }
                                     </td>
 
 
-                                    <td className="p-4">
-                                        ₹{entry.credit}
+                                    <td className="p-4 text-right">
+                                        ₹
+                                        {
+                                            entry.credit
+                                            ??
+                                            0
+                                        }
                                     </td>
 
 
-                                    <td className="p-4 font-semibold">
-                                        ₹{entry.balance}
+                                    <td className="p-4 text-right">
+                                        ₹
+                                        {
+                                            entry.balance
+                                            ??
+                                            0
+                                        }
                                     </td>
 
 
                                 </tr>
 
-
                             ))
                         }
 
 
-
                     </tbody>
-
-
 
                 </table>
 

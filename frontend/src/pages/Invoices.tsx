@@ -1,18 +1,26 @@
 import { useEffect, useState } from "react";
+
 import { getInvoices } from "../api/services/invoiceService";
+
 import SearchBar from "../components/Common/SearchBar";
 import ActionButton from "../components/Common/ActionButton";
 import StatusBadge from "../components/Common/StatusBadge";
 
 
+
 interface Invoice {
 
     id: string;
+
     invoiceNumber: string;
-    customerName: string;
-    date: string;
-    amount: number;
-    status: string;
+
+    customerId: string;
+
+    invoiceDate: string;
+
+    totalAmount: number;
+
+    status: string | null;
 
 }
 
@@ -22,7 +30,9 @@ export default function Invoices() {
 
 
     const [invoices, setInvoices] = useState<Invoice[]>([]);
+
     const [search, setSearch] = useState("");
+
 
 
 
@@ -31,9 +41,32 @@ export default function Invoices() {
 
         const loadInvoices = async () => {
 
-            const data = await getInvoices();
 
-            setInvoices(data);
+            try {
+
+                const data = await getInvoices();
+
+
+                console.log(
+                    "INVOICE DATA:",
+                    data
+                );
+
+
+                setInvoices(data);
+
+
+            } catch(error) {
+
+
+                console.error(
+                    "Invoice loading error:",
+                    error
+                );
+
+
+            }
+
 
         };
 
@@ -46,22 +79,26 @@ export default function Invoices() {
 
 
 
-    const filteredInvoices = invoices.filter((invoice)=>
 
 
-        invoice.invoiceNumber
-        .toLowerCase()
-        .includes(search.toLowerCase())
+
+    const filteredInvoices = invoices.filter(
+        (invoice) =>
+
+            invoice.invoiceNumber
+            .toLowerCase()
+            .includes(search.toLowerCase())
 
 
-        ||
+            ||
 
-        invoice.customerName
-        .toLowerCase()
-        .includes(search.toLowerCase())
-
+            invoice.customerId
+            .toLowerCase()
+            .includes(search.toLowerCase())
 
     );
+
+
 
 
 
@@ -72,19 +109,26 @@ export default function Invoices() {
         <div>
 
 
-            <div className="
+
+            <div
+                className="
                 flex
                 justify-between
                 items-center
                 mb-6
-            ">
+                "
+            >
 
 
-                <h1 className="
+                <h1
+                    className="
                     text-3xl
                     font-bold
-                ">
+                    "
+                >
+
                     Invoices
+
                 </h1>
 
 
@@ -104,15 +148,16 @@ export default function Invoices() {
                 </button>
 
 
+
             </div>
 
 
 
 
 
-            <div className="
-                mb-5
-            ">
+
+
+            <div className="mb-5">
 
 
                 <SearchBar
@@ -133,15 +178,25 @@ export default function Invoices() {
 
 
 
-            <div className="
+
+
+
+            <div
+                className="
                 bg-white
                 rounded-xl
                 border
                 overflow-hidden
-            ">
+                "
+            >
 
 
-                <table className="w-full">
+
+                <table
+                    className="
+                    w-full
+                    "
+                >
 
 
 
@@ -181,7 +236,6 @@ export default function Invoices() {
                             </th>
 
 
-
                         </tr>
 
 
@@ -192,121 +246,139 @@ export default function Invoices() {
 
 
 
+
                     <tbody>
 
 
-                        {
-                            filteredInvoices.map((invoice)=>(
+                    {
+                        filteredInvoices.map(
+                            (invoice)=>(
 
 
-                                <tr
+                            <tr
 
-                                    key={invoice.id}
+                                key={invoice.id}
 
+                                className="
+                                border-b
+                                hover:bg-gray-50
+                                "
+
+                            >
+
+
+
+                                <td className="p-4">
+
+                                    {invoice.invoiceNumber}
+
+                                </td>
+
+
+
+
+
+                                <td className="p-4">
+
+                                    {invoice.customerId}
+
+                                </td>
+
+
+
+
+
+                                <td className="p-4">
+
+                                    {invoice.invoiceDate}
+
+                                </td>
+
+
+
+
+
+                                <td className="p-4">
+
+                                    ₹{invoice.totalAmount}
+
+                                </td>
+
+
+
+
+
+
+                                <td className="p-4">
+
+
+                                    <StatusBadge
+
+                                        status={
+                                            invoice.status 
+                                            ?? 
+                                            "Pending"
+                                        }
+
+                                    />
+
+
+                                </td>
+
+
+
+
+
+
+
+                                <td
                                     className="
-                                    border-b
-                                    hover:bg-gray-50
+                                    p-4
+                                    flex
+                                    gap-3
                                     "
-
                                 >
 
 
+                                    <ActionButton
 
-                                    <td className="p-4">
+                                        label="View"
 
-                                        {invoice.invoiceNumber}
+                                        onClick={()=>{}}
 
-                                    </td>
-
-
-
-
-                                    <td className="p-4">
-
-                                        {invoice.customerName}
-
-                                    </td>
+                                    />
 
 
+                                    <ActionButton
+
+                                        label="Edit"
+
+                                        onClick={()=>{}}
+
+                                    />
 
 
-                                    <td className="p-4">
+                                    <ActionButton
 
-                                        {invoice.date}
+                                        label="Delete"
 
-                                    </td>
+                                        onClick={()=>{}}
+
+                                    />
 
 
 
-
-
-                                    <td className="p-4">
-
-                                        ₹{invoice.amount}
-
-                                    </td>
+                                </td>
 
 
 
 
-
-                                    <td className="p-4">
-
-                                        <StatusBadge
-                                            status={invoice.status}
-                                        />
-
-                                    </td>
+                            </tr>
 
 
-
-
-
-                                    <td className="
-                                        p-4
-                                        flex
-                                        gap-3
-                                    ">
-
-
-                                        <ActionButton
-
-                                            label="View"
-
-                                            onClick={()=>{}}
-
-                                        />
-
-
-                                        <ActionButton
-
-                                            label="Edit"
-
-                                            onClick={()=>{}}
-
-                                        />
-
-
-                                        <ActionButton
-
-                                            label="Delete"
-
-                                            onClick={()=>{}}
-
-                                        />
-
-
-
-                                    </td>
-
-
-
-
-                                </tr>
-
-
-                            ))
-                        }
+                            )
+                        )
+                    }
 
 
 
@@ -320,6 +392,7 @@ export default function Invoices() {
 
 
             </div>
+
 
 
 

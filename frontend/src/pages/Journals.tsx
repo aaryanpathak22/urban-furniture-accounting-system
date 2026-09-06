@@ -1,27 +1,23 @@
-import { useEffect, useState } from "react";
-import { getJournals } from "../api/services/journalService";
-import SearchBar from "../components/Common/SearchBar";
-import ActionButton from "../components/Common/ActionButton";
+import {
+    useEffect,
+    useState
+} from "react";
 
 
-interface Journal {
-
-    id: string;
-    entryNumber: string;
-    date: string;
-    description: string;
-    debit: number;
-    credit: number;
-
-}
+import {
+    getJournals,
+    type Journal
+} from "../api/services/journalService";
 
 
 
 export default function Journals() {
 
 
-    const [journals, setJournals] = useState<Journal[]>([]);
-    const [search, setSearch] = useState("");
+    const [
+        journals,
+        setJournals
+    ] = useState<Journal[]>([]);
 
 
 
@@ -30,9 +26,12 @@ export default function Journals() {
 
         const loadJournals = async () => {
 
+
             const data = await getJournals();
 
+
             setJournals(data);
+
 
         };
 
@@ -45,92 +44,21 @@ export default function Journals() {
 
 
 
-    const filteredJournals = journals.filter((journal)=>
-
-        journal.entryNumber
-        .toLowerCase()
-        .includes(search.toLowerCase())
-
-        ||
-
-        journal.description
-        .toLowerCase()
-        .includes(search.toLowerCase())
-
-    );
-
-
-
-
 
     return (
 
-        <div>
+        <div className="p-8">
 
 
-            <div className="
-                flex
-                justify-between
-                items-center
-                mb-6
-            ">
+            <h1 className="text-3xl font-bold mb-6">
 
+                Journals
 
-                <h1 className="
-                    text-3xl
-                    font-bold
-                ">
-                    Journals
-                </h1>
+            </h1>
 
 
 
-                <button
-                    className="
-                    bg-[#714B67]
-                    text-white
-                    px-5
-                    py-2
-                    rounded-lg
-                    "
-                >
-
-                    + Create Entry
-
-                </button>
-
-
-            </div>
-
-
-
-
-
-            <div className="mb-5">
-
-                <SearchBar
-
-                    placeholder="Search journal entries..."
-
-                    value={search}
-
-                    onChange={setSearch}
-
-                />
-
-            </div>
-
-
-
-
-
-
-            <div className="
-                bg-white
-                rounded-xl
-                border
-                overflow-hidden
-            ">
+            <div className="border rounded-lg overflow-hidden">
 
 
                 <table className="w-full">
@@ -139,36 +67,36 @@ export default function Journals() {
                     <thead>
 
 
-                        <tr className="border-b">
+                        <tr className="bg-gray-100">
 
 
-                            <th className="p-4 text-left">
-                                Entry Number
+                            <th className="p-3 text-left">
+                                Journal Number
                             </th>
 
 
-                            <th className="p-4 text-left">
+                            <th className="p-3 text-left">
                                 Date
                             </th>
 
 
-                            <th className="p-4 text-left">
+                            <th className="p-3 text-left">
+                                Reference
+                            </th>
+
+
+                            <th className="p-3 text-left">
                                 Description
                             </th>
 
 
-                            <th className="p-4 text-left">
+                            <th className="p-3 text-left">
                                 Debit
                             </th>
 
 
-                            <th className="p-4 text-left">
+                            <th className="p-3 text-left">
                                 Credit
-                            </th>
-
-
-                            <th className="p-4 text-left">
-                                Actions
                             </th>
 
 
@@ -179,80 +107,81 @@ export default function Journals() {
 
 
 
-
-
                     <tbody>
 
 
-                    {
-                        filteredJournals.map((journal)=>(
+                        {
+
+                            journals.map(
+
+                                (journal)=>(
 
 
-                            <tr
-                                key={journal.id}
-                                className="
-                                border-b
-                                hover:bg-gray-50
-                                "
-                            >
+                                    <tr
+                                        key={journal.id}
+                                        className="border-t"
+                                    >
 
 
-                                <td className="p-4">
-                                    {journal.entryNumber}
-                                </td>
+                                        <td className="p-3">
 
+                                            {journal.journalNumber}
 
-                                <td className="p-4">
-                                    {journal.date}
-                                </td>
-
-
-                                <td className="p-4">
-                                    {journal.description}
-                                </td>
-
-
-                                <td className="p-4">
-                                    ₹{journal.debit}
-                                </td>
-
-
-                                <td className="p-4">
-                                    ₹{journal.credit}
-                                </td>
+                                        </td>
 
 
 
-                                <td className="
-                                    p-4
-                                    flex
-                                    gap-3
-                                ">
+                                        <td className="p-3">
+
+                                            {journal.date}
+
+                                        </td>
 
 
-                                    <ActionButton
-                                        label="View"
-                                        onClick={()=>{}}
-                                    />
+
+                                        <td className="p-3">
+
+                                            {journal.reference}
+
+                                        </td>
 
 
-                                    <ActionButton
-                                        label="Edit"
-                                        onClick={()=>{}}
-                                    />
+
+                                        <td className="p-3">
+
+                                            {journal.description}
+
+                                        </td>
 
 
-                                </td>
+
+                                        <td className="p-3">
+
+                                            ₹ {journal.debit}
+
+                                        </td>
 
 
-                            </tr>
+
+                                        <td className="p-3">
+
+                                            ₹ {journal.credit}
+
+                                        </td>
 
 
-                        ))
-                    }
+                                    </tr>
+
+
+                                )
+
+                            )
+
+                        }
 
 
                     </tbody>
+
 
 
                 </table>
@@ -261,8 +190,11 @@ export default function Journals() {
             </div>
 
 
+
         </div>
 
+
     );
+
 
 }

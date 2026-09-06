@@ -1,96 +1,184 @@
-import { useState } from "react";
+import {
+    useEffect,
+    useState
+} from "react";
+
 
 import ActionButton from "../components/Common/ActionButton";
 import SearchBar from "../components/Common/SearchBar";
 import StatusBadge from "../components/Common/StatusBadge";
 
 
-const products = [
+import {
+    getProducts,
+    type Product
+} from "../api/services/productService";
 
-{
- id:1,
- name:"Office Chair",
- type:"Goods",
- category:"Furniture",
- salesPrice:7000,
- purchasePrice:5000,
- active:true
-},
 
-{
- id:2,
- name:"Wooden Table",
- type:"Goods",
- category:"Furniture",
- salesPrice:15000,
- purchasePrice:11000,
- active:true
-},
-
-{
- id:3,
- name:"Executive Sofa",
- type:"Goods",
- category:"Furniture",
- salesPrice:45000,
- purchasePrice:32000,
- active:true
-},
-
-{
- id:4,
- name:"Dining Table",
- type:"Goods",
- category:"Furniture",
- salesPrice:30000,
- purchasePrice:22000,
- active:false
-}
-
-];
 
 
 
 export default function Products(){
 
 
-const [search,setSearch] = useState("");
+
+const [
+    products,
+    setProducts
+] = useState<Product[]>([]);
+
+
+
+
+const [
+    search,
+    setSearch
+] = useState("");
+
+
+
+
+const [
+    category,
+    setCategory
+] = useState("All Categories");
+
+
+
+
+
+
+useEffect(()=>{
+
+
+    const loadProducts = async()=>{
+
+
+        const data = await getProducts();
+
+
+        setProducts(data);
+
+
+    };
+
+
+    loadProducts();
+
+
+
+},[]);
+
+
+
+
+
+
+
+const categories = [
+
+    "All Categories",
+
+    ...Array.from(
+
+        new Set(
+
+            products.map(
+
+                product=>product.category
+
+            )
+
+        )
+
+    )
+
+];
+
+
+
+
 
 
 
 const filteredProducts = products.filter((product)=>{
 
-return product.name
-.toLowerCase()
-.includes(search.toLowerCase());
+
+
+    const matchesSearch =
+
+        product.name
+
+        .toLowerCase()
+
+        .includes(
+
+            search.toLowerCase()
+
+        );
+
+
+
+
+    const matchesCategory =
+
+        category === "All Categories"
+
+        ||
+
+        product.category === category;
+
+
+
+    return matchesSearch && matchesCategory;
+
+
 
 });
 
 
 
+
+
+
+
+
+
 return (
+
 
 <div className="p-6">
 
 
+
+
+
 <div
+
 className="
 flex
 justify-between
 items-center
 mb-6
 "
+
 >
 
 
 <h1
+
 className="
 text-3xl
 font-bold
 "
+
 >
+
 Products
+
 </h1>
+
+
 
 
 
@@ -111,19 +199,26 @@ rounded-lg
 </button>
 
 
+
 </div>
 
 
 
 
 
+
+
+
 <div
+
 className="
 flex
 gap-4
 mb-6
 "
+
 >
+
 
 
 <SearchBar
@@ -138,7 +233,16 @@ placeholder="Search products..."
 
 
 
+
+
+
 <select
+
+value={category}
+
+onChange={(e)=>
+setCategory(e.target.value)
+}
 
 className="
 border
@@ -149,21 +253,40 @@ py-2
 
 >
 
-<option>
-All Categories
+
+{
+
+categories.map((cat)=>(
+
+
+<option
+
+key={cat}
+
+value={cat}
+
+>
+
+{cat}
+
 </option>
 
 
-<option>
-Furniture
-</option>
+))
+
+
+}
 
 
 </select>
 
 
 
+
 </div>
+
+
+
 
 
 
@@ -182,6 +305,8 @@ overflow-hidden
 >
 
 
+
+
 <table
 
 className="
@@ -189,6 +314,7 @@ w-full
 "
 
 >
+
 
 
 <thead>
@@ -202,9 +328,11 @@ Name
 </th>
 
 
+
 <th className="p-4 text-left">
 Type
 </th>
+
 
 
 <th className="p-4 text-left">
@@ -212,9 +340,11 @@ Category
 </th>
 
 
+
 <th className="p-4 text-left">
 Sales Price
 </th>
+
 
 
 <th className="p-4 text-left">
@@ -222,9 +352,11 @@ Purchase Price
 </th>
 
 
+
 <th className="p-4 text-left">
 Status
 </th>
+
 
 
 <th className="p-4 text-left">
@@ -241,11 +373,17 @@ Actions
 
 
 
+
+
+
 <tbody>
 
 
+
 {
+
 filteredProducts.map((product)=>(
+
 
 
 <tr
@@ -259,29 +397,57 @@ border-b
 >
 
 
+
 <td className="p-4">
+
 {product.name}
+
 </td>
 
 
+
+
+
 <td className="p-4">
+
 {product.type}
+
 </td>
 
 
+
+
+
 <td className="p-4">
+
 {product.category}
+
 </td>
 
 
+
+
+
+
 <td className="p-4">
-₹{product.salesPrice}
+
+₹{product.sellingPrice}
+
 </td>
 
 
+
+
+
+
 <td className="p-4">
+
 ₹{product.purchasePrice}
+
 </td>
+
+
+
 
 
 
@@ -291,18 +457,29 @@ border-b
 
 <StatusBadge
 
+
 status={
-product.active
+
+product.status === "Active"
+
 ?
+
 "Active"
+
 :
+
 "Inactive"
+
 }
+
 
 />
 
 
 </td>
+
+
+
 
 
 
@@ -319,15 +496,21 @@ gap-3
 >
 
 
+
 <ActionButton
 
 label="View"
 
 onClick={()=>
-console.log("view",product.id)
+console.log(
+"view",
+product.id
+)
 }
 
 />
+
+
 
 
 
@@ -336,10 +519,16 @@ console.log("view",product.id)
 label="Edit"
 
 onClick={()=>
-console.log("edit",product.id)
+console.log(
+"edit",
+product.id
+)
 }
 
 />
+
+
+
 
 
 
@@ -348,10 +537,16 @@ console.log("edit",product.id)
 label="Delete"
 
 onClick={()=>
-console.log("delete",product.id)
+console.log(
+"delete",
+product.id
+)
 }
 
 />
+
+
+
 
 
 
@@ -360,7 +555,9 @@ console.log("delete",product.id)
 
 
 
+
 </tr>
+
 
 
 ))
@@ -370,18 +567,28 @@ console.log("delete",product.id)
 
 
 
+
+
 </tbody>
+
+
 
 
 </table>
 
 
-</div>
 
 
 </div>
+
+
+
+
+</div>
+
 
 
 )
+
 
 }

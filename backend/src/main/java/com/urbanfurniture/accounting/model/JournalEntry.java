@@ -1,5 +1,4 @@
-package com.urbanfurniture.accounting.accounting.model;
-
+package com.urbanfurniture.accounting.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 

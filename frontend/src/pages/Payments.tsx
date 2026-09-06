@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+
 import { getPayments } from "../api/services/paymentService";
+
 import SearchBar from "../components/Common/SearchBar";
 import ActionButton from "../components/Common/ActionButton";
 import StatusBadge from "../components/Common/StatusBadge";
@@ -8,80 +10,148 @@ import StatusBadge from "../components/Common/StatusBadge";
 interface Payment {
 
     id: string;
+
     paymentNumber: string;
-    customerName: string;
-    date: string;
+
+    type: string | null;
+
+    referenceId: string | null;
+
+    paymentDate: string;
+
     amount: number;
-    method: string;
-    status: string;
+
+    method: string | null;
+
+    status: string | null;
 
 }
 
 
 
-export default function Payments() {
 
 
-    const [payments, setPayments] = useState<Payment[]>([]);
-    const [search, setSearch] = useState("");
+export default function Payments(){
+
+
+    const [payments,setPayments] =
+        useState<Payment[]>([]);
+
+
+    const [search,setSearch] =
+        useState("");
 
 
 
-    useEffect(() => {
 
 
-        const loadPayments = async () => {
+    useEffect(()=>{
 
-            const data = await getPayments();
 
-            setPayments(data);
+        const loadPayments = async()=>{
+
+
+            try{
+
+
+                const data =
+                    await getPayments();
+
+
+
+                console.log(
+                    "PAYMENT DATA:",
+                    data
+                );
+
+
+                setPayments(data);
+
+
+
+            }
+            catch(error){
+
+                console.error(
+                    "Payment Error:",
+                    error
+                );
+
+            }
+
+
 
         };
+
 
 
         loadPayments();
 
 
-    }, []);
+
+    },[]);
 
 
 
 
-    const filteredPayments = payments.filter((payment) =>
 
-        payment.paymentNumber
+
+
+    const filteredPayments =
+        payments.filter(payment=>
+
+            payment.paymentNumber
             .toLowerCase()
-            .includes(search.toLowerCase())
+            .includes(
+                search.toLowerCase()
+            )
 
-        ||
 
-        payment.customerName
+            ||
+
+            (payment.referenceId ?? "")
             .toLowerCase()
-            .includes(search.toLowerCase())
+            .includes(
+                search.toLowerCase()
+            )
 
-    );
+
+        );
+
+
+
+
+
 
 
 
 
     return (
 
+
         <div>
 
 
-            <div className="
+
+            <div
+                className="
                 flex
                 justify-between
                 items-center
                 mb-6
-            ">
+                "
+            >
 
 
-                <h1 className="
+                <h1
+                    className="
                     text-3xl
                     font-bold
-                ">
+                    "
+                >
+
                     Payments
+
                 </h1>
 
 
@@ -101,23 +171,6 @@ export default function Payments() {
                 </button>
 
 
-            </div>
-
-
-
-
-
-            <div className="mb-5">
-
-                <SearchBar
-
-                    placeholder="Search payments..."
-
-                    value={search}
-
-                    onChange={setSearch}
-
-                />
 
             </div>
 
@@ -126,165 +179,245 @@ export default function Payments() {
 
 
 
+            <SearchBar
 
-            <div className="
+                placeholder="Search payments..."
+
+                value={search}
+
+                onChange={setSearch}
+
+            />
+
+
+
+
+
+
+
+            <div
+                className="
                 bg-white
                 rounded-xl
                 border
                 overflow-hidden
-            ">
+                mt-5
+                "
+            >
 
 
-                <table className="w-full">
 
+            <table className="w-full">
 
-                    <thead>
 
-                        <tr className="border-b">
 
+            <thead>
 
-                            <th className="p-4 text-left">
-                                Payment Number
-                            </th>
+            <tr className="border-b">
 
 
-                            <th className="p-4 text-left">
-                                Customer
-                            </th>
+                <th className="p-4 text-left">
+                    Payment Number
+                </th>
 
 
-                            <th className="p-4 text-left">
-                                Date
-                            </th>
+                <th className="p-4 text-left">
+                    Type
+                </th>
 
 
-                            <th className="p-4 text-left">
-                                Amount
-                            </th>
+                <th className="p-4 text-left">
+                    Date
+                </th>
 
 
-                            <th className="p-4 text-left">
-                                Method
-                            </th>
+                <th className="p-4 text-left">
+                    Amount
+                </th>
 
 
-                            <th className="p-4 text-left">
-                                Status
-                            </th>
+                <th className="p-4 text-left">
+                    Method
+                </th>
 
 
-                            <th className="p-4 text-left">
-                                Actions
-                            </th>
+                <th className="p-4 text-left">
+                    Status
+                </th>
 
 
-                        </tr>
+                <th className="p-4 text-left">
+                    Actions
+                </th>
 
 
-                    </thead>
 
+            </tr>
 
 
+            </thead>
 
 
-                    <tbody>
 
 
-                        {
-                            filteredPayments.map((payment)=>(
 
 
-                                <tr
+            <tbody>
 
-                                    key={payment.id}
 
-                                    className="
-                                    border-b
-                                    hover:bg-gray-50
-                                    "
 
-                                >
+            {
+                filteredPayments.map(payment=>(
 
 
-                                    <td className="p-4">
-                                        {payment.paymentNumber}
-                                    </td>
 
+                    <tr
 
-                                    <td className="p-4">
-                                        {payment.customerName}
-                                    </td>
+                    key={payment.id}
 
+                    className="
+                    border-b
+                    hover:bg-gray-50
+                    "
 
-                                    <td className="p-4">
-                                        {payment.date}
-                                    </td>
+                    >
 
 
-                                    <td className="p-4">
-                                        ₹{payment.amount}
-                                    </td>
 
+                    <td className="p-4">
 
-                                    <td className="p-4">
-                                        {payment.method}
-                                    </td>
+                        {payment.paymentNumber}
 
+                    </td>
 
-                                    <td className="p-4">
 
-                                        <StatusBadge
-                                            status={payment.status}
-                                        />
 
-                                    </td>
 
 
+                    <td className="p-4">
 
-                                    <td className="
-                                        p-4
-                                        flex
-                                        gap-3
-                                    ">
+                        {payment.type ?? "-"}
 
+                    </td>
 
-                                        <ActionButton
-                                            label="View"
-                                            onClick={()=>{}}
-                                        />
 
 
-                                        <ActionButton
-                                            label="Edit"
-                                            onClick={()=>{}}
-                                        />
 
 
-                                        <ActionButton
-                                            label="Delete"
-                                            onClick={()=>{}}
-                                        />
+                    <td className="p-4">
 
+                        {payment.paymentDate}
 
-                                    </td>
+                    </td>
 
 
 
-                                </tr>
 
 
-                            ))
-                        }
+                    <td className="p-4">
 
+                        ₹{payment.amount}
 
+                    </td>
 
-                    </tbody>
 
 
-                </table>
+
+
+                    <td className="p-4">
+
+                        {payment.method ?? "-"}
+
+                    </td>
+
+
+
+
+
+                    <td className="p-4">
+
+
+                        <StatusBadge
+
+                            status={
+                                payment.status
+                                ??
+                                "Pending"
+                            }
+
+                        />
+
+
+                    </td>
+
+
+
+
+
+                    <td className="p-4 flex gap-3">
+
+
+                        <ActionButton
+
+                            label="View"
+
+                            onClick={()=>{}}
+
+                        />
+
+
+                        <ActionButton
+
+                            label="Edit"
+
+                            onClick={()=>{}}
+
+                        />
+
+
+                        <ActionButton
+
+                            label="Delete"
+
+                            onClick={()=>{}}
+
+                        />
+
+
+
+                    </td>
+
+
+
+
+
+                    </tr>
+
+
+
+                ))
+            }
+
+
+
+
+
+            </tbody>
+
+
+
+
+
+            </table>
+
+
+
 
 
             </div>
+
+
+
 
 
 
@@ -292,5 +425,6 @@ export default function Payments() {
 
 
     );
+
 
 }

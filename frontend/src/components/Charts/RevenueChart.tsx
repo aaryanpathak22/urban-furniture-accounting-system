@@ -8,56 +8,65 @@ import {
 } from "recharts";
 
 
-const data = [
+interface Props{
+
+    revenue:number;
+
+}
+
+
+
+export default function RevenueChart({
+    revenue
+}:Props){
+
+
+const data=[
+
     {
-        month:"Jan",
-        revenue:40000
-    },
-    {
-        month:"Feb",
-        revenue:65000
-    },
-    {
-        month:"Mar",
-        revenue:90000
-    },
-    {
-        month:"Apr",
-        revenue:120000
-    },
-    {
-        month:"May",
-        revenue:150000
+        month:"Current",
+        revenue:revenue
     }
+
 ];
 
 
-export default function RevenueChart(){
+
+return(
+
+<ResponsiveContainer width="100%" height="100%">
 
 
-    return (
+<LineChart data={data}>
 
-        <ResponsiveContainer width="100%" height="100%">
 
-            <LineChart data={data}>
+<XAxis dataKey="month"/>
 
-                <XAxis dataKey="month"/>
+<YAxis/>
 
-                <YAxis/>
 
-                <Tooltip/>
+<Tooltip/>
 
-                <Line
-                    type="monotone"
-                    dataKey="revenue"
-                    stroke="#714B67"
-                    strokeWidth={3}
-                />
 
-            </LineChart>
+<Line
 
-        </ResponsiveContainer>
+type="monotone"
 
-    )
+dataKey="revenue"
+
+stroke="#714B67"
+
+strokeWidth={3}
+
+/>
+
+
+</LineChart>
+
+
+</ResponsiveContainer>
+
+
+);
 
 }

@@ -1,32 +1,38 @@
-import { useEffect, useState } from "react";
-import { getReports } from "../api/services/reportService";
+import {
+    useEffect,
+    useState
+} from "react";
 
 
-interface Report {
-
-    id: string;
-    name: string;
-    period: string;
-    amount: number;
-
-}
+import {
+    getReports
+} from "../api/services/reportService";
 
 
-
-export default function Reports() {
-
-
-    const [reports, setReports] = useState<Report[]>([]);
+import type {
+    Report
+} from "../api/services/reportService";
 
 
 
-    useEffect(() => {
+export default function Reports(){
 
 
-        const loadReports = async () => {
+    const [reports,setReports] =
+        useState<Report[]>([]);
 
 
-            const data = await getReports();
+
+
+    useEffect(()=>{
+
+
+        const loadReports = async()=>{
+
+
+            const data =
+                await getReports();
+
 
             setReports(data);
 
@@ -37,22 +43,34 @@ export default function Reports() {
         loadReports();
 
 
-    }, []);
+    },[]);
+
 
 
 
 
     return (
 
+
         <div>
 
 
-            <div className="flex justify-between items-center mb-6">
+
+            <div className="
+                flex
+                justify-between
+                items-center
+                mb-6
+            ">
 
 
-                <h1 className="text-3xl font-bold">
+                <h1 className="
+                    text-3xl
+                    font-bold
+                ">
                     Reports
                 </h1>
+
 
 
                 <button
@@ -62,10 +80,11 @@ export default function Reports() {
                     px-5
                     py-2
                     rounded-lg
-                    hover:opacity-90
                     "
                 >
+
                     + Generate Report
+
                 </button>
 
 
@@ -74,14 +93,14 @@ export default function Reports() {
 
 
 
-            <div
-                className="
+
+
+            <div className="
                 bg-white
                 border
                 rounded-xl
                 overflow-hidden
-                "
-            >
+            ">
 
 
                 <table className="w-full">
@@ -93,24 +112,49 @@ export default function Reports() {
                         <tr className="border-b">
 
 
-                            <th className="p-4 text-left">
+                            <th className="
+                            p-4
+                            text-left
+                            ">
                                 Report Name
                             </th>
 
 
-                            <th className="p-4 text-left">
+
+                            <th className="
+                            p-4
+                            text-left
+                            ">
+                                Type
+                            </th>
+
+
+
+                            <th className="
+                            p-4
+                            text-left
+                            ">
                                 Period
                             </th>
 
 
-                            <th className="p-4 text-left">
-                                Amount
+
+                            <th className="
+                            p-4
+                            text-left
+                            ">
+                                Status
                             </th>
 
 
-                            <th className="p-4 text-left">
+
+                            <th className="
+                            p-4
+                            text-left
+                            ">
                                 Actions
                             </th>
+
 
 
                         </tr>
@@ -120,74 +164,109 @@ export default function Reports() {
 
 
 
+
+
                     <tbody>
 
 
-                        {
-                            reports.length > 0 ? (
+                    {
+
+                    reports.map(report=>(
 
 
-                                reports.map((report) => (
+                        <tr
+                            key={report.id}
+                            className="
+                            border-b
+                            hover:bg-gray-50
+                            "
+                        >
 
 
-                                    <tr
-                                        key={report.id}
-                                        className="border-b"
-                                    >
+
+                            <td className="p-4">
+
+                                {report.reportName}
+
+                            </td>
 
 
-                                        <td className="p-4">
-                                            {report.name}
-                                        </td>
 
 
-                                        <td className="p-4">
-                                            {report.period}
-                                        </td>
+                            <td className="p-4">
+
+                                {report.reportType}
+
+                            </td>
 
 
-                                        <td className="p-4">
-                                            ₹{report.amount}
-                                        </td>
 
 
-                                        <td className="p-4">
+                            <td className="p-4">
+
+                                {report.period}
+
+                            </td>
 
 
-                                            <span className="text-[#714B67] cursor-pointer">
-                                                View
-                                            </span>
 
 
-                                        </td>
+
+                            <td className="p-4">
 
 
-                                    </tr>
+                                <span
+                                className="
+                                bg-green-100
+                                text-green-700
+                                px-3
+                                py-1
+                                rounded-full
+                                text-sm
+                                "
+                                >
+
+                                    {report.status}
+
+                                </span>
 
 
-                                ))
+                            </td>
 
 
-                            ) : (
 
 
-                                <tr>
 
-                                    <td
-                                        colSpan={4}
-                                        className="p-6 text-center text-gray-500"
-                                    >
-                                        No reports available
-                                    </td>
-
-                                </tr>
+                            <td className="p-4">
 
 
-                            )
-                        }
+                                <button
+                                className="
+                                text-[#714B67]
+                                "
+                                >
+
+                                    View
+
+                                </button>
+
+
+                            </td>
+
+
+
+                        </tr>
+
+
+
+                    ))
+
+                    }
+
 
 
                     </tbody>
+
 
 
                 </table>
@@ -196,8 +275,12 @@ export default function Reports() {
             </div>
 
 
+
         </div>
 
+
     );
+
+
 
 }

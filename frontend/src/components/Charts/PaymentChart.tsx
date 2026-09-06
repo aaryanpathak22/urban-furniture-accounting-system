@@ -3,67 +3,116 @@ import {
     Pie,
     Cell,
     Tooltip,
-    ResponsiveContainer
+    ResponsiveContainer,
+    Legend
 } from "recharts";
 
 
-const data = [
-
-    {
-        name:"Completed",
-        value:70
-    },
-
-    {
-        name:"Pending",
-        value:20
-    },
-
-    {
-        name:"Cancelled",
-        value:10
-    }
-
-];
+interface Props {
+    completed:number;
+    pending:number;
+    cancelled:number;
+}
 
 
-const COLORS = [
+const COLORS=[
     "#714B67",
     "#F0AD4E",
     "#D9534F"
 ];
 
 
-export default function PaymentChart(){
+export default function PaymentChart({
+    completed,
+    pending,
+    cancelled
+}:Props){
 
 
-    return (
+    const data=[
+        {
+            name:"Completed",
+            value:completed
+        },
+        {
+            name:"Pending",
+            value:pending
+        },
+        {
+            name:"Cancelled",
+            value:cancelled
+        }
+    ];
+
+
+
+    // Prevent empty chart
+    const chartData =
+        data.every(item=>item.value===0)
+        ?
+        [
+            {
+                name:"No Data",
+                value:1
+            }
+        ]
+        :
+        data;
+
+
+
+    return(
 
         <ResponsiveContainer width="100%" height="100%">
 
 
             <PieChart>
 
+
                 <Pie
-                    data={data}
+
+                    data={chartData}
+
                     dataKey="value"
-                    outerRadius={100}
+
+                    cx="50%"
+
+                    cy="50%"
+
+                    outerRadius={90}
+
                     label
+
+
                 >
 
                     {
-                        data.map((_,index)=>(
+                        chartData.map((item,index)=>(
+
                             <Cell
-                                key={index}
-                                fill={COLORS[index]}
+
+                                key={item.name}
+
+                                fill={
+                                    item.name==="No Data"
+                                    ?
+                                    "#cccccc"
+                                    :
+                                    COLORS[index]
+                                }
+
                             />
+
                         ))
                     }
+
 
                 </Pie>
 
 
                 <Tooltip/>
+
+                <Legend/>
 
 
             </PieChart>
@@ -71,6 +120,6 @@ export default function PaymentChart(){
 
         </ResponsiveContainer>
 
-    )
+    );
 
 }

@@ -1,62 +1,91 @@
 package com.urbanfurniture.accounting.product.controller;
 
-import com.urbanfurniture.accounting.product.dto.ProductRequest;
-import com.urbanfurniture.accounting.product.dto.ProductResponse;
-import com.urbanfurniture.accounting.product.service.ProductService;
-import jakarta.validation.Valid;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.urbanfurniture.accounting.product.model.Product;
+import com.urbanfurniture.accounting.product.service.ProductService;
+
+
 @RestController
 @RequestMapping("/api/products")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "*")
 public class ProductController {
+
 
     private final ProductService productService;
 
+
     public ProductController(ProductService productService) {
+
         this.productService = productService;
+
     }
 
-    @PostMapping
-    public ResponseEntity<ProductResponse> createProduct(
-            @Valid @RequestBody ProductRequest request) {
 
-        return ResponseEntity.status(HttpStatus.CREATED)
-                .body(productService.createProduct(request));
-    }
-
+    // GET ALL PRODUCTS
     @GetMapping
-    public ResponseEntity<List<ProductResponse>> getAllProducts() {
+    public List<Product> getProducts(){
 
-        return ResponseEntity.ok(productService.getAllProducts());
+        return productService.getAllProducts();
+
     }
 
+
+    // GET PRODUCT BY ID
     @GetMapping("/{id}")
-    public ResponseEntity<ProductResponse> getProductById(
-            @PathVariable String id) {
+    public Product getProductById(
+            @PathVariable String id
+    ){
 
-        return ResponseEntity.ok(productService.getProductById(id));
+        return productService.getProductById(id);
+
     }
 
+
+    // CREATE PRODUCT
+    @PostMapping
+    public Product createProduct(
+            @RequestBody Product product
+    ){
+
+        return productService.saveProduct(product);
+
+    }
+
+
+    // UPDATE PRODUCT
     @PutMapping("/{id}")
-    public ResponseEntity<ProductResponse> updateProduct(
+    public Product updateProduct(
             @PathVariable String id,
-            @Valid @RequestBody ProductRequest request) {
+            @RequestBody Product product
+    ){
 
-        return ResponseEntity.ok(
-                productService.updateProduct(id, request)
-        );
+        return productService.updateProduct(id, product);
+
     }
 
+
+    // DELETE PRODUCT
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteProduct(
-            @PathVariable String id) {
+    public String deleteProduct(
+            @PathVariable String id
+    ){
 
         productService.deleteProduct(id);
-        return ResponseEntity.noContent().build();
+
+        return "Product deleted successfully";
+
     }
+
 }

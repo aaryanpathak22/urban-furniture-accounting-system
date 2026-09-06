@@ -1,44 +1,67 @@
-import { useEffect, useState } from "react";
-import { getPurchaseOrders } from "../api/services/purchaseOrdersService";
-import SearchBar from "../components/Common/SearchBar";
-import ActionButton from "../components/Common/ActionButton";
-import StatusBadge from "../components/Common/StatusBadge";
+import {
+    useEffect,
+    useMemo,
+    useState
+} from "react";
 
 
-interface PurchaseOrder {
+import {
+    getPurchaseOrders
+} from "../api/services/purchaseOrdersService";
 
-    id: string;
-    orderNumber: string;
-    vendorName: string;
-    date: string;
-    amount: number;
-    status: string;
 
-}
+import type {
+    PurchaseOrder
+} from "../api/services/purchaseOrdersService";
 
 
 
 export default function PurchaseOrders() {
 
 
-    const [orders, setOrders] = useState<PurchaseOrder[]>([]);
-    const [search, setSearch] = useState("");
+    const [
+        orders,
+        setOrders
+    ] = useState<PurchaseOrder[]>([]);
+
+
+
+    const [
+        search,
+        setSearch
+    ] = useState("");
+
+
+
+    const [
+        loading,
+        setLoading
+    ] = useState(true);
+
 
 
 
     useEffect(() => {
 
 
-        const loadOrders = async () => {
+        async function loadOrders() {
+
 
             const data = await getPurchaseOrders();
 
+
             setOrders(data);
 
-        };
+
+            setLoading(false);
+
+
+        }
+
 
 
         loadOrders();
+
 
 
     }, []);
@@ -47,19 +70,66 @@ export default function PurchaseOrders() {
 
 
 
-    const filteredOrders = orders.filter((order)=>
+    const filteredOrders = useMemo(() => {
 
-        order.orderNumber
-        .toLowerCase()
-        .includes(search.toLowerCase())
 
-        ||
+        const value = search
+            .toLowerCase()
+            .trim();
 
-        order.vendorName
-        .toLowerCase()
-        .includes(search.toLowerCase())
 
-    );
+
+        if (!value) {
+
+            return orders;
+
+        }
+
+
+
+        return orders.filter(
+            (order) =>
+
+                order.orderNumber
+                    .toLowerCase()
+                    .includes(value)
+
+                ||
+
+                order.vendorName
+                    .toLowerCase()
+                    .includes(value)
+
+                ||
+
+                order.status
+                    .toLowerCase()
+                    .includes(value)
+
+        );
+
+
+    }, [orders, search]);
+
+
+
+
+
+    if (loading) {
+
+
+        return (
+
+            <div className="p-6">
+
+                Loading purchase orders...
+
+            </div>
+
+        );
+
+
+    }
 
 
 
@@ -67,33 +137,27 @@ export default function PurchaseOrders() {
 
     return (
 
-        <div>
+        <div className="p-6">
 
 
-            <div className="
-                flex
-                justify-between
-                items-center
-                mb-6
-            ">
+            <div className="flex justify-between items-center mb-6">
 
 
-                <h1 className="
-                    text-3xl
-                    font-bold
-                ">
+                <h1 className="text-3xl font-bold">
+
                     Purchase Orders
+
                 </h1>
 
 
 
                 <button
                     className="
-                    bg-[#714B67]
+                    bg-purple-700
                     text-white
-                    px-5
+                    px-4
                     py-2
-                    rounded-lg
+                    rounded
                     "
                 >
 
@@ -108,40 +172,49 @@ export default function PurchaseOrders() {
 
 
 
-            <div className="mb-5">
+            <input
 
-                <SearchBar
-
-                    placeholder="Search purchase orders..."
-
-                    value={search}
-
-                    onChange={setSearch}
-
-                />
-
-            </div>
-
-
-
-
-
-
-            <div className="
-                bg-white
-                rounded-xl
+                className="
                 border
+                rounded
+                p-3
+                w-full
+                mb-5
+                "
+
+                placeholder="Search purchase orders..."
+
+                value={search}
+
+                onChange={
+                    (event) =>
+                        setSearch(event.target.value)
+                }
+
+            />
+
+
+
+
+
+
+            <div
+                className="
+                bg-white
+                border
+                rounded-xl
                 overflow-hidden
-            ">
+                "
+            >
 
 
                 <table className="w-full">
 
 
-                    <thead>
+                    <thead className="bg-gray-100">
 
 
-                        <tr className="border-b">
+                        <tr>
 
 
                             <th className="p-4 text-left">
@@ -169,11 +242,6 @@ export default function PurchaseOrders() {
                             </th>
 
 
-                            <th className="p-4 text-left">
-                                Actions
-                            </th>
-
-
                         </tr>
 
 
@@ -187,80 +255,101 @@ export default function PurchaseOrders() {
 
 
                         {
-                            filteredOrders.map((order)=>(
+                            filteredOrders.length === 0 ?
+
+                                (
+
+                                    <tr>
+
+                                        <td
+                                            colSpan={5}
+                                            className="p-5 text-center"
+                                        >
+
+                                            No purchase orders found
+
+                                        </td>
 
 
-                                <tr
-
-                                    key={order.id}
-
-                                    className="
-                                    border-b
-                                    hover:bg-gray-50
-                                    "
-
-                                >
+                                    </tr>
 
 
-                                    <td className="p-4">
-                                        {order.orderNumber}
-                                    </td>
+                                )
+
+                                :
+
+                                (
+
+                                    filteredOrders.map(
+                                        (order) => (
+
+                                            <tr
+                                                key={order.id}
+                                                className="border-t"
+                                            >
 
 
-                                    <td className="p-4">
-                                        {order.vendorName}
-                                    </td>
+                                                <td className="p-4">
 
+                                                    {
+                                                        order.orderNumber
+                                                    }
 
-                                    <td className="p-4">
-                                        {order.date}
-                                    </td>
-
-
-                                    <td className="p-4">
-                                        ₹{order.amount}
-                                    </td>
-
-
-                                    <td className="p-4">
-
-                                        <StatusBadge
-                                            status={order.status}
-                                        />
-
-                                    </td>
-
-
-
-                                    <td className="
-                                        p-4
-                                        flex
-                                        gap-3
-                                    ">
-
-
-                                        <ActionButton
-                                            label="View"
-                                            onClick={()=>{}}
-                                        />
-
-
-                                        <ActionButton
-                                            label="Edit"
-                                            onClick={()=>{}}
-                                        />
+                                                </td>
 
 
 
-                                    </td>
+                                                <td className="p-4">
+
+                                                    {
+                                                        order.vendorName
+                                                    }
+
+                                                </td>
 
 
 
-                                </tr>
+
+                                                <td className="p-4">
+
+                                                    {
+                                                        order.date
+                                                    }
+
+                                                </td>
 
 
-                            ))
+
+
+                                                <td className="p-4">
+
+                                                    ₹ {order.amount}
+
+                                                </td>
+
+
+
+
+                                                <td className="p-4">
+
+                                                    {
+                                                        order.status
+                                                    }
+
+                                                </td>
+
+
+
+                                            </tr>
+
+                                        )
+
+                                    )
+
+                                )
+
                         }
+
 
 
                     </tbody>
@@ -275,5 +364,6 @@ export default function PurchaseOrders() {
         </div>
 
     );
+
 
 }

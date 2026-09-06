@@ -1,31 +1,22 @@
 package com.urbanfurniture.accounting.product.dto;
 
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.PositiveOrZero;
 
-public record ProductRequest(
+import lombok.Data;
 
-        @NotBlank(message = "Product name is required")
-        String name,
 
-        @NotBlank(message = "SKU is required")
-        String sku,
+@Data
+public class ProductRequest {
 
-        String description,
+    private String productId;
 
-        String category,
+    private String name;
 
-        @PositiveOrZero(message = "Unit price cannot be negative")
-        double unitPrice,
+    private String category;
 
-        @PositiveOrZero(message = "Cost price cannot be negative")
-        double costPrice,
+    private Double price;
 
-        @PositiveOrZero(message = "Tax rate cannot be negative")
-        double taxRate,
+    private Integer quantity;
 
-        @Min(value = 0, message = "Stock quantity cannot be negative")
-        int stockQuantity
-) {
+    private String description;
+
 }

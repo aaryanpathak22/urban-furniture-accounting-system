@@ -1,4 +1,4 @@
-package com.urbanfurniture.accounting.accounting.dto;
+package com.urbanfurniture.accounting.dto;
 
 public record JournalLineResponse(
 

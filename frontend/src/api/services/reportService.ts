@@ -1,48 +1,61 @@
-import api from "../axios";
+import axios from "../axios";
+
+export interface Report {
+  id?: string;
+  reportId: string;
+  reportType: string;
+  reportName: string;
+  period: string;
+  data: Record<string, unknown>;
+  generatedBy: string;
+  status: string;
+  createdAt: string;
+}
 
 
-export const getReports = async () => {
-
-    const response = await api.get("/reports");
-
+/*
+ * Reports
+ */
+export const getReports = async (): Promise<Report[]> => {
+  try {
+    const response = await axios.get("/reports");
     return response.data;
-
+  } catch (error) {
+    console.error("Failed to fetch reports", error);
+    return [];
+  }
 };
 
-export const getLedger = async () => {
 
-    return [
+/*
+ * Ledger
+ * Required by Ledger.tsx
+ */
+export const getLedger = async (): Promise<unknown[]> => {
+  try {
+    const response = await axios.get("/ledger");
+    return response.data;
+  } catch (error) {
+    console.error("Failed to fetch ledger", error);
+    return [];
+  }
+};
 
-        {
-            id: "1",
-            accountName: "Cash Account",
-            date: "2026-01-01",
-            description: "Opening Balance",
-            debit: 50000,
-            credit: 0,
-            balance: 50000
-        },
 
-        {
-            id: "2",
-            accountName: "Sales Account",
-            date: "2026-01-05",
-            description: "Customer Payment Received",
-            debit: 0,
-            credit: 25000,
-            balance: 75000
-        },
+/*
+ * Generate report
+ */
+export const generateReport = async (
+  reportType: string
+): Promise<Report | null> => {
+  try {
+    const response = await axios.post("/reports/generate", {
+      reportType,
+    });
 
-        {
-            id: "3",
-            accountName: "Purchase Account",
-            date: "2026-01-10",
-            description: "Material Purchase",
-            debit: 15000,
-            credit: 0,
-            balance: 60000
-        }
-
-    ];
-
+    return response.data;
+  } catch (error) {
+    console.error("Failed to generate report", error);
+    return null;
+  }
 };

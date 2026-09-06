@@ -1,19 +1,24 @@
 package com.urbanfurniture.accounting.product.dto;
 
-import java.time.LocalDateTime;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
-public record ProductResponse(
-        String id,
-        String name,
-        String sku,
-        String description,
-        String category,
-        double unitPrice,
-        double costPrice,
-        double taxRate,
-        int stockQuantity,
-        boolean active,
-        LocalDateTime createdAt,
-        LocalDateTime updatedAt
-) {
+
+@Data
+@AllArgsConstructor
+public class ProductResponse {
+
+
+    private String id;
+
+    private String productId;
+
+    private String name;
+
+    private String category;
+
+    private Double price;
+
+    private Integer quantity;
+
 }
